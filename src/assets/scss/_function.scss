@@ -1,0 +1,10 @@
+
+@function px2rem( $px ){
+	@return $px / 16 + rem;
+}
+@function px2em( $px ){
+	@return $px / 16 + em;
+}
+@function adaptPx( $px ){
+	@return $px*16/375 + px;
+}

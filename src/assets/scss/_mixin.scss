@@ -1,0 +1,56 @@
+// 清除浮动
+@mixin clearfix {
+    &:after{
+        content: "";
+        display: block;
+        height: 0;
+        font-size: 0;
+        overflow: hidden;
+        line-height: 0;
+        clear: both;
+    }
+}
+
+// 文字单行超出显示省略号
+@mixin otw {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 文字多行超出显示省略号
+@mixin motw {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+// px为单位的 2倍 雪碧图
+@mixin sprite($sprite) {
+    background-image: url(nth($sprite, 9));
+    background-position: nth($sprite, 3)/2 nth($sprite, 4)/2;
+    width: nth($sprite, 5)/2;
+    height: nth($sprite, 6)/2;
+    background-size: nth($sprite, 7)/2 nth($sprite, 8)/2;
+}
+
+//rem作为单位的2倍雪碧图，无缩放
+@mixin _sprite($sprite) {
+    background-image: url(nth($sprite, 9));
+    background-position: _base14rem2base16rem(base14px2rem(nth($sprite, 3)/2)) _base14rem2base16rem(base14px2rem(nth($sprite, 4)/2));
+    width: _base14rem2base16rem(base14px2rem(nth($sprite, 5)/2));
+    height: _base14rem2base16rem(base14px2rem(nth($sprite, 6)/2));
+    background-size: _base14rem2base16rem(base14px2rem(nth($sprite, 7)/2)) _base14rem2base16rem(base14px2rem(nth($sprite, 8)/2));
+}
+
+//rem作为单位的2倍雪碧图，hotcss页面缩放
+@mixin hotCssSprite($sprite) {
+    background-image: url(nth($sprite, 9));
+    background-position: _px2rem(nth($sprite, 3)/2) _px2rem(nth($sprite, 4)/2);
+    width: _px2rem(nth($sprite, 5)/2);
+    height: _px2rem(nth($sprite, 6)/2);
+    background-size: _px2rem(nth($sprite, 7)/2) _px2rem(nth($sprite, 8)/2);
+}
