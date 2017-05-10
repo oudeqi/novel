@@ -1,0 +1,98 @@
+#header {
+  width: 100%;
+  height: 70px;
+  position: relative;
+}
+
+#header .navbar {
+  border: 0;
+  min-width: 320px;
+}
+
+#header .navbar .navbar-brand {
+  margin-left: -15px;
+}
+
+#header .navbar .dropdown {
+  position: relative;
+  height: 50px;
+}
+
+#header .navbar .dropdown-menu {
+  left: auto;
+  right: -2px;
+}
+
+#header .navbar .dropdown-menu .glyphicon {
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#header .navbar .dropdown-menu span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#header .navbar .dropdown-toggle {
+  display: block;
+  float: right;
+  height: 50px;
+  padding: 0 10px;
+  padding-top: 7px;
+  background-color: #333;
+  cursor: pointer;
+}
+
+#header .navbar .dropdown-toggle:hover {
+  background-color: #000;
+  text-decoration: none;
+}
+
+#header .navbar .dropdown-toggle .pic {
+  display: inline-block;
+  vertical-align: middle;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+#header .navbar .dropdown-toggle .pic img {
+  width: 100%;
+  height: auto;
+}
+
+#header .navbar .dropdown-toggle .txt {
+  display: none;
+  vertical-align: middle;
+  margin-right: 8px;
+  color: #fff;
+}
+
+#header .navbar .dropdown-toggle .txt small {
+  display: block;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+#header .navbar .dropdown-toggle .txt span {
+  display: block;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+#header .navbar .dropdown-toggle .caret {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  border-width: 5px;
+}
+
+@media screen and (min-width: 375px) {
+  #header .navbar .dropdown-toggle .txt {
+    display: inline-block;
+  }
+}

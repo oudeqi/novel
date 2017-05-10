@@ -139,9 +139,9 @@ gulp.task("tpl", function() {
   return gulp.src("./src/component/**/*.html")
     .pipe(htmlmin(htmlMinOptions))
     .pipe(ngTemplate({
-      moduleName: "appTemplate",
+      moduleName: "app.template",
       standalone: true,
-      prefix: "../",
+      prefix: "./component/",
       filePath: "app-template.js"
     }))
     .pipe(gulp.dest("./src/component/app"));

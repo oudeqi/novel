@@ -3,6 +3,7 @@
 .idea/
 dist/
 node_modules/
+bower_components/
 src/assets/scss/_sprite.scss
 src/assets/image/sprite.png
 ##############################

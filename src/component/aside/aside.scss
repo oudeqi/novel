@@ -1,0 +1,25 @@
+#aside{
+    border-right:0;
+    padding-bottom:20px;
+    left: 0;
+}
+@media screen and (min-width:768px) {
+    #aside{
+        border-right:1px solid #eee;
+        position: absolute;
+        width: 150px;
+        top: 0;
+    }
+}
+
+@media screen and (min-width:992px) {
+    #aside{
+        width: 200px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #aside{
+        width: 250px;
+    }
+}

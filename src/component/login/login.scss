@@ -1,0 +1,45 @@
+#login{
+    .alert{
+        margin-top: 10px;
+    }
+    .login-form{
+        padding-top: 10px;
+    }
+}
+
+
+@media screen and (min-width:768px) {
+    #login{
+        .alert{
+            margin-top: 30px;
+        }
+        .login-form{
+            padding-top: 40px;
+        }
+    }
+
+}
+
+@media screen and (min-width:992px) {
+    #login{
+        .alert{
+            margin-top: 40px;
+        }
+        .login-form{
+            padding-top: 40px;
+        }
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    #login{
+        .alert{
+            margin-top: 20px;
+        }
+        .login-form{
+            padding-top: 60px;
+        }
+    }
+
+}
