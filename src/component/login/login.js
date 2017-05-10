@@ -8,8 +8,6 @@
 
     function loginFn($scope,$http,$timeout,localStorageService,$state){
 
-        localStorageService.clearAll();
-
         $scope.alerts = [];
         $scope.closeAlert = function() {
             $scope.alerts.length = 0;

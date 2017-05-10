@@ -1,7 +1,7 @@
 ;(function(){
     'use strict';
-    angular.module('app').controller('header',['$scope','localStorageService','$http',
-        function($scope,localStorageService,$http){
+    angular.module('app').controller('header',['$scope','localStorageService','$http','$state',
+        function($scope,localStorageService,$http,$state){
 
             $scope.userInfo = {
                 token: '',
@@ -60,6 +60,11 @@
             $scope.$on('warpperlogin', function(event,data) {
                 getUserInfo();
         	});
+
+            $scope.logout = function(){
+                localStorageService.clearAll();
+                $state.go('warpper.login',{},{reload:true});
+            };
 
         }
     ]);
