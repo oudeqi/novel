@@ -1,0 +1,15 @@
+<div class="container-fluid" id="novel" ng-controller="novel">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li><a ui-sref="warpper.views.section.novels">图书列表</a></li>
+        <li class="active">{{title}}</li>
+    </ol>
+    <div class="">
+        {{list | json}}
+    </div>
+</div>

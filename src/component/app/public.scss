@@ -2,3 +2,23 @@
 body{
     min-width:320px;
 }
+
+// 表格列表
+.table-list{
+    .table{
+        margin-bottom: 0;
+    }
+    .nodata{
+        text-align: center;
+        padding: 10px;
+        color: #aaa;
+    }
+    .pagination-cont{
+        text-align: right;
+    }
+}
+
+//路径导航
+.breadcrumb li:first-child a:hover{
+    text-decoration: none;
+}

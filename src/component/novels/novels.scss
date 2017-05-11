@@ -1,0 +1,47 @@
+#novels{
+    .table{
+        table-layout: auto;
+        .novel-coverImg{
+            width: 50px;
+            height: auto;
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+        .novel-name{
+            p{
+                margin-bottom: 2px;
+                a{
+                    font-size: 15px;
+                }
+                span{
+                    font-size: 13px;
+                    color: #999;
+                    &.text-dark{
+                        color: #333;
+                    }
+                }
+                color: #999;
+            }
+        }
+        .status{
+            padding: 5px 8px;
+            font-size: 12px;
+            line-height: 1;
+            border-radius: 4px;
+            background-color: #ddd;
+            color: #fff;
+            &.on{
+                background-color:#337ab7;
+            }
+            &.off{
+                background-color: #999;
+            }
+        }
+    }
+
+    .table > thead > tr > th{
+        border-bottom: 1px solid #ddd;
+    }
+}

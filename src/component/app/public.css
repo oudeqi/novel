@@ -1,3 +1,21 @@
 body {
   min-width: 320px;
 }
+
+.table-list .table {
+  margin-bottom: 0;
+}
+
+.table-list .nodata {
+  text-align: center;
+  padding: 10px;
+  color: #aaa;
+}
+
+.table-list .pagination-cont {
+  text-align: right;
+}
+
+.breadcrumb li:first-child a:hover {
+  text-decoration: none;
+}

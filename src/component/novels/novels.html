@@ -1,0 +1,68 @@
+<div class="container-fluid" id="novels" ng-controller="novels">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="active">图书列表</li>
+    </ol>
+    <div class="table-list">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>封面图</th>
+                    <th>名称</th>
+                    <th>状态</th>
+                    <th>性别频度</th>
+                    <th>派单指数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in list">
+                    <td>
+                        <div class="novel-coverImg">
+                            <img ng-src="{{item.coverImg}}" alt="">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="novel-name">
+                            <p>
+                                <a ui-sref="warpper.views.section.novel({id:item.id,title:item.name})">
+                                    [{{item.typeName}}] {{item.name}}
+                                </a>
+                                <span ng-if="item.isEnd==1">
+                                    [已完结]
+                                </span>
+                                <span class="text-dark" ng-if="item.isEnd!=1">
+                                    [连载中<i class="glyphicon glyphicon-arrow-up"></i>]
+                                </span>
+                            </p>
+                            <p>作者: {{item.author}}</p>
+                            <p>共{{item.chapter}}章，第{{item.followChapter}}章开始要求关注</p>
+                        </div>
+                    </td>
+                    <td>
+                        <span ng-if="item.status==1" class="status on">已上架</span>
+                        <span ng-if="item.status!=1" class="status off">已下架</span>
+                    </td>
+                    <td>
+                        <span ng-show="item.sex==0">通用</span>
+                        <span ng-show="item.sex==1">男频</span>
+                        <span ng-show="item.sex==2">女频</span>
+                    </td>
+                    <td>
+                        <span>{{item.recommend || 0 | number}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="nodata" ng-show="list.length==0">
+            暂无数据
+        </div>
+        <div class="pagination-cont" ng-show="pageCount>1">
+            <ul uib-pagination boundary-links="true" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
+    </div>
+</div>
