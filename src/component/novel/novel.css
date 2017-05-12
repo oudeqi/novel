@@ -1,0 +1,56 @@
+#novel .nodata {
+  text-align: center;
+}
+
+#novel .jumbotron img {
+  max-width: 100%;
+}
+
+#novel .jumbotron h1 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+#novel .jumbotron p {
+  font-size: 16px;
+}
+
+#novel .chapter-list .free {
+  color: forestgreen;
+}
+
+#novel .chapter-list .charge {
+  color: hotpink;
+}
+
+#novel .chapter-list .charge i {
+  margin-right: 4px;
+}
+
+#novel .chapter-list .curr-follow {
+  color: forestgreen;
+}
+
+#novel .chapter-list .curr-follow i {
+  margin-right: 2px;
+}
+
+#novel .chapter-list a {
+  margin-right: 6px;
+}
+
+#novel .pagination-cont {
+  text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+  #novel .jumbotron {
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  #novel .jumbotron h1 {
+    font-size: 36px;
+  }
+}

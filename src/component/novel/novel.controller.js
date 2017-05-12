@@ -3,9 +3,9 @@
     angular.module('app').controller('novel',['$scope','$http','$state',
         function($scope,$http,$state){
 
-            console.log($state.params);
             $scope.id = $state.params.id;
-            $scope.title = $state.params.title;
+            $scope.novel = {};
+            $scope.novel.name = $state.params.title;
 
             $scope.maxSize = 5;
             $scope.totalItems = 0;
@@ -26,6 +26,15 @@
                     $scope.currentPage = res.data.data.pageIndex++;
                 }else{
 
+                }
+            }).catch(function(res){
+
+            });
+
+            $http.get('/v1/aut/backend/book?id='+$scope.id).then(function(res){
+                console.log('小说详情',res);
+                if(!res.data.errMessage){
+                    $scope.novel = res.data.data;
                 }
             }).catch(function(res){
 

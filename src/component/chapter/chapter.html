@@ -1,0 +1,30 @@
+<div class="container-fluid" id="chapter" ng-controller="chapter">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li><a ui-sref="warpper.views.section.novels">图书列表</a></li>
+        <li><a ui-sref="warpper.views.section.novel({id:id,name:name})">{{name}}</a></li>
+        <li class="active">{{title}}</li>
+    </ol>
+    <div class="panel panel-{{theme}}">
+        <div class="panel-heading">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-{{theme}}" ng-click="theme='primary'">主题Ⅰ</button>
+            <button type="button" class="btn btn-{{theme}}" ng-click="theme='default'">主题Ⅱ</button>
+            <button type="button" class="btn btn-{{theme}}" ng-click="theme='info'">主题Ⅵ</button>
+            <button type="button" class="btn btn-{{theme}}" ng-click="theme='success'">主题Ⅲ</button>
+            <button type="button" class="btn btn-{{theme}}" ng-click="theme='warning'">主题Ⅳ</button>
+            <button type="button" class="btn btn-{{theme}}" ng-click="theme='danger'">主题Ⅴ</button>
+        </div>
+        </div>
+        <div class="panel-body">
+            <p class="text-{{theme}}">
+                <pre>{{content}}</pre>
+            </p>
+        </div>
+    </div>
+</div>

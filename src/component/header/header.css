@@ -96,3 +96,9 @@
     display: inline-block;
   }
 }
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}

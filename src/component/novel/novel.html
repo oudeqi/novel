@@ -7,9 +7,53 @@
             </a>
         </li>
         <li><a ui-sref="warpper.views.section.novels">图书列表</a></li>
-        <li class="active">{{title}}</li>
+        <li class="active">{{novel.name}}</li>
     </ol>
-    <div class="">
-        {{list | json}}
+
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-sm-4 col-lg-3">
+                <img ng-src="{{novel.coverImg}}" alt="">
+            </div>
+            <div class="col-sm-8 col-lg-9">
+                <h1>{{novel.name}}</h1>
+                <p>作者：{{novel.author}}</p>
+                <p>字数：{{novel.words | number}}</p>
+                <p>{{novel.introduction}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chapter-list">
+        <table class="table table-bordered">
+            <tr ng-repeat="item in list">
+                <td>{{$index+1}}</td>
+                <td>
+                    <a ui-sref="warpper.views.section.chapter({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">{{item.title}}</a>
+                    <span ng-if="item.gold==0" class="free">免费</span>
+                    <span ng-if="item.gold!=0" class="charge"><i class="glyphicon glyphicon-piggy-bank"></i>{{item.gold}}</span>
+                </td>
+                <td>
+                    <a ng-if="$index<5" href="javascript:void(0);">
+                        <i class="glyphicon glyphicon-link"></i>
+                        <span>生成推广文案</span>
+                    </a>
+                    <a ng-if="$index<5" href="javascript:void(0);">
+                        <i class="glyphicon glyphicon-link"></i>
+                        <span>获取推广链接</span>
+                    </a>
+                    <!-- <a href="javascript:void(0);">设为关注章节</a>
+                    <span class="curr-follow">
+                        <i class="glyphicon glyphicon-ok-sign"></i>当前关注章节
+                    </span> -->
+                </td>
+            </tr>
+        </table>
+        <div class="nodata" ng-show="list.length==0">
+            暂无数据
+        </div>
+        <div class="pagination-cont" ng-show="pageCount>1">
+            <ul uib-pagination boundary-links="true" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
     </div>
 </div>

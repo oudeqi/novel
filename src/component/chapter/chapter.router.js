@@ -8,11 +8,12 @@
 
             $stateProvider.state({
                 params:{
+                    title:'',
                     name:''
                 },
-                name: 'warpper.views.section.novel',
-                url: '^/nls/{id}',
-                templateUrl: './component/novel/novel.html'
+                name: 'warpper.views.section.chapter',
+                url: '^/nls/{id}/{chapterid}',
+                templateUrl: './component/chapter/chapter.html'
             });
 
         }
