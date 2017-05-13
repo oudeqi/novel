@@ -1,0 +1,124 @@
+<div class="container-fluid" id="promotion-letters" ng-controller="promotion-letters">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li><a ui-sref="warpper.views.section.novels">图书列表</a></li>
+        <li><a ui-sref="warpper.views.section.novel({id:id,name:name})">{{name}}</a></li>
+        <li>
+            <a ui-sref="warpper.views.section.chapter({id:id,chapterid:chapterid,name:name,title:title})">
+                {{title}}
+            </a>
+        </li>
+        <li class="active">推广文案</li>
+    </ol>
+    <div class="container-fluid">
+        <div class="template-content">
+            <div class="promo-template">
+                <div class="promo-template-title">
+                    <h1 class="article-title">一个小三诉说出轨男人的真面目，真的很准，值得一看！</h1>
+                </div>
+                <div class="promo-template-coverimg">
+                    <img src="../../assets/image/promo-coverimg-02.jpg" alt="">
+                </div>
+                <div class="promo-template-body">
+                    <div class="promo-template-section">
+                        <div class="section-header">
+                            <div class="center">
+                                <span></span><span></span><span></span><span>第一章 只是个替身</span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="section-body">
+                            <p ng-repeat="item in content track by $index">{{item}}</p>
+                        </div>
+                        <div class="section-footer"><span></span><span></span><span></span></div>
+                    </div>
+                </div>
+                <div class="promo-template-footer">
+                    <div class="footer-style-01">
+                        <p><strong>未完待续...</strong></p>
+                        <p><strong>点击</strong><strong><b>“阅读原文”</b></strong><strong>阅读后续精彩情节</strong></p>
+                        <div class="pic">
+                            <img src="../../assets/image/promo-look-original-01.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="set-template">
+                <ul class="button-list">
+                    <li class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            文案标题
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            文案封面
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="display:block;" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            正文模板
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            原文引导模板
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <div class="btn-group btn-group-" role="group" aria-label="...">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default">复制标题</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default">复制正文</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default">生成链接</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="alert alert-success" role="alert">
+        复制正文成功！
+    </div>
+</div>

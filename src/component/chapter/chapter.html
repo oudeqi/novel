@@ -22,9 +22,11 @@
         </div>
         </div>
         <div class="panel-body">
-            <p class="text-{{theme}}">
-                <pre>{{content}}</pre>
-            </p>
+            <div class="content text-{{theme}}">
+                <p ng-repeat="item in content track by $index">
+                    {{item}}
+                </p>
+            </div>
         </div>
     </div>
 </div>

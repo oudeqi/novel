@@ -1,6 +1,6 @@
 ;(function(){
     'use strict';
-    angular.module('app').controller('chapter',['$scope','$http','$state',
+    angular.module('app').controller('promotion-letters',['$scope','$http','$state',
         function($scope,$http,$state){
 
             console.log($state.params);
@@ -36,7 +36,6 @@
 
             });
 
-            $scope.theme = 'primary';
 
 
         }

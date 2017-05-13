@@ -34,11 +34,11 @@
                     <span ng-if="item.gold!=0" class="charge"><i class="glyphicon glyphicon-piggy-bank"></i>{{item.gold}}</span>
                 </td>
                 <td>
-                    <a ng-if="$index<5" href="javascript:void(0);">
+                    <a ng-if="item.gold==0" ui-sref="warpper.views.section.promletters({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">
                         <i class="glyphicon glyphicon-link"></i>
                         <span>生成推广文案</span>
                     </a>
-                    <a ng-if="$index<5" href="javascript:void(0);">
+                    <a ng-if="item.gold==0" href="javascript:void(0);">
                         <i class="glyphicon glyphicon-link"></i>
                         <span>获取推广链接</span>
                     </a>
