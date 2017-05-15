@@ -22,6 +22,10 @@
   right: 10px;
 }
 
+#promotion-letters .alert div {
+  white-space: nowrap;
+}
+
 #promotion-letters .button-list {
   list-style: none;
   padding: 0;
@@ -37,6 +41,10 @@
 
 #promotion-letters .button-list .dropdown:last-child {
   margin-left: 20px;
+}
+
+#promotion-letters .button-list .dropdown img {
+  max-height: 50px;
 }
 
 #promotion-letters .template-content {

@@ -1,0 +1,38 @@
+.create-link-modal .modal-header {
+  padding: 12px 15px;
+}
+
+.create-link-modal .modal-header .close {
+  margin-top: 8px;
+}
+
+.create-link-modal .modal-header .modal-title {
+  line-height: 1.5;
+  font-size: 22px;
+}
+
+.create-link-modal .modal-footer {
+  padding: 12px 15px;
+}
+
+.create-link-modal .modal-footer .copyLinkMsg {
+  display: inline-block;
+  margin-right: 10px;
+  color: #449d44;
+  line-height: 1;
+}
+
+.create-link-modal .modal-body .form-horizontal .book-coverimg img {
+  max-height: 100px;
+  width: auto;
+  display: block;
+}
+
+.create-link-modal .modal-body .form-horizontal b, .create-link-modal .modal-body .form-horizontal a {
+  padding-top: 7px;
+  display: inline-block;
+}
+
+.create-link-modal .modal-body .form-horizontal .warning {
+  color: red;
+}

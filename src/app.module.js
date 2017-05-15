@@ -6,7 +6,8 @@
         'ui.router',
         'app.template',
         'LocalStorageModule',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'ngClipboard'
     ]);
 
 })();
