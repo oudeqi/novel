@@ -19,6 +19,7 @@ body{
 }
 
 //路径导航
-.breadcrumb li:first-child a:hover{
+.breadcrumb li:first-child a:hover,
+.breadcrumb li:first-child a:focus{
     text-decoration: none;
 }

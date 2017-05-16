@@ -14,16 +14,19 @@
             $scope.pageCount = 0;//总页数
             $scope.list = [];
 
-            $http.get('/v1/backend/book/chapter?id='+$scope.id,{
-                pageSize:$scope.pageSize,
-                pageIndex:$scope.currentPage,
+            $http.get('/v1/backend/book/chapter',{
+                params:{
+                    id:$scope.id,
+                    pageSize:$scope.pageSize,
+                    pageIndex:$scope.currentPage,
+                }
             }).then(function(res){
                 console.log('章节列表',res);
                 if(!res.data.errMessage){
                     $scope.list = res.data.data.data;
                     $scope.totalItems = res.data.data.rowCount;
                     $scope.pageCount = res.data.data.pageCount;
-                    $scope.currentPage = res.data.data.pageIndex++;
+                    $scope.currentPage = res.data.data.pageIndex + 1;
                 }else{
 
                 }

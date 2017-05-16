@@ -20,7 +20,7 @@
             function getUserInfo(){
                 if(!!localStorageService.get('token')){
                     $http.get('/v1/aut/user/info').then(function(res){
-                        console.log('userInfo',res);
+                        // console.log('用户信息',res);
                         if(!res.data.errMessage){
                             $scope.userInfo = {
                                 token: res.data.data.token,

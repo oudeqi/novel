@@ -1,0 +1,57 @@
+#promotion-list{
+    .table{
+        table-layout: auto;
+    }
+
+    .table > thead > tr > th{
+        border-bottom: 1px solid #ddd;
+    }
+
+    .link{
+        margin-bottom: 8px;
+        button{
+            border: 0;
+            background-color: inherit;
+            color: #777;
+        }
+    }
+
+    .time{
+        margin-bottom: 0;
+        color: #999;
+    }
+
+    .ori-chapter{
+        &:after{
+            display: block;
+            content: " ";
+            clear: both;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+    }
+    .fl{
+        float: left;
+        &.chapter{
+            p{
+                line-height: 1;
+                color: #999;
+                a{
+                    line-height: 1.3;
+                }
+            }
+        }
+    }
+    .pic{
+        height: 50px;
+        width: auto;
+        margin-right: 10px;
+        img{
+            height: 100%;
+            width: auto;
+        }
+    }
+}

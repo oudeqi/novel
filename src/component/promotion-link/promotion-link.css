@@ -1,112 +1,72 @@
-@media screen and (min-width: 768px) {
-  #promotion-letters .set-template {
-    padding-left: 150px;
-  }
+#promotion-link .btn-list {
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
-@media screen and (min-width: 992px) {
-  #promotion-letters .set-template {
-    padding-left: 200px;
-  }
+#promotion-link .warning {
+  color: red;
 }
 
-@media screen and (min-width: 1200px) {
-  #promotion-letters .set-template {
-    padding-left: 250px;
-  }
-}
-
-#promotion-letters .alert {
-  position: fixed;
-  bottom: 50px;
-  right: 10px;
-}
-
-#promotion-letters .alert div {
-  white-space: nowrap;
-}
-
-#promotion-letters .button-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-top: 10px;
-}
-
-#promotion-letters .button-list .dropdown {
-  margin-bottom: 10px;
-  float: left;
-  margin-right: 10px;
-}
-
-#promotion-letters .button-list .dropdown:last-child {
-  margin-left: 20px;
-}
-
-#promotion-letters .button-list .dropdown img {
-  max-height: 50px;
-}
-
-#promotion-letters .template-content {
+#promotion-link .template-content {
   max-width: 670px;
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 
-#promotion-letters .promo-template {
+#promotion-link .promo-template {
   max-width: 100%;
   padding-top: 1px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-#promotion-letters .promo-template .promo-template-title {
+#promotion-link .promo-template .promo-template-title {
   border-bottom: 1px solid #e7e7eb;
   margin-top: 20px;
   padding-bottom: 10px;
 }
 
-#promotion-letters .promo-template .promo-template-title h1 {
+#promotion-link .promo-template .promo-template-title h1 {
   font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
 
-#promotion-letters .promo-template .promo-template-coverimg {
+#promotion-link .promo-template .promo-template-coverimg {
   margin-top: 20px;
 }
 
-#promotion-letters .promo-template .promo-template-coverimg img {
+#promotion-link .promo-template .promo-template-coverimg img {
   width: 100%;
   display: block;
   height: auto;
 }
 
-#promotion-letters .promo-template .promo-template-body {
+#promotion-link .promo-template .promo-template-body {
   margin-top: 20px;
   font-size: 16px;
   line-height: 1.5;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section {
+#promotion-link .promo-template .promo-template-body .promo-template-section {
   margin-top: 20px;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header {
   text-align: center;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header .center {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header .center {
   display: inline-block;
   box-sizing: border-box;
   background-color: #fff;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header .center span {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header .center span {
   margin: 0;
   padding: 0;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(1) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(1) {
   display: inline-block;
   height: 30px;
   width: 10px;
@@ -123,7 +83,7 @@
   border-bottom-color: transparent !important;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(2) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(2) {
   display: inline-block;
   height: 30px;
   width: 10px;
@@ -141,7 +101,7 @@
   box-sizing: border-box;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(3) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(3) {
   display: inline-block;
   height: 30px;
   width: 10px;
@@ -158,7 +118,7 @@
   border-bottom-color: transparent !important;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(4) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(4) {
   display: inline-block;
   vertical-align: top;
   height: 30px;
@@ -172,7 +132,7 @@
   font-size: 16px;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(5) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(5) {
   display: inline-block;
   height: 30px;
   width: 10px;
@@ -189,7 +149,7 @@
   border-bottom-color: transparent !important;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(6) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(6) {
   display: inline-block;
   height: 30px;
   width: 10px;
@@ -207,7 +167,7 @@
   border-bottom-color: transparent !important;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(7) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-header .center span:nth-child(7) {
   display: inline-block;
   height: 30px;
   width: 10px;
@@ -225,23 +185,23 @@
   box-sizing: border-box;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-body {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-body {
   border: 2px solid #FD8125;
   padding: 30px 15px 15px;
   margin-top: -16px;
   box-sizing: border-box;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-footer {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-footer {
   margin-top: -20px;
   box-sizing: border-box;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-footer span {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-footer span {
   display: block;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-footer span:nth-child(1) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-footer span:nth-child(1) {
   border-color: transparent transparent #ff8124;
   border-style: solid;
   border-width: 10px;
@@ -254,7 +214,7 @@
   box-sizing: border-box;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-footer span:nth-child(2) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-footer span:nth-child(2) {
   border-color: transparent transparent #fefefe;
   border-style: solid;
   border-width: 10px;
@@ -267,7 +227,7 @@
   box-sizing: border-box;
 }
 
-#promotion-letters .promo-template .promo-template-body .promo-template-section .section-footer span:nth-child(3) {
+#promotion-link .promo-template .promo-template-body .promo-template-section .section-footer span:nth-child(3) {
   border-color: transparent transparent #ff8124;
   border-style: solid;
   border-width: 10px;
@@ -280,29 +240,29 @@
   box-sizing: border-box;
 }
 
-#promotion-letters .promo-template .promo-template-footer {
+#promotion-link .promo-template .promo-template-footer {
   margin-top: 20px;
 }
 
-#promotion-letters .promo-template .promo-template-footer .footer-style-01 p {
+#promotion-link .promo-template .promo-template-footer .footer-style-01 p {
   margin-bottom: 0;
   line-height: 1.5;
 }
 
-#promotion-letters .promo-template .promo-template-footer .footer-style-01 p strong {
+#promotion-link .promo-template .promo-template-footer .footer-style-01 p strong {
   font-size: 18px;
 }
 
-#promotion-letters .promo-template .promo-template-footer .footer-style-01 p strong b {
+#promotion-link .promo-template .promo-template-footer .footer-style-01 p strong b {
   color: #FD2840;
 }
 
-#promotion-letters .promo-template .promo-template-footer .footer-style-01 .pic {
+#promotion-link .promo-template .promo-template-footer .footer-style-01 .pic {
   padding-top: 10px;
   padding-bottom: 20px;
 }
 
-#promotion-letters .promo-template .promo-template-footer .footer-style-01 .pic img {
+#promotion-link .promo-template .promo-template-footer .footer-style-01 .pic img {
   max-width: 100%;
   display: block;
   height: auto;

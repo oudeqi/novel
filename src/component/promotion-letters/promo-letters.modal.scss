@@ -12,32 +12,33 @@
 
     .modal-footer{
         padding: 12px 15px;
-        .copyLinkMsg{
+        .createErrMsg{
             display: inline-block;
             margin-right: 10px;
-            color: #449d44;
+            color: #a94442;
             line-height: 1;
         }
     }
 
     .modal-body{
         .form-horizontal{
-            .book-coverimg{
+            .pic{
                 img{
-                    max-height: 100px;
+                    max-height: 50px;
                     width: auto;
                     display: block;
                 }
             }
-            b,a{
+            b{
                 padding-top: 7px;
                 display: inline-block;
             }
+            .info{
+                color: red;
+                margin-top: 20px;
+            }
             .tip{
 
-            }
-            .warning{
-                color: red;
             }
         }
     }

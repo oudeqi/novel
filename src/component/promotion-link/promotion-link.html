@@ -1,0 +1,56 @@
+<div class="container-fluid" id="promotion-link" ng-controller="promotion-link">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li><a ui-sref="warpper.views.section.novels">图书列表</a></li>
+        <li><a ui-sref="warpper.views.section.novel({id:id,name:name})">{{name}}</a></li>
+        <li class="active">推广链接</li>
+    </ol>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="template-content">
+                    <div class="promo-template">
+                        <div class="promo-template-title">
+                            <h1 id="article-title" class="article-title">{{templateTitle.txt}}</h1>
+                        </div>
+                        <div class="promo-template-coverimg" id="article-coverimg">
+                            <img ng-src="{{templateCoverimg.pic}}" alt="">
+                        </div>
+                        <div id="article-body" class="promo-template-body" ng-include="templateBodyStyle.templateUrl"></div>
+                        <div id="article-footer" class="promo-template-footer" ng-include="templateFooter.templateUrl"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="link">
+                    <b>推广链接：</b>
+                    <a href="javascript:void(0);" target="_blank">{{link}}</a>
+                </p>
+                <p class="tip">请复制上方推广链接，后续您可以在后台菜单的"推广链接"中找到它并查看统计数据</p>
+                <p class="warning">
+                    <i class="glyphicon glyphicon-exclamation-sign"></i>
+                    <span>请务必使用此链接作为文案的原文链接，不要使用微信中点开后手工复制的链接</span>
+                </p>
+                <div class="btn-list">
+                    <div class="btn-group">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-info" clip-copy="copyContentTitle" clip-click="copyTitle('article-title')">复制标题</button>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-info" clip-copy="copyContentBody" clip-click="copyBody('article-body')">复制正文</button>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-info" clip-copy="copyContentLink" clip-click="copyLink()">复制推广链接</button>
+                        </div>
+                    </div>
+                </div>
+                <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'success')" close="closeAlert()">{{alert.msg}}</div>
+            </div>
+        </div>
+    </div>
+</div>

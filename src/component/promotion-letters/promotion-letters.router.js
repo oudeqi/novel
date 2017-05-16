@@ -12,7 +12,7 @@
                     name:''
                 },
                 name: 'warpper.views.section.promletters',
-                url: '^/nls/{id}/{chapterid}/',
+                url: '^/nls/{id}/{chapterid}/plt',
                 templateUrl: './component/promotion-letters/promotion-letters.html'
             });
 
