@@ -1,11 +1,11 @@
 <div id="agent" ng-controller="agentctl">
 	 <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">代理管理</a></li>
+        <li><a href="javascript:void;">Home</a></li>
+        <li><a href="javascript:void;">代理管理</a></li>
     </ol>
    
     <!--<div class="container">-->
-    	 <button type="button" class="btn btn-primary" style="margin-bottom: 15px;">添加代理</button>
+    	 <button ui-sref="warpper.views.section.agentedit" type="button" class="btn btn-primary" style="margin-bottom: 15px;">添加代理</button>
     	 
     	 	<div class="input-group search_btn">
 			  <input type="text" class="form-control" placeholder="搜索昵称" aria-describedby="basic-addon1">
@@ -94,6 +94,23 @@
 			
 			
 		  </uib-tabset>
+		  
+		<div class="app-pagination">
+        <ul
+            uib-pagination
+            ng-change=""
+            items-per-page="list.pageSize"
+            num-pages="list.pageCount"
+            total-items="list.rowCount"
+            ng-model="pageIndex"
+            max-size="5"
+            boundary-links="true"
+            rotate="true"
+            first-text="&laquo;"
+            last-text="&raquo;"
+            previous-text="&lsaquo;"
+            next-text="&rsaquo;"></ul>
+    </div>
  			
  			
 </div>
