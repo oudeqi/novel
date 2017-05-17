@@ -7,7 +7,7 @@
         'app.template',
         'LocalStorageModule',
         'ui.bootstrap',
-        'ngClipboard'
+        'ngclipboard'
     ]);
 
 })();

@@ -77,52 +77,80 @@
                 }
             });
 
-            var scrollIntoView = function(id){
-                // document.getElementById(id).scrollIntoView();
-            };
 
-            $scope.alerts = [{
-                type:'success',
-                msg:'复制标题成功',
-            }];
+
+
+            $scope.alerts = [];
             $scope.closeAlert = function() {
                 $scope.alerts.length = 0;
             };
 
-            $scope.copyContentTitle = 'title';
-            $scope.copyTitle = function(id){
-                $scope.closeAlert();
+            var timer;
+            $scope.copyTitleError = function(e) {
+                $timeout.cancel(timer);
+                $scope.alerts = [{
+                    type:'error',
+                    msg:'复制标题失败，请手动复制！',
+                }];
+                timer = $timeout(function(){
+                    $scope.closeAlert();
+                },2000);
+            };
+            $scope.copyBodyError = function(e) {
+                $timeout.cancel(timer);
+                $scope.alerts = [{
+                    type:'error',
+                    msg:'复制正文失败，请手动复制！',
+                }];
+                timer = $timeout(function(){
+                    $scope.closeAlert();
+                },2000);
+            };
+            $scope.copyLinkError = function(e) {
+                $timeout.cancel(timer);
+                $scope.alerts = [{
+                    type:'error',
+                    msg:'复制推广链接失败，请手动复制！',
+                }];
+                timer = $timeout(function(){
+                    $scope.closeAlert();
+                },2000);
+            };
+
+            $scope.copyTitleSuccess = function(e){
+                e.clearSelection();
+                $timeout.cancel(timer);
                 $scope.alerts = [{
                     type:'success',
                     msg:'复制标题成功',
                 }];
-                scrollIntoView(id);
-                $timeout(function(){
+                timer = $timeout(function(){
                     $scope.closeAlert();
                 },2000);
             };
 
-            $scope.copyContentBody = 'body';
-            $scope.copyBody = function(id){
-                $scope.closeAlert();
+
+            $scope.copyBodySuccess = function(e){
+                e.clearSelection();
+                $timeout.cancel(timer);
                 $scope.alerts = [{
                     type:'success',
                     msg:'复制正文成功',
                 }];
-                scrollIntoView(id);
-                $timeout(function(){
+                timer = $timeout(function(){
                     $scope.closeAlert();
                 },2000);
             };
 
-            $scope.copyContentLink = 'copyLink';
-            $scope.copyLink = function(id){
-                $scope.closeAlert();
+
+            $scope.copyLinkSuccess = function(e){
+                e.clearSelection();
+                $timeout.cancel(timer);
                 $scope.alerts = [{
                     type:'success',
                     msg:'复制推广链接成功',
                 }];
-                $timeout(function(){
+                timer = $timeout(function(){
                     $scope.closeAlert();
                 },2000);
             };

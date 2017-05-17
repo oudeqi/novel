@@ -195,7 +195,6 @@
                         promoLinkModal.idArr.push(res.data.data);
                         $uibModalInstance.close(promoLinkModal.idArr);
                     }
-
                 }).catch(function(res){
                     $scope.createErrMsg = '生成推广链接失败';
                 });
@@ -245,7 +244,7 @@
 
         titles = [{
             id:1,
-            txt:'温柔体贴的老公突然提出了离婚，只因为七年前我……1'
+            txt:'温柔体贴的老公突然提出了离婚，只因为七年前我……'
         },{
             id:2,
             txt:'温柔体贴的老公突然提出了离婚，只因为七年前我……2'

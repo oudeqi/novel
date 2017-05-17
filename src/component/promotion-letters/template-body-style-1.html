@@ -1,11 +1,11 @@
-<div class="promo-template-section" ng-repeat="items in chapters track by $index">
-    <div class="section-header">
-        <div class="center">
-            <span></span><span></span><span></span><span>{{items.chapterTitle}}1</span><span></span><span></span><span></span>
-        </div>
-    </div>
-    <div class="section-body">
+<section class="promo-template-section" ng-repeat="items in chapters track by $index">
+    <section class="section-header">
+        <section class="center">
+            <span></span><span></span><span></span><span>{{items.chapterTitle}}</span><span></span><span></span><span></span>
+        </section>
+    </section>
+    <section class="section-body">
         <p ng-repeat="item in items.chapterContent track by $index">{{item}}</p>
-    </div>
-    <div class="section-footer"><span></span><span></span><span></span></div>
-</div>
+    </section>
+    <section class="section-footer"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></section>
+</section>

@@ -11,8 +11,10 @@
             $scope.list = [];
 
             $http.get('/v1/aut/backend/books',{
-                pageSize:$scope.pageSize,
-                pageIndex:$scope.currentPage,
+                params:{
+                    pageSize:$scope.pageSize,
+                    pageIndex:$scope.currentPage,
+                }
             }).then(function(res){
                 console.log('小说列表',res);
                 if(!res.data.errMessage){
