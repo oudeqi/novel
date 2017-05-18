@@ -42,8 +42,10 @@
                                 </div>
                             </div>
                             <div class="fl chapter">
-                                <p><a href="#">{{item.bookName}}</a></p>
-                                <p>{{item.cTitle}}</p>
+                                <p><a ui-sref="warpper.views.section.novel({id:item.bookId,name:item.bookName})">{{item.bookName}}</a></p>
+                                <p>
+                                    <button type="button" ui-sref="warpper.views.section.chapter({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.cTitle})">{{item.cTitle}}</button>
+                                </p>
                             </div>
                         </div>
                     </td>
@@ -51,7 +53,7 @@
                     <td>{{item.addNumber | number}}</td>
                     <td>{{item.followNumber | number}}</td>
                     <td>{{item.payMoney | currency : "￥" : 2}}</td>
-                    <td><a href="#">查看文案</a></td>
+                    <td><a href="javascript:void(0);" ng-click="promotionLetters(item)">查看文案</a></td>
                 </tr>
             </tbody>
         </table>
@@ -59,7 +61,7 @@
             暂无数据
         </div>
         <div class="pagination-cont" ng-show="pageCount>1">
-            <ul uib-pagination boundary-links="true" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+            <ul uib-pagination boundary-links="true" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
         </div>
     </div>
 </div>

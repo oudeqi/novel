@@ -45,6 +45,14 @@
   line-height: 1.3;
 }
 
+#promotion-list .fl.chapter p button {
+  border: 0;
+  background-color: inherit;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
 #promotion-list .pic {
   height: 50px;
   width: auto;

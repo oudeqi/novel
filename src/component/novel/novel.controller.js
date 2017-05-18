@@ -14,25 +14,32 @@
             $scope.pageCount = 0;//总页数
             $scope.list = [];
 
-            $http.get('/v1/backend/book/chapter',{
-                params:{
-                    id:$scope.id,
-                    pageSize:$scope.pageSize,
-                    pageIndex:$scope.currentPage,
-                }
-            }).then(function(res){
-                console.log('章节列表',res);
-                if(!res.data.errMessage){
-                    $scope.list = res.data.data.data;
-                    $scope.totalItems = res.data.data.rowCount;
-                    $scope.pageCount = res.data.data.pageCount;
-                    $scope.currentPage = res.data.data.pageIndex + 1;
-                }else{
+            $scope.getList = function(){
+                $http.get('/v1/backend/book/chapter',{
+                    params:{
+                        id:$scope.id,
+                        pageSize:$scope.pageSize,
+                        pageIndex:$scope.currentPage,
+                    }
+                }).then(function(res){
+                    console.log('章节列表',res);
+                    if(!res.data.errMessage){
+                        $scope.list = res.data.data.data;
+                        $scope.totalItems = res.data.data.rowCount;
+                        $scope.pageCount = res.data.data.pageCount;
+                        $scope.currentPage = res.data.data.pageIndex;
+                    }else{
 
-                }
-            }).catch(function(res){
+                    }
+                }).catch(function(res){
 
-            });
+                });
+            };
+            $scope.getList();
+            $scope.pageChanged = function(){
+                console.log("page to "+$scope.currentPage);
+                $scope.getList();
+            };
 
             $http.get('/v1/aut/backend/book?id='+$scope.id).then(function(res){
                 console.log('小说详情',res);
