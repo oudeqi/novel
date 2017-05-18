@@ -1,0 +1,19 @@
+#site-settings .form-horizontal {
+  margin-top: 20px;
+}
+
+#site-settings .form-horizontal .control-label {
+  font-weight: normal;
+}
+
+#site-settings .form-horizontal .form-actions {
+  background-color: #fefefe;
+  border-top: 1px solid #E5E5E5;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px 0 20px;
+}
+
+#site-settings .alert {
+  margin-top: 20px;
+}

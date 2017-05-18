@@ -1,0 +1,124 @@
+<div class="container-fluid" id="site-settings" ng-controller="site-settings">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="active">网站设置</li>
+    </ol>
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="公众号设置">
+            <div class="alert alert-warning alert-dismissible">
+                <strong>注意: </strong> 接入公众号必须是 “ 认证服务号 ”
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">网站首页</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">email@example.com</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">原始ID</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" placeholder="微信公众平台的原始ID">
+                        <span class="help-block">注意: 上线后请不要更改公众号，否则会影响先前的粉丝，如需换号请申请开新号</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">微信号</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" placeholder="微信用户可通过该微信号搜索到你的公众账号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">昵称</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" placeholder="微信公众账号展示的昵称">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">App ID</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" placeholder="开发者的AppID">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">App Secret</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" placeholder="开发者的应用密钥">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-5">
+                            <button type="submit" class="btn btn-primary">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab index="1" heading="公众号接入" disable="!weixingongzhong">
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>消息：</strong>生成菜单失败
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-4 col-lg-3 control-label">业务域名</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">email@example.com</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-lg-3 control-label">JS接口安全域名</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">email@example.com</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-lg-3 control-label">网页授权域名</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">email@example.com</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-lg-3 control-label">URL（服务器地址）</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">email@example.com</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-lg-3 control-label">Token（令牌）</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">89a5f04e9ea2d561f23d987f0d0e7c7d</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-lg-3 control-label">EncodingAESKey（消息加解密密钥）</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">随机生成</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-lg-3 control-label">消息加解密方式</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">明文模式</p>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-lg-offset-3 col-sm-5">
+                            <button type="submit" class="btn btn-primary">生成菜单</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </uib-tab>
+    </uib-tabset>
+</div>
