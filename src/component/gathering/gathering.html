@@ -1,0 +1,114 @@
+<div id="gathering" ng-controller="gathering">
+	 <ol class="breadcrumb">
+        <li><a href="javascript:void;">Home</a></li>
+        <li><a href="javascript:void;">收款信息</a></li>
+    </ol>
+   
+   <div class="xd" ng-class="xdshow?'xdShow':'xdHide'">
+    {{xdtitle}}
+   </div>
+    
+ 			
+		  <uib-tabset active="active">
+		    <uib-tab index="0" heading="个人资料">
+		    	<div class="gathering_cover">
+		    	<div class="panel panel-success">
+				  <div class="panel-heading">账号类型</div>
+				  <div class="panel-body">
+				    Panel content
+				  </div>
+				</div>
+				<div class="panel panel-success">
+				  <div class="panel-heading">昵称</div>
+				  <div class="panel-body">
+				    Panel content
+				  </div>
+				</div>
+				<div class="panel panel-success">
+				  <div class="panel-heading">用户名</div>
+				  <div class="panel-body">
+				    Panel content
+				  </div>
+				</div>
+				<div class="panel panel-success">
+				  <div class="panel-heading">邮箱</div>
+				  <div class="panel-body">
+				    Panel content
+				  </div>
+				</div>
+				<div class="panel panel-success">
+				  <div class="panel-heading">手机</div>
+				  <div class="panel-body">
+				    Panel content
+				  </div>
+				</div>
+				<div class="panel panel-success">
+				  <div class="panel-heading">佣金比例</div>
+				  <div class="panel-body">
+				    Panel content
+				  </div>
+				</div>
+				
+				
+				</div>
+						    	
+		    	
+		    </uib-tab>
+			<uib-tab index="1" heading="收款信息">
+				<div class="gathering_cover">
+					<div class="alert alert-success" role="alert">如需修改请联系管理员</div>
+					
+					<div class="panel panel-primary">
+					  <div class="panel-heading">收款方式</div>
+					  <div class="panel-body">
+					    Panel content
+					  </div>
+					</div>
+					<div class="panel panel-primary">
+					  <div class="panel-heading">持卡人姓名</div>
+					  <div class="panel-body">
+					    Panel content
+					  </div>
+					</div>
+					<div class="panel panel-primary">
+					  <div class="panel-heading">卡号</div>
+					  <div class="panel-body">
+					    Panel content
+					  </div>
+					</div>
+					
+					<div class="panel panel-primary">
+					  <div class="panel-heading">开户行</div>
+					  <div class="panel-body">
+					    Panel content
+					  </div>
+					</div>
+				</div>
+		    	
+			</uib-tab>
+			
+			<uib-tab index="2" heading="修改密码">
+				<div class="gathering_cover" style="width: 25%;">
+					<div class="form-group">
+					    <label for="myname">当前密码</label>
+					    <input type="password" class="form-control" ng-model="oldPwd" id="myname" placeholder="">
+					  </div>
+				 	 <div class="form-group">
+					    <label for="myname1">新密码</label>
+					    <input type="password" class="form-control" ng-model="nowPwd" id="myname1" placeholder="">
+					  </div>
+					  <div class="form-group">
+					    <label for="myname2">新密码确认</label>
+					    <input type="password" class="form-control" ng-model="nowPwdYes" id="myname2" placeholder="">
+					  </div>
+					   <button ng-click="cgPwd()" type="button" class="btn btn-primary" style="margin-bottom: 15px;">确认修改</button>
+					  
+				</div>
+		    	
+			</uib-tab>
+			
+			
+		  </uib-tabset>
+		  
+ 			
+</div>
