@@ -63,11 +63,9 @@
             </form>
         </uib-tab>
         <uib-tab index="1" heading="公众号接入" disable="!wx.baseId || !wx.wechat || !wx.name || !wx.appId || !wx.appsecret">
-            <div class="alert alert-danger">
-                <button type="button" class="close"><span>&times;</span></button>
-                <strong>消息：</strong>生成菜单失败
+            <div uib-alert ng-repeat="alert in menuAlerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeMenuAlert()">
+                <strong>消息：</strong>{{alert.msg}}
             </div>
-            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert()">{{alert.msg}}</div>
             <div class="form-horizontal">
                 <div class="form-group">
                     <label class="col-sm-4 col-lg-3 control-label">业务域名</label>

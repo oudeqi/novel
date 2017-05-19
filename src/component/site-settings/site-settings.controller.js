@@ -1,7 +1,7 @@
 ;(function(){
     'use strict';
-    angular.module('app').controller('site-settings',['$scope','$http',
-        function($scope,$http){
+    angular.module('app').controller('site-settings',['$scope','$http','$timeout',
+        function($scope,$http,$timeout){
 
             $scope.wx = {};
 
@@ -52,8 +52,41 @@
                 });
             };
 
+            $scope.menuAlerts = [];
+            $scope.closeMenuAlert = function() {
+                $scope.menuAlerts.length = 0;
+            };
+            $scope.generateMenuClicked = false;
             $scope.generateMenu = function(){
-                console.log('generateMenu');
+                if($scope.generateMenuClicked){
+                    return false;
+                }
+                $scope.generateMenuClicked = true;
+                $http.get('/v1/aut/wx/user/menu').then(function(res){
+                    console.log('生成按钮',res);
+                    $scope.generateMenuClicked = false;
+                    if(res.data.errMessage){
+                        $scope.menuAlerts[0] = {
+                            type:'danger',
+                            msg: res.data.errMessage
+                        };
+                    }else{
+                        $scope.menuAlerts[0] = {
+                            type:'success',
+                            msg: '生成菜单成功！'
+                        };
+                        $timeout(function(){
+                            location.reload();
+                        },2000);
+                    }
+
+                }).catch(function(res){
+                    $scope.generateMenuClicked = false;
+                    $scope.menuAlerts[0] = {
+                        type:'danger',
+                        msg: '菜单生成失败！'
+                    };
+                });
             };
 
 
