@@ -15,24 +15,25 @@
   padding: 12px 15px;
 }
 
-.create-link-modal .modal-footer .copyLinkMsg {
+.create-link-modal .modal-footer .createErrMsg {
   display: inline-block;
   margin-right: 10px;
-  color: #449d44;
+  color: #a94442;
   line-height: 1;
 }
 
-.create-link-modal .modal-body .form-horizontal .book-coverimg img {
-  max-height: 100px;
+.create-link-modal .modal-body .form-horizontal .pic img {
+  max-height: 50px;
   width: auto;
   display: block;
 }
 
-.create-link-modal .modal-body .form-horizontal b, .create-link-modal .modal-body .form-horizontal a {
+.create-link-modal .modal-body .form-horizontal b {
   padding-top: 7px;
   display: inline-block;
 }
 
-.create-link-modal .modal-body .form-horizontal .warning {
+.create-link-modal .modal-body .form-horizontal .info {
   color: red;
+  margin-top: 20px;
 }

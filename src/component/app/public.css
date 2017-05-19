@@ -16,6 +16,83 @@ body {
   text-align: right;
 }
 
-.breadcrumb li:first-child a:hover {
+.breadcrumb li:first-child a:hover,
+.breadcrumb li:first-child a:focus {
   text-decoration: none;
+}
+
+.xd {
+  opacity: 0;
+  width: 20rem;
+  height: 12.36rem;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  line-height: 12.36rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  top: 40vh;
+  left: 40vw;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+}
+
+.xdShow {
+  -webkit-animation: 0.5s xdShow forwards;
+          animation: 0.5s xdShow forwards;
+}
+
+.xdHide {
+  -webkit-animation: 0.5s xdHide forwards;
+          animation: 0.5s xdHide forwards;
+}
+
+@-webkit-keyframes xdShow {
+  from {
+    opacity: 0;
+    top: 45vh;
+  }
+  to {
+    opacity: 1;
+    top: 40vh;
+    width: 20rem;
+  }
+}
+
+@keyframes xdShow {
+  from {
+    opacity: 0;
+    top: 45vh;
+  }
+  to {
+    opacity: 1;
+    top: 40vh;
+    width: 20rem;
+  }
+}
+
+@-webkit-keyframes xdHide {
+  from {
+    opacity: 1;
+    top: 40vh;
+  }
+  to {
+    opacity: 0;
+    top: 45vh;
+    width: 0;
+  }
+}
+
+@keyframes xdHide {
+  from {
+    opacity: 1;
+    top: 40vh;
+  }
+  to {
+    opacity: 0;
+    top: 45vh;
+    width: 0;
+  }
 }

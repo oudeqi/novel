@@ -1,0 +1,65 @@
+#promotion-list .table {
+  table-layout: auto;
+}
+
+#promotion-list .table > thead > tr > th {
+  border-bottom: 1px solid #ddd;
+}
+
+#promotion-list .link {
+  margin-bottom: 8px;
+}
+
+#promotion-list .link button {
+  border: 0;
+  background-color: inherit;
+  color: #777;
+}
+
+#promotion-list .time {
+  margin-bottom: 0;
+  color: #999;
+}
+
+#promotion-list .ori-chapter:after {
+  display: block;
+  content: " ";
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+#promotion-list .fl {
+  float: left;
+}
+
+#promotion-list .fl.chapter p {
+  line-height: 1;
+  color: #999;
+}
+
+#promotion-list .fl.chapter p a {
+  line-height: 1.3;
+}
+
+#promotion-list .fl.chapter p button {
+  border: 0;
+  background-color: inherit;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+#promotion-list .pic {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+#promotion-list .pic img {
+  height: 100%;
+  width: auto;
+}

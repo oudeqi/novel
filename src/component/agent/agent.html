@@ -28,11 +28,11 @@
 		                </tr>
 		            </thead>
            			 <tbody>
-              		 <tr ng-repeat="x in [1,2,3,4,5,7]">
+              		 <tr ng-repeat="x in list">
 					  <td class="active">
 					  	<span uib-dropdown on-toggle="toggled(open)">
 					      <a href id="simple-dropdownx" uib-dropdown-toggle>
-					       刮风这天
+					       {{x.nickName}}
 					      </a>
 					      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdownx">
 					        <li style="padding: 10px;">
@@ -45,9 +45,9 @@
 					      </ul>
 					    </span>
 					  </td>
-					  <td class="success">333</td>
-					  <td class="warning">444</td>
-					  <td class="danger"><span style="background-color: cornflowerblue; padding: 3px; color: white;">555</span></td>
+					  <td class="success">{{x.scale}}</td>
+					  <td class="warning">{{x.createDate | date:"yyyy/MM/dd HH:mm"}}</td>
+					  <td class="danger"><span style="background-color: cornflowerblue; padding: 3px 6px; color: white;">{{x.grade==0?'待定':''}}{{x.grade==1?'差':''}}{{x.grade==2?'良':''}}{{x.grade==3?'优':''}}</span></td>
 					  <td class="info">
 					  	<span uib-dropdown on-toggle="toggled(open)">
 					      <a href id="simple-dropdown" uib-dropdown-toggle>
@@ -99,9 +99,9 @@
         <ul
             uib-pagination
             ng-change=""
-            items-per-page="list.pageSize"
-            num-pages="list.pageCount"
-            total-items="list.rowCount"
+            items-per-page="20"
+            num-pages="pageCount"
+            total-items="rowCount"
             ng-model="pageIndex"
             max-size="5"
             boundary-links="true"

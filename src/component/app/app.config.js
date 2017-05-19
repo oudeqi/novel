@@ -8,13 +8,6 @@
         }
     ]);
 
-    angular.module('app').config(['ngClipProvider', function(ngClipProvider) {
-        ngClipProvider.setPath("./assets/flash/ZeroClipboard.swf");
-        // ngClipProvider.setConfig({
-        //     zIndex: 50
-        // });
-    }]);
-
     angular.module('app').config(['$httpProvider','APP_HOST',
         function($httpProvider,APP_HOST){
             function HttpInterceptor($q){

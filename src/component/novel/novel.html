@@ -10,7 +10,7 @@
         <li class="active">{{novel.name}}</li>
     </ol>
 
-    <div class="jumbotron">
+    <div class="jumbotron" ng-show="novel.name">
         <div class="row">
             <div class="col-sm-4 col-lg-3">
                 <img ng-src="{{novel.coverImg}}" alt="">
@@ -38,10 +38,10 @@
                         <i class="glyphicon glyphicon-link"></i>
                         <span>生成推广文案</span>
                     </a>
-                    <a ng-if="item.gold==0" href="javascript:void(0);">
+                    <!-- <a ng-if="item.gold==0" href="javascript:void(0);">
                         <i class="glyphicon glyphicon-link"></i>
                         <span>获取推广链接</span>
-                    </a>
+                    </a> -->
                     <!-- <a href="javascript:void(0);">设为关注章节</a>
                     <span class="curr-follow">
                         <i class="glyphicon glyphicon-ok-sign"></i>当前关注章节
@@ -53,7 +53,7 @@
             暂无数据
         </div>
         <div class="pagination-cont" ng-show="pageCount>1">
-            <ul uib-pagination boundary-links="true" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+            <ul uib-pagination boundary-links="true" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
         </div>
     </div>
 </div>

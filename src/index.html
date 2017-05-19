@@ -20,12 +20,15 @@
         <link rel="stylesheet" href="component/aside/aside.css">
         <link rel="stylesheet" href="component/body/body.css">
         <link rel="stylesheet" href="component/chapter/chapter.css">
+        <link rel="stylesheet" href="component/gathering/gathering.css">
         <link rel="stylesheet" href="component/header/header.css">
         <link rel="stylesheet" href="component/login/login.css">
         <link rel="stylesheet" href="component/novel/novel.css">
         <link rel="stylesheet" href="component/novels/novels.css">
-        <link rel="stylesheet" href="component/promotion-letters/promolink.modal.css">
+        <link rel="stylesheet" href="component/promotion-letters/promo-letters.modal.css">
         <link rel="stylesheet" href="component/promotion-letters/promotion-letters.css">
+        <link rel="stylesheet" href="component/promotion-link/promotion-link.css">
+        <link rel="stylesheet" href="component/promotion-list/promotion-list.css">
         <link rel="stylesheet" href="component/section/section.css">
         <!-- endinject -->
         <!-- endbuild -->
@@ -34,16 +37,20 @@
         <ui-view></ui-view>
         <!-- build:js /assets/script/app.js -->
         <script type="text/javascript" src="./vendor/angular/angular.js"></script>
-        <script type="text/javascript" src="./vendor/zeroclipboard/ZeroClipboard.js"></script>
-        <script type="text/javascript" src="./vendor/ng-clip/ngClip.js"></script>
+        <script type="text/javascript" src="./vendor/clipboard/clipboard.js"></script>
+        <script type="text/javascript" src="./vendor/ngclipboard/ngclipboard.js"></script>
         <script type="text/javascript" src="./vendor/angular-ui-router/angular-ui-router.js"></script>
         <script type="text/javascript" src="./vendor/angular-local-storage/angular-local-storage.js"></script>
         <script type="text/javascript" src="./vendor/ui-bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
         <script type="text/javascript" src="./app.module.js"></script>
         <!-- inject:js -->
+        <script src="component/section/section.router.js"></script>
         <script src="component/warpper/warpper.router.js"></script>
         <script src="component/warpper/warpper.controller.js"></script>
-        <script src="component/section/section.router.js"></script>
+        <script src="component/promotion-list/promotion-list.router.js"></script>
+        <script src="component/promotion-list/promotion-list.controller.js"></script>
+        <script src="component/promotion-link/promotion-link.router.js"></script>
+        <script src="component/promotion-link/promotion-link.controller.js"></script>
         <script src="component/promotion-letters/promotion-letters.router.js"></script>
         <script src="component/promotion-letters/promotion-letters.controller.js"></script>
         <script src="component/novels/novels.router.js"></script>
@@ -52,8 +59,9 @@
         <script src="component/novel/novel.controller.js"></script>
         <script src="component/login/login.router.js"></script>
         <script src="component/login/login.controller.js"></script>
-        <script src="component/home/home.router.js"></script>
         <script src="component/header/header.controller.js"></script>
+        <script src="component/home/home.router.js"></script>
+        <script src="component/gathering/gathering.controller.js"></script>
         <script src="component/chapter/chapter.router.js"></script>
         <script src="component/chapter/chapter.controller.js"></script>
         <script src="component/app/app.run.js"></script>

@@ -1,58 +1,20 @@
 
-@media screen and (min-width:768px) {
-    #promotion-letters{
-        .set-template{
-            padding-left: 150px;
-        }
-    }
-}
+#promotion-link{
 
-@media screen and (min-width:992px) {
-    #promotion-letters{
-        .set-template{
-            padding-left: 200px;
-        }
+    .btn-list{
+        padding-top: 15px;
+        padding-bottom: 10px;
     }
-}
 
-@media screen and (min-width:1200px) {
-    #promotion-letters{
-        .set-template{
-            padding-left: 250px;
-        }
+    .warning{
+        color: red;
     }
-}
 
-#promotion-letters{
-    .alert{
-        position: fixed;
-        bottom: 50px;
-        right: 10px;
-        div{
-            white-space: nowrap;
-        }
-    }
-    .button-list{
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        margin-top: 10px;
-        .dropdown{
-            margin-bottom: 10px;
-            float: left;
-            margin-right: 10px;
-            &:last-child{
-                margin-left: 20px;
-            }
-            img{
-                max-height: 50px;
-            }
-        }
-    }
     .template-content{
         max-width: 670px;
-        padding-bottom: 70px;
+        padding-bottom: 20px;
     }
+
     .promo-template{
         max-width: 100%;
         padding-top: 1px;
@@ -80,6 +42,7 @@
             margin-top: 20px;
             font-size: 16px;
             line-height: 1.5;
+            padding-bottom: 20px;
             .promo-template-section{
                 margin-top: 20px;
                 .section-header{

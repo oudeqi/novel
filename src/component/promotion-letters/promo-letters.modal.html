@@ -1,0 +1,65 @@
+<div class="app-modal">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="cancel()">&times;</button>
+        <h3 class="modal-title">生成推广链接</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">文案标题</label>
+                    <div class="col-sm-10">
+                        <b>{{templateTitle.txt}}</b>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">当前章节</label>
+                    <div class="col-sm-10">
+                        <b>{{currChapter}}</b>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">文案封面</label>
+                    <div class="col-sm-10">
+                        <div class="pic">
+                            <img ng-src="{{templateCoverimg.pic}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">正文模板</label>
+                    <div class="col-sm-10">
+                        <div class="pic">
+                            <img ng-src="{{templateBodyStyle.pic}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">原文引导模板</label>
+                    <div class="col-sm-10">
+                        <div class="pic">
+                            <img ng-src="{{templateFooter.pic}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <p class="info">
+                            <i class="glyphicon glyphicon-exclamation-sign"></i>
+                            <span>确认使用以上模板生成推广链接吗？</span>
+                        </p>
+                        <p class="tip">
+                            生成的推广链接就是微信后台的原文链接，后续您可以在后台菜单的"推广链接"中找到它并查看统计数据
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <p class="createErrMsg">{{createErrMsg}}</p>
+        <button class="btn btn-warning" type="button" ng-click="createdLink()">生成</button>
+        <button class="btn btn-primary" type="button" ng-click="cancel()">取消</button>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="container-fluid" id="promotion-list" ng-controller="promotion-list">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="active">推广链接</li>
+    </ol>
+    <div class="table-list">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>推广链接</th>
+                    <th>原文章节</th>
+                    <th>点击量</th>
+                    <th>新增用户</th>
+                    <th>新增关注</th>
+                    <th>充值金额</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in list track by $index">
+                    <td>
+                        <p class="link">
+                            <a href="javascript:void(0);">{{item.link}}</a>
+                            <button type="button">
+                                <i class="glyphicon glyphicon-duplicate"></i>
+                            </button>
+                        </p>
+                        <p class="time">
+                            创建时间: {{item.createDate | date:"yyyy/MM/dd HH:mm"}}
+                        </p>
+                    </td>
+                    <td>
+                        <div class="ori-chapter">
+                            <div class="fl">
+                                <div class="pic">
+                                    <img ng-src="{{item.bookImg}}" alt="">
+                                </div>
+                            </div>
+                            <div class="fl chapter">
+                                <p><a ui-sref="warpper.views.section.novel({id:item.bookId,name:item.bookName})">{{item.bookName}}</a></p>
+                                <p>
+                                    <button type="button" ui-sref="warpper.views.section.chapter({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.cTitle})">{{item.cTitle}}</button>
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{item.clickNumber | number}}</td>
+                    <td>{{item.addNumber | number}}</td>
+                    <td>{{item.followNumber | number}}</td>
+                    <td>{{item.payMoney | currency : "￥" : 2}}</td>
+                    <td><a href="javascript:void(0);" ng-click="promotionLetters(item)">查看文案</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="nodata" ng-show="list.length==0">
+            暂无数据
+        </div>
+        <div class="pagination-cont" ng-show="pageCount>1">
+            <ul uib-pagination boundary-links="true" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
+    </div>
+</div>
