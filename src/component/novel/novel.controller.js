@@ -5,7 +5,7 @@
 
             $scope.id = $state.params.id;
             $scope.novel = {};
-            $scope.novel.name = $state.params.title;
+            $scope.novel.name = $state.params.name;
 
             $scope.maxSize = 5;
             $scope.totalItems = 0;

@@ -14,6 +14,10 @@
   padding: 20px 0 20px;
 }
 
+#site-settings .form-horizontal button[type="submit"] {
+  margin-right: 8px;
+}
+
 #site-settings .alert {
   margin-top: 20px;
 }

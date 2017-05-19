@@ -1,0 +1,105 @@
+<div class="container-fluid" id="chapter-add" ng-controller="chapter-add">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li><a ui-sref="warpper.views.section.novels">图书列表</a></li>
+        <li><a ui-sref="warpper.views.section.novel({id:id,name:novel.name})">{{novel.name}}</a></li>
+        <li class="active">章节添加</li>
+    </ol>
+
+    <div class="jumbotron" ng-show="novel.name">
+        <div class="row">
+            <div class="col-sm-4 col-lg-3">
+                <img ng-src="{{novel.coverImg}}" alt="">
+            </div>
+            <div class="col-sm-8 col-lg-9">
+                <h1>{{novel.name}}</h1>
+                <p>作者：{{novel.author}}</p>
+                <p>字数：{{novel.words | number}}</p>
+                <p>{{novel.introduction}}</p>
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered" ng-show="chapters.length>0">
+        <tr>
+            <th>章节ID</th>
+            <th>章节标题</th>
+            <th>章节费用</th>
+            <th>章节内容</th>
+        </tr>
+        <tr ng-repeat="item in chapters">
+            <td>{{item.cid}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.gold}}</td>
+            <td>{{item.content}}</td>
+        </tr>
+    </table>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+                <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert()"><strong>错误：</strong>{{alert.msg}}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">章节标题</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="title" placeholder="请输入章节标题">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">章节费用</label>
+            <div class="col-sm-6">
+                <input type="number" class="form-control" ng-model="gold" placeholder="请填入整数，0 代表免费">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">章节内容</label>
+            <div class="col-sm-6">
+                <textarea class="form-control" rows="20" ng-model="content" placeholder="章节内容"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+                <button type="submit" class="btn btn-primary" ng-click="addChapter()">添加章节</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="chapter-list">
+        <table class="table table-bordered">
+            <tr ng-repeat="item in list">
+                <td>{{$index+1}}</td>
+                <td>
+                    <a ui-sref="warpper.views.section.chapter({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">{{item.title}}</a>
+                    <span ng-if="item.gold==0" class="free">免费</span>
+                    <span ng-if="item.gold!=0" class="charge"><i class="glyphicon glyphicon-piggy-bank"></i>{{item.gold}}</span>
+                </td>
+                <td>
+                    <a ng-if="item.gold==0" ui-sref="warpper.views.section.promletters({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">
+                        <i class="glyphicon glyphicon-link"></i>
+                        <span>生成推广文案</span>
+                    </a>
+                    <!-- <a ng-if="item.gold==0" href="javascript:void(0);">
+                        <i class="glyphicon glyphicon-link"></i>
+                        <span>获取推广链接</span>
+                    </a> -->
+                    <!-- <a href="javascript:void(0);">设为关注章节</a>
+                    <span class="curr-follow">
+                        <i class="glyphicon glyphicon-ok-sign"></i>当前关注章节
+                    </span> -->
+                </td>
+            </tr>
+        </table>
+        <div class="nodata" ng-show="list.length==0">
+            暂无数据
+        </div>
+        <div class="pagination-cont" ng-show="pageCount>1">
+            <ul uib-pagination boundary-links="true" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
+    </div>
+</div>
