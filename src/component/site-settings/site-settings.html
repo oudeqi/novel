@@ -62,7 +62,8 @@
                 </div>
             </form>
         </uib-tab>
-        <uib-tab index="1" heading="公众号接入" disable="!wx.baseId || !wx.wechat || !wx.name || !wx.appId || !wx.appsecret">
+        <uib-tab index="1" heading="公众号接入">
+            <!--  disable="!wx.baseId || !wx.wechat || !wx.name || !wx.appId || !wx.appsecret" -->
             <div uib-alert ng-repeat="alert in menuAlerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeMenuAlert()">
                 <strong>消息：</strong>{{alert.msg}}
             </div>

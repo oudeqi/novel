@@ -8,7 +8,11 @@
             $http.get('/v1/aut/user/wxinfo').then(function(res){
                 console.log('获取微信公众平台信息',res);
                 if(!res.data.errMessage){
-                    $scope.wx = res.data.data;
+                    if(res.data.data === null){
+                        $scope.wx = {};
+                    }else{
+                        $scope.wx = res.data.data;
+                    }
                 }
             }).catch(function(res){
 
@@ -32,7 +36,7 @@
                     return false;
                 }
                 $scope.submitClicked = true;
-                $http.get('/v1/aut/user/wxinfo',{
+                $http.post('/v1/aut/user/wxinfo',{
                     appId: $scope.wx.appId,
                     appsecret: $scope.wx.appsecret,
                     name: $scope.wx.name,
