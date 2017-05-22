@@ -20,7 +20,7 @@
                 <p>作者：{{novel.author}}</p>
                 <p>字数：{{novel.words | number}}</p>
                 <p>{{novel.introduction}}</p>
-                <button type="button" class="btn btn-info" ui-sref="warpper.views.section.chapterAdd({id:id,name:novel.name})">
+                <button ng-if="level==1" type="button" class="btn btn-info" ui-sref="warpper.views.section.chapterAdd({id:id,name:novel.name})">
                     <i class="glyphicon glyphicon-plus"></i>
                     添加章节
                 </button>

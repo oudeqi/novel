@@ -1,0 +1,38 @@
+<div class="container-fluid" id="order-list" ng-controller="order-list">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="active">订单管理</li>
+    </ol>
+
+    <div class="chapter-list">
+        <table class="table table-bordered">
+            <tr>
+                <th>商户订单</th>
+                <th>用户</th>
+                <th>总额</th>
+                <th>订单状态</th>
+                <th>创建日期</th>
+                <th>代理</th>
+            </tr>
+            <tr ng-repeat="item in list">
+                <td>{{item.orderNo}}</td>
+                <td>{{item.nickname}}</td>
+                <td>{{item.money | currency : "￥" : 2}}</td>
+                <td>{{item.statusName}}</td>
+                <td>{{item.createDate | date:"yyyy/MM/dd HH:mm"}}</td>
+                <td>{{item.agent}}</td>
+            </tr>
+        </table>
+        <div class="nodata" ng-show="list.length==0">
+            暂无数据
+        </div>
+        <div class="pagination-cont" ng-show="pageCount>1">
+            <ul uib-pagination boundary-links="true" items-per-page="pageSize" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
+    </div>
+</div>

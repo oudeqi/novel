@@ -1,4 +1,4 @@
-<div id="aside">
+<div id="aside" ng-controller="aside">
     <div class="container-fluid">
         <ul class="nav nav-pills nav-stacked ">
             <!-- <li role="presentation" ui-sref-active="active">
@@ -7,22 +7,28 @@
                     <span>首页</span>
                 </a>
             </li> -->
-            <li role="presentation" ui-sref-active="active">
+            <li ng-if="level==1" role="presentation" ui-sref-active="active">
                 <a ui-sref="warpper.views.section.noveladd">
                     <i class="glyphicon glyphicon-plus"></i>
                     <span>图书添加</span>
                 </a>
             </li>
-            <li role="presentation" ui-sref-active="active">
+            <li ng-if="level==1||level==2||level==3" role="presentation" ui-sref-active="active">
                 <a ui-sref="warpper.views.section.novels">
                     <i class="glyphicon glyphicon-list"></i>
                     <span>图书列表</span>
                 </a>
             </li>
-            <li role="presentation" ui-sref-active="active">
+            <li ng-if="level==1||level==2||level==3" role="presentation" ui-sref-active="active">
                 <a ui-sref="warpper.views.section.promolist">
                     <i class="glyphicon glyphicon-link"></i>
                     <span>推广链接</span>
+                </a>
+            </li>
+            <li ng-if="level==1||level==2||level==3" role="presentation" ui-sref-active="active">
+                <a ui-sref="warpper.views.section.orderList">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    <span>订单管理</span>
                 </a>
             </li>
             <!-- <li role="presentation">
@@ -45,19 +51,19 @@
             </li> -->
 
             <!--cmw use-->
-            <li role="presentation">
+            <li ng-if="level==1||level==2" role="presentation">
                 <a ui-sref="warpper.views.section.agent">
                     <i class="glyphicon empty glyphicon glyphicon-user"></i>
                     <span>代理管理</span>
                 </a>
             </li>
-            <li role="presentation" ui-sref-active="active">
+            <li ng-if="level==1||level==2" role="presentation" ui-sref-active="active">
                 <a ui-sref="warpper.views.section.siteset">
                     <i class="glyphicon glyphicon-cog"></i>
                     <span>网站设置</span>
                 </a>
             </li>
-            <li role="presentation">
+            <li ng-if="level==1||level==2||level==3" role="presentation">
                 <a ui-sref="warpper.views.section.gathering">
                     <i class="glyphicon empty glyphicon glyphicon-credit-card"></i>
                     <span>收款信息</span>

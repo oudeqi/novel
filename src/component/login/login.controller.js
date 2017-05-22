@@ -31,6 +31,7 @@
                 account:$scope.user.name,
                 passWorld:$scope.user.password
             }).then(function(res){
+                console.log('用户登录',res);
                 $scope.flag = false;
                 if(!!res.data.errMessage){
                     $scope.alerts[0] = { type: 'danger', msg: res.data.errMessage};
@@ -39,6 +40,7 @@
                     },2000);
                 }else{
                     localStorageService.set('token',res.data.data.token);
+                    localStorageService.set('level',res.data.data.level);
                     if(!!localStorageService.get('token')){
                         $http.defaults.headers.common.Authorization = localStorageService.get('token');
                     }else{

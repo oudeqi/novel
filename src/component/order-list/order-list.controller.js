@@ -1,13 +1,7 @@
 ;(function(){
     'use strict';
-    angular.module('app').controller('novel',['$scope','$http','$state','localStorageService',
-        function($scope,$http,$state,localStorageService){
-
-            $scope.level = localStorageService.get('level');
-
-            $scope.id = $state.params.id;
-            $scope.novel = {};
-            $scope.novel.name = $state.params.name;
+    angular.module('app').controller('order-list',['$scope','$http','$state',
+        function($scope,$http,$state){
 
             $scope.maxSize = 5;
             $scope.totalItems = 0;
@@ -17,9 +11,8 @@
             $scope.list = [];
 
             $scope.getList = function(){
-                $http.get('/v1/backend/book/chapter',{
+                $http.get('/v1/aut/order',{
                     params:{
-                        id:$scope.id,
                         pageSize:$scope.pageSize,
                         pageIndex:$scope.currentPage,
                     }
@@ -43,14 +36,7 @@
                 $scope.getList();
             };
 
-            $http.get('/v1/aut/backend/book?id='+$scope.id).then(function(res){
-                console.log('小说详情',res);
-                if(!res.data.errMessage){
-                    $scope.novel = res.data.data;
-                }
-            }).catch(function(res){
 
-            });
 
 
 
