@@ -12,13 +12,32 @@
 		  <uib-tabset active="active">
 		    <uib-tab index="0" heading="订单统计">
 		    	<div class="row" style="padding: 1rem;">
-		    		<div class="col-sm-3">
+		    		<div class="col-sm-3" ng-repeat="x in [0,1,2,3]">
 		    			<div class="panel panel-default">
 						  <div class="panel-heading">今日充值</div>
 						  <div class="panel-body">
 						    <div class="top_coin">
 						    	34798798.00
 						    </div>
+						    
+						    <div class="row">
+						    	<div class="col-sm-6">
+						    		<div class="normal_title">普通充值</div>
+						    		<div class="normal_money">3290.00</div>
+						    		<div class="normal_ct">已支付：<strong>83</strong>笔</div>
+						    		<div class="normal_ct">未支付：<strong>83</strong>笔</div>
+						    		<div class="normal_ct">完成率：<strong>83%</strong></div>
+						    	</div>
+						    	<div class="col-sm-6">
+						    		<div class="normal_title">年费VIP</div>
+						    		<div class="normal_money">3290.00</div>
+						    		<div class="normal_ct">已支付：<strong>83</strong>笔</div>
+						    		<div class="normal_ct">未支付：<strong>83</strong>笔</div>
+						    		<div class="normal_ct">完成率：<strong>83%</strong></div>
+						    	</div>
+						    </div>
+						    
+						    
 						  </div>
 						</div>
 		    		</div>
