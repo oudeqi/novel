@@ -42,7 +42,7 @@ gulp.task("clean", function() {
 gulp.task("useref", function() {
     return gulp.src("./src/index.html")
         .pipe(useref())
-        .pipe(gulpif("*.js", uglify()))
+        // .pipe(gulpif("*.js", uglify()))
         .pipe(gulpif("*.css", minifyCss()))
         .pipe(gulp.dest("./dist"));
 });

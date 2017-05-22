@@ -9,6 +9,9 @@
 			    '禁止登陆',
 			    '查看用户',
 			  ];
+			  $scope.search={
+			  	search:null,
+			  };
 			  
 			  k.toggled=function(open){
 			  	console.log(open)
@@ -25,6 +28,7 @@
                     params:{
                         pageSize:20,
                         pageIndex:$scope.pageIndex,
+                        search:$scope.search.search,
                     }
                 }).then(function(res){
                     console.log('小说列表',res);

@@ -28,6 +28,9 @@
 				nowPwd:null,
 				nowPwdYes:null,
 			}
+			
+			$scope.getPayInfo=null;
+			$scope.myinfo=null;
         	
         	$scope.cgPwd=function(){
 //      		console.log($scope.prw.oldPwd,$scope.prw.nowPwd,$scope.prw.nowPwdYes)
@@ -64,13 +67,31 @@
         	
         	/*获取收款信息*/
         	$scope.payEnd=function(){
-        		
+        		$http.get('/v1/aut/user/pay/account',{
+        			
+        		}).then(function(res){
+        			if(!res.data.errMessage){
+        				$scope.getPayInfo=res.data.data;
+        			}else{
+        				console.log(res.data);
+        			}
+        		})
         	}
+        	$scope.payEnd();
         	
         	/*返回个人信息*/
         	$scope.callInfo=function(){
-        		
+        		$http.get('/v1/aut/user/info',{
+        			
+        		}).then(function(res){
+        			if(!res.data.errMessage){
+        				$scope.myinfo=res.data.data;
+        			}else{
+        				console.log(res.data);
+        			}
+        		})
         	}
+        	$scope.callInfo();
         	
 			
 

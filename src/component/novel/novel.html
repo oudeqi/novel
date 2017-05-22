@@ -20,6 +20,10 @@
                 <p>作者：{{novel.author}}</p>
                 <p>字数：{{novel.words | number}}</p>
                 <p>{{novel.introduction}}</p>
+                <button type="button" class="btn btn-info" ui-sref="warpper.views.section.chapterAdd({id:id,name:novel.name})">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    添加章节
+                </button>
             </div>
         </div>
     </div>
@@ -34,7 +38,7 @@
                     <span ng-if="item.gold!=0" class="charge"><i class="glyphicon glyphicon-piggy-bank"></i>{{item.gold}}</span>
                 </td>
                 <td>
-                    <a ng-if="item.gold==0" ui-sref="warpper.views.section.promletters({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">
+                    <a ng-if="$index<5" ui-sref="warpper.views.section.promletters({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">
                         <i class="glyphicon glyphicon-link"></i>
                         <span>生成推广文案</span>
                     </a>
@@ -53,7 +57,7 @@
             暂无数据
         </div>
         <div class="pagination-cont" ng-show="pageCount>1">
-            <ul uib-pagination boundary-links="true" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+            <ul uib-pagination boundary-links="true" items-per-page="pageSize" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
         </div>
     </div>
 </div>
