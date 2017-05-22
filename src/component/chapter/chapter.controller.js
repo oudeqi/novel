@@ -20,8 +20,12 @@
 
             });
 
-            $http.get('/v1/aut/read/book/chapter?bookid='+$scope.id+'&chapterid='+$scope.chapterid)
-            .then(function(res){
+            $http.get('/v1/aut/read/book/chapter',{
+                params:{
+                    bookid:$scope.id,
+                    chapterid:$scope.chapterid,
+                }
+            }).then(function(res){
                 console.log('章节详情',res);
                 if(!res.data.errMessage){
                     $scope.title = res.data.data.title;//章节名称

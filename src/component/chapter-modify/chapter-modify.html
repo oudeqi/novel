@@ -1,4 +1,4 @@
-<div class="container-fluid" id="chapter-add" ng-controller="chapter-add">
+<div class="container-fluid" id="chapter-modify" ng-controller="chapter-modify">
     <ol class="breadcrumb">
         <li>
             <a href="javascript:void(0);">
@@ -8,7 +8,7 @@
         </li>
         <li><a ui-sref="warpper.views.section.novels">图书列表</a></li>
         <li><a ui-sref="warpper.views.section.novel({id:id,name:novel.name})">{{novel.name}}</a></li>
-        <li class="active">章节添加</li>
+        <li class="active">章节修改</li>
     </ol>
 
     <div class="jumbotron" ng-show="novel.name">
@@ -24,20 +24,7 @@
             </div>
         </div>
     </div>
-    <table class="table table-bordered" ng-show="chapters.length>0">
-        <tr>
-            <th>章节ID</th>
-            <th>章节标题</th>
-            <th>章节费用</th>
-            <th>章节内容</th>
-        </tr>
-        <tr ng-repeat="item in chapters">
-            <td>{{item.cid}}</td>
-            <td>{{item.title}}</td>
-            <td>{{item.gold}}</td>
-            <td>{{item.content}}</td>
-        </tr>
-    </table>
+
     <div class="form-horizontal">
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
@@ -65,7 +52,7 @@
 
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
-                <button type="submit" class="btn btn-primary" ng-click="addChapter()">添加章节</button>
+                <button type="submit" class="btn btn-primary" ng-click="modifyChapter()">修改</button>
             </div>
         </div>
     </div>

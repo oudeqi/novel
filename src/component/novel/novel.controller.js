@@ -1,7 +1,7 @@
 ;(function(){
     'use strict';
-    angular.module('app').controller('novel',['$scope','$http','$state','localStorageService',
-        function($scope,$http,$state,localStorageService){
+    angular.module('app').controller('novel',['$scope','$http','$state','localStorageService','$uibModal',
+        function($scope,$http,$state,localStorageService,$uibModal){
 
             $scope.level = localStorageService.get('level');
 
@@ -51,6 +51,43 @@
             }).catch(function(res){
 
             });
+
+            $scope.del = function(item){
+                console.log(item);
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: './component/confirm/confirm.modal.html',
+                    controller: 'confirmCtrl',
+                    openedClass: 'confirm-modal',
+                    backdrop:'static',
+                    size: 'sm',
+                    resolve: {
+                        confirm: function () {
+                            return {
+                                title:'确认删除该章节吗？',
+                                msg:'删除后不能恢复'
+                            };
+                        }
+                    }
+                });
+                modalInstance.result.then(function () {
+                    $http.post('/v1/aut/delete/chapter',{
+                        cid: item.cid,
+                        bookId: item.bookId
+                    }).then(function(res){
+                        console.log('删除',res);
+                        if(res.data.errMessage){
+                            alert('删除失败！');
+                        }else{
+                            location.reload();
+                        }
+                    }).catch(function(res){
+
+                    });
+                }, function () {
+                    console.log('Modal dismissed at: ' + new Date());
+                });
+            };
 
 
 
