@@ -2,7 +2,17 @@
     'use strict';
     
     
-    angular.module('app').controller('gathering',['$scope','$http','$timeout',
+    angular.module('app').config(['$stateProvider','$urlRouterProvider',
+        function($stateProvider,$urlRouterProvider){
+            $stateProvider.state({
+                name: 'warpper.views.section.gathering',
+                url: '^/gathering',
+                templateUrl: './component/gathering/gathering.html'
+           });
+
+        }
+    ])
+    .controller('gathering',['$scope','$http','$timeout',
         function($scope,$http,$timeout){     	
         	$scope.xdtitle='';
 			$scope.xdshow=false;
@@ -13,32 +23,36 @@
 					$scope.xdshow=false;
 				},2000)
 			}
+			$scope.prw={
+				oldPwd:null,
+				nowPwd:null,
+				nowPwdYes:null,
+			}
 			
-        	$scope.oldPwd=null;
-        	$scope.nowPwd=null;
-        	$scope.nowPwdYes=null;
+			$scope.getPayInfo=null;
+			$scope.myinfo=null;
         	
         	$scope.cgPwd=function(){
-        		console.log($scope.oldPwd,$scope.nowPwd,$scope.nowPwdYes)
-				if($scope.nowPwd==null || $scope.nowPwd==''){
+//      		console.log($scope.prw.oldPwd,$scope.prw.nowPwd,$scope.prw.nowPwdYes)
+				if($scope.prw.nowPwd==null || $scope.prw.nowPwd==''){
 					$scope.show('密码不能为空');
         			return;
 				}
-				if($scope.oldPwd==null || $scope.oldPwd==''){
+				if($scope.prw.oldPwd==null || $scope.prw.oldPwd==''){
 					$scope.show('密码不能为空');
         			return;
 				}
-				if($scope.nowPwdYes==null || $scope.nowPwdYes==''){
+				if($scope.prw.nowPwdYes==null || $scope.prw.nowPwdYes==''){
 					$scope.show('密码不能为空');
         			return;
 				}
-        		if($scope.nowPwd!=$scope.nowPwdYes){
+        		if($scope.prw.nowPwd!=$scope.prw.nowPwdYes){
         			$scope.show('新密码不一致');
         			return;
         		}
         		$http.post('/v1/aut/user/password',{
-							"password":$scope.oldPwd,
-							"newPassword":$scope.nowPwdYes
+							"password":$scope.prw.oldPwd,
+							"newPassword":$scope.prw.nowPwdYes
                }).then(function(res){
                     if(!res.data.errMessage){
 					
@@ -50,19 +64,39 @@
                 });
         		
         	}
+        	
+        	/*获取收款信息*/
+        	$scope.payEnd=function(){
+        		$http.get('/v1/aut/user/pay/account',{
+        			
+        		}).then(function(res){
+        			if(!res.data.errMessage){
+        				$scope.getPayInfo=res.data.data;
+        			}else{
+        				console.log(res.data);
+        			}
+        		})
+        	}
+        	$scope.payEnd();
+        	
+        	/*返回个人信息*/
+        	$scope.callInfo=function(){
+        		$http.get('/v1/aut/user/info',{
+        			
+        		}).then(function(res){
+        			if(!res.data.errMessage){
+        				$scope.myinfo=res.data.data;
+        			}else{
+        				console.log(res.data);
+        			}
+        		})
+        	}
+        	$scope.callInfo();
+        	
 			
 
 
         }
     ])
-    .config(['$stateProvider','$urlRouterProvider',
-        function($stateProvider,$urlRouterProvider){
-            $stateProvider.state({
-                name: 'warpper.views.section.gathering',
-                url: '^/gathering',
-                templateUrl: './component/gathering/gathering.html'
-           });
-
-        }
-    ]);
+    
 })();
