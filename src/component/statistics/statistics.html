@@ -12,28 +12,28 @@
 		  <uib-tabset active="active">
 		    <uib-tab index="0" heading="订单统计">
 		    	<div class="row" style="padding: 1rem;">
-		    		<div class="col-sm-3" ng-repeat="x in [0,1,2,3]">
+		    		<div class="col-sm-3" ng-repeat="x in nt">
 		    			<div class="panel panel-default">
-						  <div class="panel-heading">今日充值</div>
+						  <div class="panel-heading">{{x.title}}</div>
 						  <div class="panel-body">
 						    <div class="top_coin">
-						    	34798798.00
+						    	¥{{x.obj.allMoney}}
 						    </div>
 						    
 						    <div class="row">
 						    	<div class="col-sm-6">
 						    		<div class="normal_title">普通充值</div>
-						    		<div class="normal_money">3290.00</div>
-						    		<div class="normal_ct">已支付：<strong>83</strong>笔</div>
-						    		<div class="normal_ct">未支付：<strong>83</strong>笔</div>
-						    		<div class="normal_ct">完成率：<strong>83%</strong></div>
+						    		<div class="normal_money">{{x.obj.buyMoney}}</div>
+						    		<div class="normal_ct">已支付：<strong>{{x.obj.allNumber-x.obj.vipNumber}}</strong>笔</div>
+						    		<div class="normal_ct">未支付：<strong>{{x.obj.noPayBuyMoney}}</strong>笔</div>
+						    		<div class="normal_ct">完成率：<strong>{{(x.obj.noPayBuyNumber+(x.obj.allNumber-x.obj.vipNumber))/x.obj.allNumber*100 | number:2}}%</strong></div>
 						    	</div>
 						    	<div class="col-sm-6">
 						    		<div class="normal_title">年费VIP</div>
-						    		<div class="normal_money">3290.00</div>
-						    		<div class="normal_ct">已支付：<strong>83</strong>笔</div>
-						    		<div class="normal_ct">未支付：<strong>83</strong>笔</div>
-						    		<div class="normal_ct">完成率：<strong>83%</strong></div>
+						    		<div class="normal_money">{{x.obj.vipMoney}}</div>
+						    		<div class="normal_ct">已支付：<strong>{{x.obj.vipNumber}}</strong>笔</div>
+						    		<div class="normal_ct">未支付：<strong>{{x.obj.noPayVipNumber}}</strong>笔</div>
+						    		<div class="normal_ct">完成率：<strong>{{(x.obj.vipNumber/(x.obj.vipNumber+x.obj.noPayVipNumber))*100 | number:2}}%</strong></div>
 						    	</div>
 						    </div>
 						    
@@ -41,15 +41,99 @@
 						  </div>
 						</div>
 		    		</div>
-		    		<div class="col-sm-3"></div>
-		    		<div class="col-sm-3"></div>
-		    		<div class="col-sm-3"></div>
+
 		    	</div>
-						    	
-		    	
+				
+				<h3>近30天充值统计</h3>
+				
+		    	<div class="chapter-list">
+			        <table class="table table-bordered">
+			            <tr>
+			                <th>日起</th>
+			                <th>充值金额</th>
+			                <th>普通充值</th>
+			                <th>普通充值支付订单数</th>
+			                <th>年费VIP会员</th>
+			                <th>年费VIP会员支付订单数</th>
+			            </tr>
+			            <tr ng-repeat="item in th">
+			                <td>{{item.date}}</td>
+			                <td>¥{{item.allMoney}}</td>
+			                <td><strong>¥{{item.buyMoney}}</strong><br />
+			                	充值人数：{{item.allNumber-item.vipNumber}}，人均{{item.buyMoney/(item.allNumber-item.vipNumber)| number:2}}
+			                </td>
+			                <td><strong>{{item.noPayBuyNumber+(item.allNumber-item.vipNumber)}}笔</strong><br />
+			                	{{item.noPayBuyNumber}}笔未支付，完成率{{(item.noPayBuyNumber+(item.allNumber-item.vipNumber))/item.allNumber*100 | number:2}}%</td>
+			                <td><strong>¥{{item.vipMoney}}</strong><br />
+			                	充值人数：{{item.vipNumber}}，人均¥{{item.vipMoney/item.vipNumber | number:2}}</td>
+			                <td><strong>{{item.vipNumber}}笔</strong><br />
+			                	{{item.noPayVipNumber}}笔未支付，完成率:{{item.vipNumber/(item.vipNumber+item.noPayVipNumber)*100 | number:2}}%</td>
+			            </tr>
+			        </table>
+			        <div class="nodata" ng-show="list.length==0">
+			            暂无数据
+			        </div>
+			        <div class="pagination-cont" ng-show="pageCount>1">
+			            <ul uib-pagination boundary-links="true" items-per-page="pageSize" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+			        </div>
+			    </div>
 		    </uib-tab>
 			<uib-tab index="1" heading="用户统计">
+				<div class="row" style="padding: 1rem;">
+		    		<div class="col-sm-3" ng-repeat="x in ntx">
+		    			<div class="panel panel-default">
+						  <div class="panel-heading">{{x.title}}</div>
+						  <div class="panel-body">
+						    <div class="top_coin">
+						    	{{x.obj.addUser}}
+						    </div>
+						    
+						    <div class="row">
+						    	<div class="col-sm-12">
+						    		<div class="normal_ct">{{x.obj.man}} 男性, {{x.obj.woman}} 女性, {{x.obj.addUser-x.obj.man-x.obj.woman}} 未知</div>
+						    		<div class="normal_ct">已关注：<strong>{{x.obj.followUser}}</strong>笔</div>
+						    		<div class="normal_ct">已付费：<strong>{{x.obj.payUser}}</strong>笔</div>
+						    		<!--<div class="normal_ct">完成率：<strong>83%</strong></div>-->
+						    	</div>
+						    </div>
+						    
+						    
+						  </div>
+						</div>
+		    		</div>
+
+		    	</div>
 				
+				<h3>近30天用户统计</h3>
+				
+		    	<div class="chapter-list">
+			        <table class="table table-bordered">
+			            <tr>
+			                <th>日期</th>
+			                <th>新增用户</th>
+			                <th>已关注</th>
+			                <th>已付费</th>
+			                <th>男性</th>
+			                <th>女性</th>
+			            </tr>
+			            <tr ng-repeat="item in th">
+			                <td>{{item.date}}</td>
+			                <td>{{item.addUser}}</td>
+			                <td>
+			                	{{item.followUser}}
+			                </td>
+			                <td>{{item.payUser}}</td>
+			                <td>{{item.man}}</td>
+			                <td>{{item.woman}}</td>
+			            </tr>
+			        </table>
+			        <div class="nodata" ng-show="list.length==0">
+			            暂无数据
+			        </div>
+			        <div class="pagination-cont" ng-show="pageCount>1">
+			            <ul uib-pagination boundary-links="true" items-per-page="pageSize" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+			        </div>
+			    </div>
 		    	
 			</uib-tab>
 			
