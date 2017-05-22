@@ -46,7 +46,7 @@
                     }else{
                         $http.defaults.headers.common.Authorization = 'no token';
                     }
-                    $state.go('warpper.views.section.home',{},{reload:true});
+                    $state.go('warpper.views.section.statistics',{},{reload:true});
                     $scope.$emit('login', res.data.data);
                 }
             }).catch(function(res){

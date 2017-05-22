@@ -42,6 +42,14 @@
                         <i class="glyphicon glyphicon-link"></i>
                         <span>生成推广文案</span>
                     </a>
+                    <a ng-if="level==1" ui-sref="warpper.views.section.chapterModify({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                        <span>修改</span>
+                    </a>
+                    <a ng-if="level==1" href="javascript:void(0);" ng-click="del(item)">
+                        <i class="glyphicon glyphicon-remove"></i>
+                        <span>删除</span>
+                    </a>
                     <!-- <a ng-if="item.gold==0" href="javascript:void(0);">
                         <i class="glyphicon glyphicon-link"></i>
                         <span>获取推广链接</span>
