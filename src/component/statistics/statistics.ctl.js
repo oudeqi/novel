@@ -58,19 +58,21 @@
                     params:{
 
                     }
-               }).then(function(res){
-               		
-                    if(!res.data.errMessage){
-                        k.list = res.data.data;
+              }).then(function(res){
+              			console.log(1111)
+//                      k.list = res.data;
 //                      allMoney,buyMoney,vipMoney,noPayBuyMoney
                         
-                        
+//                      console.log(res.data.data.yesterday);
+        				try{
                         k.nt[0].obj=res.data.data.today;
                         k.nt[0].obj.allMoney=k.nt[0].obj.allMoney/100;
                          k.nt[0].obj.buyMoney=k.nt[0].obj.buyMoney/100;
                           k.nt[0].obj.vipMoney=k.nt[0].obj.vipMoney/100;
                            k.nt[0].obj.noPayBuyMoney=k.nt[0].obj.noPayBuyMoney/100;
-                        
+                       }catch(err){
+                       	
+                       }
                         
                         k.nt[1].obj=res.data.data.yesterday;
                         k.nt[1].obj.allMoney=k.nt[1].obj.allMoney/100;
@@ -94,16 +96,14 @@
                         k.ntx[1].obj=k.nt[1].obj;
                         k.ntx[2].obj=k.nt[2].obj;
                         k.ntx[3].obj=k.nt[3].obj;
+                        console.log("k.ntx:",k.ntx)
 //                      k.ntx[0].obj=res.data.data.today;
 //                      k.ntx[1].obj=res.data.data.yesterday;
 //                      k.ntx[2].obj=res.data.data.month;
 //                      k.ntx[3].obj=res.data.data.all;
-                    	 console.log("k的list:",k.nt);
-                    }else{
-
-                    }
+                    	 console.log("k.list:",k.nt);
                 }).catch(function(res){
-
+						console.log("k.list:错误");
                 });
 
 			  }
@@ -117,10 +117,10 @@
                }).then(function(res){
                		
                     k.th=res.data.data.data;
-                     k.th.allMoney=k.th.allMoney/100;
-                          k.th.buyMoney=k.th.buyMoney/100;
-                           k.th.vipMoney=k.th.vipMoney/100;
-                            k.th.noPayBuyMoney=k.th.noPayBuyMoney/100;
+                     k.th[0].allMoney=k.th[0].allMoney/100;
+                          k.th[0].buyMoney=k.th[0].buyMoney/100;
+                           k.th[0].vipMoney=k.th[0].vipMoney/100;
+                            k.th[0].noPayBuyMoney=k.th[0].noPayBuyMoney/100;
                     
                     console.log("k.th:",k.th);
                 }).catch(function(res){
