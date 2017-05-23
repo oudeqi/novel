@@ -12,6 +12,11 @@
 
         }
     ])
+//  .filter('nowu',function(){
+//  	return function(num){
+////  		if()
+//  	}
+//  })
     .controller('statisticsx',['$scope','$http','$timeout',
         function($scope,$http,$timeout){
         	var k=$scope;
