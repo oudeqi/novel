@@ -51,7 +51,7 @@
 		k.wx_num=null; //微信号
 		k.wx_name=null; //微信昵称
 		
-		k.logtype=null; //登记类型
+		k.logtype.k=0; //登记类型
 		
 		k.logmore=null; // 登记备注
 		
@@ -127,7 +127,7 @@
 			        "phoneNumber": k.user_tel,
 			        "scale": k.scale,
 			        "email":k.user_mail,
-			        "grade":k.logtype,
+			        "grade":k.logtype.k,
 			        "remarks":k.logmore,
 			        "payAccount":{
 			        	"type":k.ggType,
@@ -164,7 +164,7 @@
 							k.wx_num=null; //微信号
 							k.wx_name=null; //微信昵称
 							
-							k.logtype=null; //登记类型
+							k.logtype.k=0; //登记类型
 							
 							k.logmore=null; // 登记备注
 							

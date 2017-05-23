@@ -3,6 +3,10 @@
         <li><a href="javascript:void;">Home</a></li>
         <li><a href="javascript:void;">代理管理</a></li>
     </ol>
+    
+     <div class="xd" ng-class="xdshow?'xdShow':'xdHide'">
+    {{xdtitle}}
+   </div>
    
     <!--<div class="container">-->
     	 <button ui-sref="warpper.views.section.agentedit" type="button" class="btn btn-primary" style="margin-bottom: 15px;">添加代理</button>
@@ -23,7 +27,7 @@
 		                    <th>佣金比例</th>
 		                    <th>注册时间</th>
 		                    <th>等级</th>
-		                    <!--<th>操作</th>-->
+		                    <th>操作</th>
 		
 		                </tr>
 		            </thead>
@@ -42,25 +46,25 @@
 					     		<div>渠道公众号：</div>
 					     		<img style="width: 16rem;" src="../../assets/image/promo-coverimg-03.jpg" alt="" />
 					        </li>
-					      </ul>-->
+					      </ul>
 					    <!--</span>-->
 					  </td>
 					  <td class="success">{{x.scale}}</td>
 					  <td class="warning">{{x.createDate | date:"yyyy/MM/dd HH:mm"}}</td>
 					  <td class="danger"><span style="background-color: cornflowerblue; padding: 3px 6px; color: white;">{{x.grade==0?'待定':''}}{{x.grade==1?'差':''}}{{x.grade==2?'良':''}}{{x.grade==3?'优':''}}</span></td>
-					  <!--<td class="info">
+					  <td class="info">
 					  	<span uib-dropdown on-toggle="toggled(open)">
 					      <a href id="simple-dropdown" uib-dropdown-toggle>
 					       操作菜单
 					      </a>
 					      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-					        <li ng-repeat="choice in items">
+					        <li ng-repeat="choice in items" ng-click="menuX(choice,x)">
 					          <a href>{{choice}}</a>
 					        </li>
 					      </ul>
 					    </span>
 
-					  </td>-->
+					  </td>
 					</tr>
             		</tbody>
 					
