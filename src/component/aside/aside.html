@@ -13,7 +13,7 @@
                     <span>数据统计</span>
                 </a>
             </li>
-            
+
             <li ng-if="level==1" role="presentation" ui-sref-active="active">
                 <a ui-sref="warpper.views.section.noveladd">
                     <i class="glyphicon glyphicon-plus"></i>
@@ -36,6 +36,18 @@
                 <a ui-sref="warpper.views.section.orderList">
                     <i class="glyphicon glyphicon-list-alt"></i>
                     <span>订单管理</span>
+                </a>
+            </li>
+            <li ng-if="level==1||level==2||level==3" role="presentation" ui-sref-active="active">
+                <a ui-sref="warpper.views.section.myStatements">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    <span>我的结算单</span>
+                </a>
+            </li>
+            <li ng-if="level==1||level==2||level==3" role="presentation" ui-sref-active="active">
+                <a ui-sref="warpper.views.section.agentStatements">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    <span>代理结算单</span>
                 </a>
             </li>
             <!-- <li role="presentation">
@@ -76,7 +88,7 @@
                     <span>收款信息</span>
                 </a>
             </li>
-            
+
 
 
 

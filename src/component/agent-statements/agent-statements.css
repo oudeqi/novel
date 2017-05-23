@@ -1,0 +1,72 @@
+#agent-statements .jumbotron {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#agent-statements .jumbotron h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1;
+  font-size: 20px;
+}
+
+#agent-statements .jumbotron p {
+  margin-bottom: 10px;
+  line-height: 1;
+  color: #999;
+}
+
+#agent-statements .jumbotron p strong {
+  color: #337ab7;
+  font-size: 28px;
+}
+
+#agent-statements .jumbotron p span {
+  font-size: 18px;
+}
+
+#agent-statements .jumbotron p i {
+  font-style: normal;
+  color: #3c763d;
+  margin-left: 5px;
+}
+
+#agent-statements .jumbotron p em {
+  font-style: normal;
+  color: #8a6d3b;
+  margin-left: 5px;
+}
+
+#agent-statements .table tr:first-child th {
+  border-top: 0;
+}
+
+#agent-statements .status-1, #agent-statements .status-2 {
+  border-radius: 3px;
+  padding: 3px 4px;
+  font-size: 12px;
+  color: #eee;
+}
+
+#agent-statements .status-1 {
+  background-color: #d44950;
+}
+
+#agent-statements .status-2 {
+  background-color: #3c763d;
+}
+
+@media screen and (min-width: 768px) {
+  #agent-statements .jumbotron {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #agent-statements .jumbotron {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
