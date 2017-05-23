@@ -1,0 +1,74 @@
+#my-statements{
+    .jumbotron{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        h3{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            line-height: 1;
+            font-size: 20px;
+        }
+        p{
+            margin-bottom: 10px;
+            line-height: 1;
+            color: #999;
+            strong{
+                color: #337ab7;
+                font-size: 28px;
+            }
+            span{
+                font-size: 18px;
+            }
+            i{
+                font-style: normal;
+                color: #3c763d;
+                margin-left: 5px;
+            }
+            em{
+                font-style: normal;
+                color: #8a6d3b;
+                margin-left: 5px;
+            }
+        }
+    }
+    .table{
+        tr:first-child{
+            th{
+                border-top: 0;
+            }
+        }
+    }
+    %status{
+        border-radius: 3px;
+        padding: 3px 4px;
+        font-size: 12px;
+        color: #eee;
+    }
+    .status-1{
+        background-color: #d44950;
+        @extend %status;
+    }
+    .status-2{
+        background-color: #3c763d;
+        @extend %status;
+    }
+}
+
+@media screen and (min-width: 768px){
+    #my-statements{
+        .jumbotron{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    #my-statements{
+        .jumbotron{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}
