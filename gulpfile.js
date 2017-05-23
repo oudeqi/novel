@@ -42,7 +42,11 @@ gulp.task("clean", function() {
 gulp.task("useref", function() {
     return gulp.src("./src/index.html")
         .pipe(useref())
-        // .pipe(gulpif("*.js", uglify()))
+        .pipe(gulpif("*.js", uglify({
+            mangle: false,//类型：Boolean 默认：true 是否修改变量名
+            compress: true,//类型：Boolean 默认：true 是否完全压缩
+            // preserveComments: 'all' //保留所有注释
+        })))
         .pipe(gulpif("*.css", minifyCss()))
         .pipe(gulp.dest("./dist"));
 });
@@ -79,7 +83,13 @@ gulp.task("server:build",function(cb){
 });
 
 gulp.task("build", ["clean"], function() {
-    runSequence("useref", "htmlmin", "imagemin", "rev", "replacerev", "server:build");
+    runSequence(
+        "useref",
+        "htmlmin",
+        "imagemin",
+        "rev",
+        "replacerev",
+        "server:build");
 });
 /////////////////////////////////////////////////////$RECYCLE.BIN\
 gulp.task("sprite", function() {

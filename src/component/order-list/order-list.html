@@ -13,6 +13,7 @@
         <table class="table table-bordered">
             <tr>
                 <th>商户订单</th>
+                <th>订单类型</th>
                 <th>用户</th>
                 <th>总额</th>
                 <th>订单状态</th>
@@ -21,9 +22,19 @@
             </tr>
             <tr ng-repeat="item in list">
                 <td>{{item.orderNo}}</td>
-                <td>{{item.nickname}}</td>
+                <td>
+                    <span class="vip" ng-if="item.payType==5">VIP支付</span>
+                    <span ng-if="item.payType!=5">普通充值</span>
+                </td>
+                <td>
+                    <img class="headpic" ng-src="{{item.headimgurl}}" alt="">
+                    {{item.nickname}}
+                </td>
                 <td>{{item.money | currency : "￥" : 2}}</td>
-                <td>{{item.statusName}}</td>
+                <td>
+                    <span class="status-1" ng-if="item.status==1">待支付</span>
+                    <span class="status-2" ng-if="item.status==2">已支付</span>
+                </td>
                 <td>{{item.createDate | date:"yyyy/MM/dd HH:mm"}}</td>
                 <td>{{item.agent}}</td>
             </tr>

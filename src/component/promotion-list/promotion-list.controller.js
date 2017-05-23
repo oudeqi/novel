@@ -48,6 +48,15 @@
                 },{reload:true});
             };
 
+            $scope.copyLinkSuccess = function(e){
+                console.log(e);
+                alert('复制成功：'+e.text);
+            };
+
+            $scope.copyLinkError = function(e){
+                alert('复制失败！');
+            };
+
 
 
 

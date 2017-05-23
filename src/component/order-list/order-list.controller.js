@@ -17,7 +17,7 @@
                         pageIndex:$scope.currentPage,
                     }
                 }).then(function(res){
-                    console.log('章节列表',res);
+                    console.log('订单列表',res);
                     if(!res.data.errMessage){
                         $scope.list = res.data.data.data;
                         $scope.totalItems = res.data.data.rowCount;

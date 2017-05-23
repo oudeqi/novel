@@ -1,5 +1,9 @@
 #promotion-list .table {
-  table-layout: auto;
+  table-layout: fixed;
+}
+
+#promotion-list .table td:first-child {
+  word-wrap: break-word;
 }
 
 #promotion-list .table > thead > tr > th {
