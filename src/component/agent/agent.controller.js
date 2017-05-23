@@ -1,14 +1,24 @@
 ;(function(){
     'use strict';
-    angular.module('app').controller('agentctl',['$scope','$http',
-        function($scope,$http){
+    angular.module('app').controller('agentctl',['$scope','$http','$timeout','$state',
+        function($scope,$http,$timeout,$state){
         	var k=$scope;
 			k.items = [
-			    '推广链接',
-			    '修改资料',
-			    '禁止登陆',
-			    '查看用户',
+			    '重置密码',
+			    '代理统计',
 			  ];
+			  
+			k.xdtitle='';
+		
+			k.xdshow=false;
+			k.show=function(e){
+				k.xdtitle=e;
+				k.xdshow=true;
+				$timeout(function(){
+					k.xdshow=false;
+				},2500)
+			}
+				  
 			  $scope.search={
 			  	search:null,
 			  };
@@ -21,7 +31,29 @@
 			  k.rowCount = null;
               k.pageCount=null;
               k.list=null;
-			  
+              
+              k.menuX=function(dd,item){
+              	/*item.uid*/
+              	if(dd==k.items[0]){
+              		console.log("是在重置密码");
+              		$http.post('/v1/aut/pwd/reset',{
+              			uid:item.uid
+              		}).then(function(res){
+              			k.show("重置密码为123456")
+              		})
+              		
+              		
+              	}
+              	if(dd==k.items[1]){
+              		localStorage.statisticsuid=item.uid;
+              		
+              		$state.go('warpper.views.section.statisticsx_user',{},{reload:true});
+              		
+              		console.log("是在代理统计"); 
+              	}
+              }
+              
+
 			  k.getList=function(){
 //			  	/v1/aut/user/list
 				$http.get('/v1/aut/user/list',{
