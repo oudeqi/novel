@@ -51,7 +51,9 @@
 		k.wx_num=null; //微信号
 		k.wx_name=null; //微信昵称
 		
-		k.logtype.k=0; //登记类型
+		k.logtype={
+			k:0
+		}; //登记类型
 		
 		k.logmore=null; // 登记备注
 		
