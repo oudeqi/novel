@@ -55,7 +55,12 @@
 							"newPassword":$scope.prw.nowPwdYes
                }).then(function(res){
                     if(!res.data.errMessage){
-					
+                    	$scope.prw={
+							oldPwd:null,
+							nowPwd:null,
+							nowPwdYes:null,
+						}
+						$scope.show("修改成功");
                     }else{
 					   $scope.show(res.data.errMessage);
                     }
