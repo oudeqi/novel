@@ -53,6 +53,9 @@
               	}
               }
               
+              k.pageGo=function(){
+              	k.getList()
+              }
 
 			  k.getList=function(){
 //			  	/v1/aut/user/list
