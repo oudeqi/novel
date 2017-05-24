@@ -1,23 +1,23 @@
-<div id="agent" ng-controller="agentctl">
+<div class="container-fluid" id="agent" ng-controller="agentctl">
 	 <ol class="breadcrumb">
         <li><a href="javascript:void;">Home</a></li>
         <li><a href="javascript:void;">代理管理</a></li>
     </ol>
-    
+
      <div class="xd" ng-class="xdshow?'xdShow':'xdHide'">
     {{xdtitle}}
    </div>
-   
+
     <!--<div class="container">-->
     	 <button ui-sref="warpper.views.section.agentedit" type="button" class="btn btn-primary" style="margin-bottom: 15px;">添加代理</button>
-    	 
+
     	 	<div class="input-group search_btn">
 			  <input type="text" ng-model="search.search" class="form-control" placeholder="搜索昵称" aria-describedby="basic-addon1">
 			  	<span ng-click="getList()" class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" href="javascript:void"></span></span>
 			</div>
-    	 
-    	 
- 			
+
+
+
 		  <uib-tabset active="active">
 		    <uib-tab index="0" heading="当前代理">
 		    	<table class="table table-striped">
@@ -28,7 +28,7 @@
 		                    <th>注册时间</th>
 		                    <th>等级</th>
 		                    <th>操作</th>
-		
+
 		                </tr>
 		            </thead>
            			 <tbody>
@@ -67,11 +67,11 @@
 					  </td>
 					</tr>
             		</tbody>
-					
+
 				</table>
 		    </uib-tab>
 			<!--<uib-tab index="1" heading="已禁止代理">
-				
+
 		    	<table class="table table-striped">
 		    		 <thead>
 		                <tr>
@@ -80,7 +80,7 @@
 		                    <th>注册时间</th>
 		                    <th>等级</th>
 		                    <th>操作</th>
-		
+
 		                </tr>
 		            </thead>
            			 <tbody>
@@ -92,13 +92,13 @@
 					  <td class="info">666</td>
 					</tr>
             		</tbody>
-					
+
 				</table>
 			</uib-tab>
 			-->
-			
+
 		  </uib-tabset>
-		  
+
 		<div class="app-pagination">
         <ul
             uib-pagination
@@ -115,6 +115,6 @@
             previous-text="&lsaquo;"
             next-text="&rsaquo;"></ul>
     </div>
- 			
- 			
+
+
 </div>
