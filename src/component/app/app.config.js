@@ -10,7 +10,7 @@
 
     angular.module('app').config(['$httpProvider','APP_HOST',
         function($httpProvider,APP_HOST){
-            function HttpInterceptor($q,$state){
+            function HttpInterceptor($q,$state,localStorageService){
                 return {
                     request: function(config) {
                         if(!!config.url && config.url[0] === '/'){
@@ -22,11 +22,11 @@
                         return $q.reject(err);
                     },
                     response: function(res) {
-                        console.log('response',res);
                         if(res.data.errMessage == '用户失效'){
-                            console.log($state);
-                            // localStorageService.clearAll();
-                            // $state.go('warpper.login',{},{reload:true});
+                            if($state.current.name !== 'warpper.login'){
+                                localStorageService.clearAll();
+                                $state.go('warpper.login',{},{reload:true});
+                            }
                         }else{
                             return res;
                         }
