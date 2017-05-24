@@ -6,7 +6,7 @@
             $scope.maxSize = 5;
             $scope.totalItems = 0;
             $scope.currentPage = 1;
-            $scope.pageSize = 20;
+            $scope.pageSize = 10;
             $scope.pageCount = 0;//总页数
             $scope.list = [];
 
