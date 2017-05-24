@@ -101,7 +101,7 @@
 			
 				
 			}else if(k.m=='alipay'){
-				if(k.ali_num && k.ali_name){
+				if(k.ali_num){
 					k.ggType=2;
 					k.lnumber=k.ali_num;
 			    	k.lname=k.ali_name;
@@ -111,7 +111,7 @@
 				}
 				
 			}else if(k.m=='weixin'){
-				if(k.wx_num && k.wx_name){
+				if(k.wx_num){
 					k.ggType=3;
 					k.lnumber=k.wx_num;
 			    	k.lname=k.wx_name;
