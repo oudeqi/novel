@@ -15,8 +15,6 @@
     angular.module('app').controller('video',['$scope','$http',
         function($scope,$http){
 
-
-
         }
     ]);
 })();

@@ -1,5 +1,19 @@
 ;(function(){
     'use strict';
+    angular.module('app').config(['$stateProvider',
+        function($stateProvider){
+
+            $stateProvider.state({
+                params:{
+                    name:''
+                },
+                name: 'warpper.views.section.novel',
+                url: '^/nls/{id}',
+                templateUrl: './component/novel/novel.html'
+            });
+
+        }
+    ]);
     angular.module('app').controller('novel',['$scope','$http','$state','localStorageService','$uibModal',
         function($scope,$http,$state,localStorageService,$uibModal){
 

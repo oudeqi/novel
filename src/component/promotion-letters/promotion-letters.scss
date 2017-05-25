@@ -24,6 +24,12 @@
 }
 
 #promotion-letters{
+    .set-template{
+        .dropdown-menu{
+            max-height: 350px;
+            overflow: auto;
+        }
+    }
     .alert{
         position: fixed;
         bottom: 50px;
