@@ -40,7 +40,7 @@
                         status:$scope.status
                     }
                 }).then(function(res){
-                    console.log('章节列表',res);
+                    console.log('结算列表',res);
                     if(!res.data.errMessage){
                         $scope.list = res.data.data.data;
                         $scope.totalItems = res.data.data.rowCount;
@@ -53,7 +53,7 @@
 
                 });
             };
-            $scope.getList();
+            // $scope.getList();
             $scope.pageChanged = function(){
                 console.log("page to "+$scope.currentPage);
                 $scope.getList();

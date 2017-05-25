@@ -1,3 +1,7 @@
+#order-list .table tr:first-child th {
+  border-top: 0;
+}
+
 #order-list .nodata {
   text-align: center;
 }

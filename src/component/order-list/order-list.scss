@@ -1,4 +1,11 @@
 #order-list{
+    .table{
+        tr:first-child{
+            th{
+                border-top: 0;
+            }
+        }
+    }
     .nodata{
         text-align: center;
     }

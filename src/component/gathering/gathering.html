@@ -1,14 +1,14 @@
-<div id="gatheringx" ng-controller="gathering">
+<div class="container-fluid" id="gatheringx" ng-controller="gathering">
 	 <ol class="breadcrumb">
         <li><a href="javascript:void;">Home</a></li>
         <li><a href="javascript:void;">收款信息</a></li>
     </ol>
-   
+
    <div class="xd" ng-class="xdshow?'xdShow':'xdHide'">
     {{xdtitle}}
    </div>
-    
- 			
+
+
 		  <uib-tabset active="active">
 		    <uib-tab index="0" heading="个人资料">
 		    	<div class="gathering_cover">
@@ -48,16 +48,16 @@
 				    {{myinfo.scale}}
 				  </div>
 				</div>
-				
-				
+
+
 				</div>
-						    	
-		    	
+
+
 		    </uib-tab>
 			<uib-tab index="1" heading="收款信息">
 				<div class="gathering_cover">
 					<div class="alert alert-success" role="alert">如需修改请联系管理员</div>
-					
+
 					<div class="panel panel-primary">
 					  <div class="panel-heading">收款方式</div>
 					  <div class="panel-body">
@@ -76,7 +76,7 @@
 					    {{getPayInfo.number}}
 					  </div>
 					</div>
-					
+
 					<div class="panel panel-primary">
 					  <div class="panel-heading">开户行</div>
 					  <div class="panel-body">
@@ -84,9 +84,9 @@
 					  </div>
 					</div>
 				</div>
-		    	
+
 			</uib-tab>
-			
+
 			<uib-tab index="2" heading="修改密码">
 				<div class="gathering_cover" style="width: 25%;">
 					<div class="form-group">
@@ -102,13 +102,13 @@
 					    <input type="password" required="required" class="form-control" ng-model="prw.nowPwdYes" id="myname2" placeholder="" />
 					  </div>
 					   <button ng-click="cgPwd()" type="button" class="btn btn-primary" style="margin-bottom: 15px;">确认修改</button>
-					  
+
 				</div>
-		    	
+
 			</uib-tab>
-			
-			
+
+
 		  </uib-tabset>
-		  
- 			
+
+
 </div>

@@ -8,9 +8,13 @@
         </li>
         <li class="active">订单管理</li>
     </ol>
-
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="全部" select="changeType(0)"></uib-tab>
+        <uib-tab index="1" heading="待支付" select="changeType(1)"></uib-tab>
+        <uib-tab index="2" heading="已支付" select="changeType(2)"></uib-tab>
+    </uib-tabset>
     <div class="chapter-list">
-        <table class="table table-bordered">
+        <table class="table">
             <tr>
                 <th>商户订单</th>
                 <th>订单类型</th>

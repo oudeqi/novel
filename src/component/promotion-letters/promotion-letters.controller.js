@@ -190,7 +190,7 @@
                 }).then(function(res){
                     console.log('生成推广链接',res);
                     if(res.data.errMessage){
-                        $scope.createErrMsg = '生成推广链接失败';
+                        $scope.createErrMsg = res.data.errMessage;
                     }else{
                         promoLinkModal.idArr.push(res.data.data);
                         $uibModalInstance.close(promoLinkModal.idArr);
