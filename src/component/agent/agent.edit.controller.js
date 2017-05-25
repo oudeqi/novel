@@ -174,7 +174,7 @@
 					    	k.lname=null;
 					    	k.lexplain=null; 
                     }else{
-					   k.show('添加失败，请重试');
+					   k.show(res.data.errMessage);
                     }
                 }).catch(function(res){
 					 k.show('添加失败，请重试');

@@ -122,10 +122,16 @@
                }).then(function(res){
                		
                     k.th=res.data.data.data;
-                     k.th[0].allMoney=k.th[0].allMoney/100;
-                          k.th[0].buyMoney=k.th[0].buyMoney/100;
-                           k.th[0].vipMoney=k.th[0].vipMoney/100;
-                            k.th[0].noPayBuyMoney=k.th[0].noPayBuyMoney/100;
+                    for(var i=0; i<k.th.length; i++){
+                    	 k.th[i].allMoney=k.th[i].allMoney/100;
+                          k.th[i].buyMoney=k.th[i].buyMoney/100;
+                           k.th[i].vipMoney=k.th[i].vipMoney/100;
+                            k.th[i].noPayBuyMoney=k.th[i].noPayBuyMoney/100;
+                    }
+//                   k.th[0].allMoney=k.th[0].allMoney/100;
+//                        k.th[0].buyMoney=k.th[0].buyMoney/100;
+//                         k.th[0].vipMoney=k.th[0].vipMoney/100;
+//                          k.th[0].noPayBuyMoney=k.th[0].noPayBuyMoney/100;
                     
                     console.log("k.th:",k.th);
                 }).catch(function(res){
