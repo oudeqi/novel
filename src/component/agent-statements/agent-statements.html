@@ -47,6 +47,7 @@
         <table class="table">
             <tr>
                 <th>日期</th>
+                <th>结算对象</th>
                 <th>总笔数</th>
                 <th>充值金额</th>
                 <th>帐单金额</th>
@@ -55,6 +56,7 @@
             </tr>
             <tr ng-repeat="item in list">
                 <td>{{item.date}}</td>
+                <td>{{item.name}}</td>
                 <td>{{item.count}}</td>
                 <td>{{item.rechargeMoney/100 | currency : "￥" : 2}}</td>
                 <td>{{item.money/100 | currency : "￥" : 2}}</td>

@@ -1,0 +1,10 @@
+#video .video {
+  border: 1px solid #eee;
+  width: 70%;
+}
+
+#video .video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
