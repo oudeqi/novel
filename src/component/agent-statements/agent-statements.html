@@ -40,8 +40,8 @@
         </div>
     </div>
     <uib-tabset active="active">
-        <uib-tab index="0" heading="待结算" select="changeType(1)"></uib-tab>
-        <uib-tab index="1" heading="已结算" select="changeType(2)"></uib-tab>
+        <uib-tab index="0" heading="代理结算明细" select="changeType(1)"></uib-tab>
+        <!--<uib-tab index="1" heading="已结算" select="changeType(2)"></uib-tab>-->
     </uib-tabset>
     <div class="table-list">
         <table class="table">
@@ -52,7 +52,7 @@
                 <th>充值金额</th>
                 <th>帐单金额</th>
                 <th>佣金比例</th>
-                <th>状态</th>
+                <!--<th>状态</th>-->
             </tr>
             <tr ng-repeat="item in list">
                 <td>{{item.date}}</td>
@@ -61,10 +61,10 @@
                 <td>{{item.rechargeMoney/100 | currency : "￥" : 2}}</td>
                 <td>{{item.money/100 | currency : "￥" : 2}}</td>
                 <td>{{item.scale}}</td>
-                <td>
+                <!--<td>
                     <span class="status-1" ng-if="item.status==1">待打款</span>
                     <span class="status-2" ng-if="item.status==2">已打款</span>
-                </td>
+                </td>-->
             </tr>
         </table>
         <div class="nodata" ng-show="list.length==0">

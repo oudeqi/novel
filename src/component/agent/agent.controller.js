@@ -6,6 +6,7 @@
 			k.items = [
 			    '重置密码',
 			    '代理统计',
+			    "删除账户",
 			  ];
 			  
 			k.xdtitle='';
@@ -34,7 +35,7 @@
               
               k.menuX=function(dd,item){
               	/*item.uid*/
-              	if(dd==k.items[0]){
+              		if(dd==k.items[0]){
               		console.log("是在重置密码");
               		$http.post('/v1/aut/pwd/reset',{
               			uid:item.uid
@@ -51,6 +52,18 @@
               		
               		console.log("是在代理统计"); 
               	}
+              	if(dd==k.items[2]){	
+              		console.log("删除账户"); 
+              		$http.post('/v1/aut/user/delete',{
+              			uid:item.uid
+              		}).then(function(res){
+              			k.show(res.data.data);
+              			k.getList();
+              		})
+              		
+              	}
+              	
+              	
               }
               
               k.pageGo=function(){
