@@ -1,0 +1,53 @@
+<div class="container-fluid" id="notice" ng-controller="notice">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="active">通知</li>
+    </ol>
+自行车自行车
+
+    <div class="chapter-list">
+        <table class="table table-bordered">
+            <tr ng-repeat="item in list">
+                <td>{{$index+1}}</td>
+                <td>
+                    <a ui-sref="warpper.views.section.chapter({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">{{item.title}}</a>
+                    <span ng-if="item.gold==0" class="free">免费</span>
+                    <span ng-if="item.gold!=0" class="charge"><i class="glyphicon glyphicon-piggy-bank"></i>{{item.gold}}</span>
+                </td>
+                <td>
+                    <a ng-if="$index<5 && currentPage==1" ui-sref="warpper.views.section.promletters({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">
+                        <i class="glyphicon glyphicon-link"></i>
+                        <span>生成推广文案</span>
+                    </a>
+                    <a ng-if="level==1" ui-sref="warpper.views.section.chapterModify({id:item.bookId,chapterid:item.cid,name:item.bookName,title:item.title})">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                        <span>修改</span>
+                    </a>
+                    <a ng-if="level==1" href="javascript:void(0);" ng-click="del(item)">
+                        <i class="glyphicon glyphicon-remove"></i>
+                        <span>删除</span>
+                    </a>
+                    <!-- <a ng-if="item.gold==0" href="javascript:void(0);">
+                        <i class="glyphicon glyphicon-link"></i>
+                        <span>获取推广链接</span>
+                    </a> -->
+                    <!-- <a href="javascript:void(0);">设为关注章节</a>
+                    <span class="curr-follow">
+                        <i class="glyphicon glyphicon-ok-sign"></i>当前关注章节
+                    </span> -->
+                </td>
+            </tr>
+        </table>
+        <div class="nodata" ng-show="list.length==0">
+            暂无数据
+        </div>
+        <div class="pagination-cont" ng-show="pageCount>1">
+            <ul uib-pagination boundary-links="true" items-per-page="pageSize" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
+    </div>
+</div>

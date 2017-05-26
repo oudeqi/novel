@@ -1,10 +1,16 @@
 <div id="aside" ng-controller="aside">
     <div class="container-fluid">
-        <ul class="nav nav-pills nav-stacked ">
+        <ul class="nav nav-pills nav-stacked">
             <!-- <li role="presentation" ui-sref-active="active">
                 <a ui-sref="warpper.views.section.home">
                     <i class="glyphicon glyphicon-home"></i>
                     <span>首页</span>
+                </a>
+            </li> -->
+            <!-- <li ng-if="level==1||level==2||level==3" role="presentation">
+                <a ui-sref="warpper.views.section.notice">
+                    <i class="glyphicon glyphicon-bullhorn"></i>
+                    <span>系统通知</span>
                 </a>
             </li> -->
             <li role="presentation" ui-sref-active="active">
@@ -13,7 +19,6 @@
                     <span>数据统计</span>
                 </a>
             </li>
-
             <li ng-if="level==1" role="presentation" ui-sref-active="active">
                 <a ui-sref="warpper.views.section.noveladd">
                     <i class="glyphicon glyphicon-plus"></i>
@@ -60,12 +65,6 @@
                 <a href="#">
                     <i class="glyphicon glyphicon-home"></i>
                     <span>首页</span>
-                </a>
-            </li>
-            <li role="presentation">
-                <a href="#">
-                    <i class="glyphicon glyphicon-bullhorn"></i>
-                    <span>通知</span>
                 </a>
             </li> -->
 
