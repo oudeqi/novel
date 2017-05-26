@@ -7,6 +7,10 @@
   color: red;
 }
 
+#promotion-link .link {
+  word-break: break-all;
+}
+
 #promotion-link .template-content {
   max-width: 670px;
   padding-bottom: 20px;

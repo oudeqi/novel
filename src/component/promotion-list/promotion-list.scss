@@ -1,10 +1,4 @@
 #promotion-list{
-    .table{
-        table-layout: fixed;
-        td:first-child{
-            word-wrap: break-word;
-        }
-    }
 
     .table > thead > tr > th{
         border-bottom: 1px solid #ddd;
@@ -12,6 +6,11 @@
 
     .link{
         margin-bottom: 8px;
+        word-wrap: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 300px;
         button{
             border: 0;
             background-color: inherit;
