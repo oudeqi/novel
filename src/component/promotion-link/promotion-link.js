@@ -1,5 +1,16 @@
 ;(function(){
     'use strict';
+    angular.module('app').config(['$stateProvider',
+        function($stateProvider){
+
+            $stateProvider.state({
+                name: 'warpper.views.section.promlink',
+                url: '^/nls/{id}/{chapterid}/lt/{link}',
+                templateUrl: './component/promotion-link/promotion-link.html'
+            });
+
+        }
+    ]);
     angular.module('app').controller('promotion-link',['$scope','$http','$state','$uibModal','$timeout','promoTemplate',
         function($scope,$http,$state,$uibModal,$timeout,promoTemplate){
 
@@ -24,21 +35,21 @@
             });
 
             $scope.chapters = [];
-            $http.get('/v1/backend/book/chapter',{
+            $http.get('/v1/aut/book/chapter/before',{
                 params:{
-                    id:$scope.id,
-                    pageSize:$scope.chapterid,
-                    pageIndex:1,
+                    bookid:$scope.id,
+                    cid:$scope.chapterid
                 }
             }).then(function(res){
                 console.log('文案章节',res);
                 if(!res.data.errMessage){
-                    angular.forEach(res.data.data.data,function(item,idx){
+                    angular.forEach(res.data.data,function(item,idx){
                         $scope.chapters[idx] = {
                             chapterTitle:item.title,
                             chapterContent: []
                         };
-                        var content = item.content.replace(/[\r]/g,'').split(/[\n]/g);
+                        // var content = item.content.replace(/[\r]/g,'').split(/[\n]/g);
+                        var content = item.content.split('<br />');
                         angular.forEach(content,function(it){
                             if(it !== ''){
                                 $scope.chapters[idx].chapterContent.push(it);

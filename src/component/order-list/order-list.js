@@ -1,27 +1,21 @@
 ;(function(){
     'use strict';
-    angular.module('app').controller('agent-statements',['$scope','$http',
-        function($scope,$http){
+    angular.module('app').config(['$stateProvider',
+        function($stateProvider){
 
-            $scope.statements = null;
-            // {
-            //     rechargeMoney: 4000,  //充值总额
-            //     money: 3600, //结算总额
-            //     count: 40, //充值笔数
-            //     okMoney: 2700, //已打款
-            //     noMoney: 900, //待打款
-            //     cehgn: 2880, //成本
-            //     profit: 720, //利润
-            //     income: 0 //进账
-            // };
-            $http.get('/v1/aut/agent/balance/top').then(function(res){
-                console.log('结算统计',res);
-                if(!res.data.errMessage && res.data.data){
-                    $scope.statements = res.data.data;
-                }
-            }).catch(function(res){
-
+            $stateProvider.state({
+                params:{
+                    name:''
+                },
+                name: 'warpper.views.section.orderList',
+                url: '^/ol',
+                templateUrl: './component/order-list/order-list.html'
             });
+
+        }
+    ]);
+    angular.module('app').controller('order-list',['$scope','$http','$state',
+        function($scope,$http,$state){
 
             $scope.maxSize = 5;
             $scope.totalItems = 0;
@@ -30,17 +24,17 @@
             $scope.pageCount = 0;//总页数
             $scope.list = [];
 
-            $scope.status = 1;//状态
+            $scope.status = 0;//1待支付，2已支付
 
             $scope.getList = function(){
-                $http.get('/v1/aut/agent/balance/list',{
+                $http.get('/v1/aut/order',{
                     params:{
                         pageSize:$scope.pageSize,
                         pageIndex:$scope.currentPage,
                         status:$scope.status
                     }
                 }).then(function(res){
-                    console.log('结算列表',res);
+                    console.log('订单列表',res);
                     if(!res.data.errMessage){
                         $scope.list = res.data.data.data;
                         $scope.totalItems = res.data.data.rowCount;
@@ -64,6 +58,7 @@
                 $scope.currentPage = 1;
                 $scope.getList();
             };
+
 
 
 

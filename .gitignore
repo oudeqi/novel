@@ -6,4 +6,7 @@ node_modules/
 bower_components/
 src/assets/scss/_sprite.scss
 src/assets/image/sprite.png
+index.html
+app-template.js
+*.css
 ##############################
