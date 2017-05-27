@@ -1,91 +1,147 @@
-;(function(){
-    'use strict';
-    angular.module('app').config(['$stateProvider',
-        function($stateProvider){
+;
+(function() {
+	'use strict';
+	angular.module('app').config(['$stateProvider',
+		function($stateProvider) {
 
-            $stateProvider.state({
-                params:{
-                    name:''
-                },
-                name: 'warpper.views.section.orderList',
-                url: '^/ol',
-                templateUrl: './component/order-list/order-list.html'
-            });
+			$stateProvider.state({
+				params: {
+					name: ''
+				},
+				name: 'warpper.views.section.orderList',
+				url: '^/ol',
+				templateUrl: './component/order-list/order-list.html'
+			});
 
-        }
-    ]);
-    angular.module('app').controller('order-list',['$scope','$http','$state','$provide',
-        function($scope,$http,$state,$provide){
+		}
+	]);
+	angular.module('app').controller('order-list', ['$scope', '$http', '$state','$timeout',
+		function($scope, $http, $state,$timeout) {
+			$scope.maxSize = 5;
+			$scope.totalItems = 0;
+			$scope.currentPage = 1;
+			$scope.pageSize = 20;
+			$scope.pageCount = 0; //总页数
+			$scope.list = [];
 			
-			var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "many", OTHER: "other"};
-			$provide.value("$locale", {"DATETIME_FORMATS":{"MONTH":["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"SHORTMONTH":["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"DAY":["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],"SHORTDAY":["周日","周一","周二","周三","周四","周五","周六"],"AMPMS":["上午","下午"],"medium":"yyyy-M-d ah:mm:ss","short":"yy-M-d ah:mm","fullDate":"y年M月d日EEEE","longDate":"y年M月d日","mediumDate":"yyyy-M-d","shortDate":"yy-M-d","mediumTime":"ah:mm:ss","shortTime":"ah:mm"},"NUMBER_FORMATS":{"DECIMAL_SEP":".","GROUP_SEP":",","PATTERNS":[{"minInt":1,"minFrac":0,"macFrac":0,"posPre":"","posSuf":"","negPre":"-","negSuf":"","gSize":3,"lgSize":3,"maxFrac":3},{"minInt":1,"minFrac":2,"macFrac":0,"posPre":"\u00A4","posSuf":"","negPre":"\u00A4-","negSuf":"","gSize":3,"lgSize":3,"maxFrac":2}],"CURRENCY_SYM":"¥"},"pluralCat":function (n) {  return PLURAL_CATEGORY.OTHER;},"id":"zh-cn"});
-            
-            
-            $scope.maxSize = 5;
-            $scope.totalItems = 0;
-            $scope.currentPage = 1;
-            $scope.pageSize = 20;
-            $scope.pageCount = 0;//总页数
-            $scope.list = [];
-            
-            /*时间筛选相关*/
-             $scope.dateOptions = {
-//			    dateDisabled: visible,
-				language:'cn',
-			    formatYear: 'yy',
-			    maxDate: new Date(),
-			    minDate: new Date(2000,5,22),
-			    startingDay: 1
-			  };
-            $scope.popup2 = {
-			    opened: false
-			  };
-           	$scope.dt = new Date();
-           	$scope.open2 = function() {
-			    $scope.popup2.opened = true;
-			  };
-            
+			$scope.xdtitle='';
+			$scope.xdshow=false;
+			$scope.show=function(e){
+				$scope.xdtitle=e;
+				$scope.xdshow=true;
+				$timeout(function(){
+					$scope.xdshow=false;
+				},2000)
+			}
 
-            $scope.status = 0;//1待支付，2已支付
+			/*时间筛选相关*/
+			$scope.dateOptions = {
+				//			    dateDisabled: visible,
+				language: 'cn',
+				formatYear: 'yy',
+				maxDate: new Date(),
+				minDate: new Date(2000, 5, 22),
+				startingDay: 1
+			};
+			$scope.popup = {
+				opened: false,
+				openedend: false,
+			};
+//			$scope.dt = new Date();
+//			$scope.dtx = new Date();
+			$scope.dt = null;
+			$scope.dtx = null;
+			$scope.opendate = function() {
+				$scope.popup.opened = true;
+			};
+			$scope.opendateend = function() {
+				$scope.popup.openedend = true;
+			};
 
-            $scope.getList = function(){
-                $http.get('/v1/aut/order',{
-                    params:{
-                        pageSize:$scope.pageSize,
-                        pageIndex:$scope.currentPage,
-                        status:$scope.status
-                    }
-                }).then(function(res){
-                    console.log('订单列表',res);
-                    if(!res.data.errMessage){
-                        $scope.list = res.data.data.data;
-                        $scope.totalItems = res.data.data.rowCount;
-                        $scope.pageCount = res.data.data.pageCount;
-                        $scope.currentPage = res.data.data.pageIndex;
-                    }else{
+			$scope.status = 0; //1待支付，2已支付
 
-                    }
-                }).catch(function(res){
+			$scope.getList = function() {
+				var startTime=null;
+				var endTime=null;
+				if($scope.dt==null && $scope.dtx!=null){
+					$scope.show("请选择开始时间");
+					return;
+				}
+				if($scope.dt!=null && $scope.dtx==null){
+					$scope.show("请选择结束时间");
+					return;
+				}
+				
+				if(Date.parse($scope.dt)>Date.parse($scope.dtx)){
+					$scope.show("开始时间大于结束时间");
+					return;
+				}
+				
+				if(Date.parse($scope.dt)==Date.parse($scope.dtx)){
+					$scope.dtx.setDate($scope.dtx.getDate()+1);
+					console.log("時間相同,查询这一天的");
+				}
+				
+				if($scope.dt==null && $scope.dtx==null){
+					startTime=null;
+					endTime=null;
+					console.log("查询所有时间段的")
+				}
+				
+				
+				if($scope.dt!=null && $scope.dtx!=null){
+					startTime=Date.parse($scope.dt);
+					endTime=Date.parse($scope.dtx);
+				}
+				
 
-                });
-            };
-            // $scope.getList();
-            $scope.pageChanged = function(){
-                console.log("page to "+$scope.currentPage);
-                $scope.getList();
-            };
+				
+				
+				
+				
+				
+//				console.log(Date.parse($scope.dt)==Date.parse($scope.dtx))
+				console.log($scope.dt,$scope.dtx);
+//				return;
 
-            $scope.changeType = function(status){
-                $scope.status = status;//状态
-                $scope.currentPage = 1;
-                $scope.getList();
-            };
+				
+				
+				
+				
+				$http.get('/v1/aut/order', {
+					params: {
+						startTime:startTime,
+						endTime:endTime,
+						pageSize: $scope.pageSize,
+						pageIndex: $scope.currentPage,
+						status: $scope.status
+					}
+				}).then(function(res) {
+					console.log('订单列表', res);
+					if(!res.data.errMessage) {
+						$scope.list = res.data.data.data;
+						$scope.totalItems = res.data.data.rowCount;
+						$scope.pageCount = res.data.data.pageCount;
+						$scope.currentPage = res.data.data.pageIndex;
+					} else {
 
+					}
+				}).catch(function(res) {
 
+				});
+			};
+			// $scope.getList();
+			$scope.pageChanged = function() {
+				console.log("page to " + $scope.currentPage);
+				$scope.getList();
+			};
 
+			$scope.changeType = function(status) {
+				$scope.status = status; //状态
+				$scope.currentPage = 1;
+				$scope.getList();
+			};
 
-
-
-        }
-    ]);
+		}
+	]);
 })();
