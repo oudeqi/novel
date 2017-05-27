@@ -1,17 +1,14 @@
-#promotion-list .table {
-  table-layout: fixed;
-}
-
-#promotion-list .table td:first-child {
-  word-wrap: break-word;
-}
-
 #promotion-list .table > thead > tr > th {
   border-bottom: 1px solid #ddd;
 }
 
 #promotion-list .link {
   margin-bottom: 8px;
+  word-wrap: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
 }
 
 #promotion-list .link button {

@@ -256,300 +256,245 @@
     angular.module('app').factory('promoTemplate',function(){
 
         var titles,coverimgs,bodys,footers;
-
         titles = [{
             id:1,
-            txt:'男人怎么吻你?,就怎么爱你!估计很少人知道......'
+            txt:'高层次的女人，才不会去做情人'
         },{
             id:2,
-            txt:'一媳妇独自在家忍不住偷偷去找老公，亲眼看到这一幕！'
+            txt:'不想睡觉，也不想睡你'
         },{
             id:3,
-            txt:'这是我见过最牛逼的女人！看了没人不服！'
+            txt:'我让我男朋友换上女头像，结果...'
         },{
             id:4,
-            txt:'和丈夫结婚多年，直到那一天我才发现，原来丈夫和妹妹早就已经背着我做这些羞耻的勾当！'
+            txt:'把喜欢的人骗上床的方法只有一个！'
         },{
             id:5,
-            txt:'新婚当夜，丈夫夜不归宿，隔日还带着情.妇在他们的新房里做那种事[表情][表情]'
+            txt:'前男友在我婚礼上放了我的裸照'
         },{
             id:6,
-            txt:'结婚六年，老公却和我说，他爱的是我的妹妹[表情][表情]'
+            txt:'女子监狱的犯人是如何解决生理需求的？'
         },{
             id:7,
-            txt:'你是有多缺爱，出轨的男人你还爱？'
+            txt:'媳妇玩了一夜，丈夫推开房门看到一幕，吓坏了！'
         },{
             id:8,
-            txt:'女人最易让男人朝思暮想的特点，你有吗？'
+            txt:'男人太快和你发生关系，这说明了什么？'
         },{
             id:9,
-            txt:'老公出轨，她却比从前更快乐，看到结局的人都哭了.....'
+            txt:'儿媳妇与情人开房，被婆婆抓到，结果让人傻眼了！'
         },{
             id:10,
-            txt:'温柔体贴的老公突然提出了离婚，只因为七年前我……'
+            txt:'老公洗浴中心被抓,媳妇…'
         },{
             id:11,
-            txt:'男人出轨,不是为了爱,而是因为….'
+            txt:'作为一名称职的男助理，要勇于满足美女总裁的各种需求……'
         },{
             id:12,
-            txt:'晚上加班巧遇女上司，她竟然让我帮她…'
-        },{
-            id:13,
-            txt:'作为一名称职的男助理，要勇于满足美女总裁的各种需求...'
-        },{
-            id:14,
-            txt:'和老公亲热完，这句话一定不能说！'
-        },{
-            id:15,
-            txt:'“嗯”和“嗯嗯”，就能看出爱和被爱的区别……'
-        },{
-            id:16,
-            txt:'男人的心在哪，钱就会花在哪！'
-        },{
-            id:17,
-            txt:'女人的第一次和男人的第一次有什么区别？'
-        },{
-            id:18,
-            txt:'女人最易让男人朝思暮想的特点，你有吗？'
-        },{
-            id:19,
-            txt:'老公出轨，她却比从前更快乐，看到结局的人都哭了.....'
-        },{
-            id:20,
-            txt:'温柔体贴的老公突然提出了离婚，只因为七年前我……'
-        },{
-            id:21,
-            txt:'她让小三流产，老公却更爱她！'
-        },{
-            id:22,
-            txt:'男人出轨,不是为了爱,而是因为….'
-        },{
-            id:23,
-            txt:'有一种陪伴不在身边，却在心间~'
-        },{
-            id:24,
-            txt:'你以为嫁了个没钱的男人，他就一定会对你好？'
-        },{
-            id:25,
-            txt:'男人怎么吻你?,就怎么爱你!估计很少人知道......'
-        },{
-            id:26,
-            txt:'46岁的老板竟说要包养我，我该接受吗？'
-        },{
-            id:27,
-            txt:'做过爱就别做朋友了……'
-        },{
-            id:28,
-            txt:'女生借钱不还，被逼打裸条之后......'
-        },{
-            id:29,
-            txt:'老公出轨，这次她选择不再原谅！'
-        },{
-            id:30,
-            txt:'妻子遭遇不测被侮辱，老公不但不安慰，还立刻拿出一纸离婚协议......'
-        },{
-            id:31,
-            txt:'你的爱情值多少钱？卖给我们就知道了！'
-        },{
-            id:32,
-            txt:'震惊！求爱不成，她和他一起被小三推下楼……'
-        },{
-            id:33,
-            txt:'纯洁少女被鬼压床之后，身体产生了惊人的变化！'
-        },{
-            id:34,
-            txt:'女人做什么都不要做小三！其中辛酸，只有自己知道'
-        },{
-            id:35,
-            txt:'被路人拍到她的不雅视频发上网，清白尽毁，才发现.....'
-        },{
-            id:36,
-            txt:'妻子去世后，丈夫对孩子说了这样的话，看哭了'
-        },{
-            id:37,
-            txt:'都说医生不好做，是因为他们看到不该看到的东西……'
-        },{
-            id:38,
-            txt:'她为救他怀了别人的孩子，被他全家看不起，结局令人唏嘘......'
-        },{
-            id:39,
-            txt:'年薪5万的女人和年薪20万的女人，差别居然这么大！'
-        },{
-            id:40,
-            txt:'最好的闺蜜怀上了我丈夫的孩子，这怎么可能！'
-        },{
-            id:41,
-            txt:'男人大吼：“你不就是嫌我穷吗？要是我有钱你早就扑上来了！”女人回答的太精彩！'
-        },{
-            id:42,
-            txt:'她狠狠给了占他便宜的老男人两巴掌，结果被强......'
-        },{
-            id:43,
-            txt:'她被迫代嫁， 他被迫代娶，当温热的吻袭来.....'
-        },{
-            id:44,
-            txt:'把女人当保姆的男人，该滚了！'
-        },{
-            id:45,
-            txt:'半夜醒来，身边的人不是老公而是小叔子......'
-        },{
-            id:46,
-            txt:'老公给不了的， 或许这种男人能给你……'
-        },{
-            id:47,
-            txt:'要走的人你留不住，装睡的人你叫不醒，不爱你的人你感动不了'
-        },{
-            id:48,
-            txt:'拯救婚姻的从来不是性，但毁掉婚姻的往往是因为性……'
-        },{
-            id:49,
-            txt:'从门缝中窥探到那一刻的呻吟与娇笑，她忽然明白自己才是小三'
-        },{
-            id:50,
-            txt:'婚礼当天她被亲人下药，没想到刚出虎穴，又入狼窝......'
-        },{
-            id:51,
-            txt:'妻子出轨，丈夫默默原谅了她，她居然扬言要离婚！'
-        },{
-            id:52,
-            txt:'“以身抵债，嫁给我。” “……谈好条件再说。”'
-        },{
-            id:53,
-            txt:'如何做一个让男人有冲动的女人？'
-        },{
-            id:54,
-            txt:'你老公不爱你？好巧，我也是'
-        },{
-            id:55,
-            txt:'提前回家，卧室里竟然躺着另一个女人....'
-        },{
-            id:56,
-            txt:'姐夫谢谢你，让我体验到做女人的乐趣！'
-        },{
-            id:57,
-            txt:'男人厌倦一个女人往往从身体开始，女人厌倦一个男人却是从.....'
-        },{
-            id:58,
-            txt:'有种女人 ， 睡过一次就想睡一辈子！'
-        },{
-            id:59,
-            txt:'带着哥嫂去捉小三，踹开门我们都傻了眼……'
-        },{
-            id:60,
-            txt:'结婚一年未孕，老公把情人带回了家……'
-        },{
-            id:61,
-            txt:'男人骨子里最惦记的女人永远是这一种！'
-        },{
-            id:62,
-            txt:'结婚后才发现，老公娶我只是因为他儿子喜欢我'
-        },{
-            id:63,
-            txt:'感情再好，也千万别找男人要这个东西！'
-        },{
-            id:64,
-            txt:'替父还债，嫁给了生活不能自理的男人……'
-        },{
-            id:65,
-            txt:'约炮遇到真爱怎么办？'
-        },{
-            id:66,
-            txt:'怀了孩子，却被出轨老公强行押上人流手术台...'
-        },{
-            id:67,
-            txt:'古代洞房都用了什么骇人听闻的姿势?'
-        },{
-            id:68,
-            txt:'想脱你衣服的人很多，想给你买衣服的有吗'
-        },{
-            id:69,
-            txt:'两大美女校花竟为我争风吃醋，一个出500W，一个要以身相许…'
-        },{
-            id:70,
-            txt:'卧铺车厢的邻座美女，要和我同睡一个被窝…'
-        },{
-            id:71,
-            txt:'被美女开豪车撞伤，为补偿我，她半夜竟……'
-        },{
-            id:72,
-            txt:'用QQ小号捉弄美女老师，竟意外发现了她不为人知的秘密……'
-        },{
-            id:73,
-            txt:'女友跟了高富帅，我只用了一招让她肠子都悔青了……'
-        },{
-            id:74,
-            txt:'出狱后，美女竟用这种方式迎接他……'
-        },{
-            id:75,
             txt:'我在夜店做男公关，竟撞到表嫂来……'
         },{
-            id:76,
-            txt:'他一身顶级医术却只给美女看病，因为他可以……'
+            id:13,
+            txt:'一对才结婚3个月就离婚的小夫妻聊天记录，火了！'
+        },{
+            id:14,
+            txt:'被逼嫁给陌生男人，没想到每天被折磨到下不了床……'
+        },{
+            id:15,
+            txt:'女大学生贪恋美男意外穿越回古代，遭遇英俊王爷后她竟然……'
+        },{
+            id:16,
+            txt:'1次约会看电影，直接把她带回家！'
+        },{
+            id:17,
+            txt:'被养母逼嫁豪门，新婚当晚，小叔子竟要强行和我洞房......'
+        },{
+            id:18,
+            txt:'穷小伙靠漂亮媳妇成为亿万富豪，结果....'
+        },{
+            id:19,
+            txt:'像这种男人，要不要原谅他？'
+        },{
+            id:20,
+            txt:'婚后不孕，老公竟想出这种难以启齿的方法！'
+        },{
+            id:21,
+            txt:'他新娘未到，她新郎落跑，女人轻声道“不如……我们拼个婚？”'
+        },{
+            id:22,
+            txt:'怀孕了老公还一夜7次折腾她,几次拒绝之后,老公竟然.....'
+        },{
+            id:23,
+            txt:'闺蜜的新婚夜，新郎却说要跟我生孩子'
+        },{
+            id:24,
+            txt:'女人为什么会找情人？'
+        },{
+            id:25,
+            txt:'漂亮女徒弟，她竟然让我教她这个…'
+        },{
+            id:26,
+            txt:'老婆和情人在男人眼里最大的区别竟是这个'
+        },{
+            id:27,
+            txt:'离婚前夜，老公却......'
+        },{
+            id:28,
+            txt:'让闺蜜用微信试探老公,竟发现深藏多年的秘密'
+        },{
+            id:29,
+            txt:'女人最易让男人朝思暮想的特点，你有吗'
+        },{
+            id:30,
+            txt:'火车上美女被人下了药，我跟踪她进厕所……'
+        },{
+            id:31,
+            txt:'女人 ，一定要出轨一次 ！'
+        },{
+            id:32,
+            txt:'赌气她嫁给了街边的乞丐， 没想到这个乞丐老公却是个'
+        },{
+            id:33,
+            txt:'正常男人一天想亲热几次？'
+        },{
+            id:34,
+            txt:'男人出轨,不是为了爱,而是因为…'
+        },{
+            id:35,
+            txt:'想给老公惊喜，竟发现闺蜜和他在......'
+        },{
+            id:36,
+            txt:'老公有这种表现，他一定是出轨了'
+        },{
+            id:37,
+            txt:'我和女上司出差，她竟然对我提出奇葩要求！'
+        },{
+            id:38,
+            txt:'这才叫情人，你有吗？'
+        },{
+            id:39,
+            txt:'这样的情人，你有吗？'
+        },{
+            id:40,
+            txt:'恨你，却把一切都给了你，说出了女人的心声……'
+        },{
+            id:41,
+            txt:'我和美女同事出差，她竟然对我提出奇葩要求！'
+        },{
+            id:42,
+            txt:'一夜激情后，再见他时才知道，自己竟把姐夫给睡了…'
+        },{
+            id:43,
+            txt:'老公出轨前，一般都有哪些暗示？'
+        },{
+            id:44,
+            txt:'和老公亲热完，这句话一定不能说！'
+        },{
+            id:45,
+            txt:'相亲一次就领证,婚后的每一晚都让我难以启齿……'
+        },{
+            id:46,
+            txt:'她8年不生孩子,竟是嫌老公长得难看, 老公出场震惊了 ！'
+        },{
+            id:47,
+            txt:'老公在外面夜生活成瘾，我却一次就怀孕了，婆婆竟说……'
         }];
 
         coverimgs = [{
             id:1,
-            pic:'../../assets/image/promo-coverimg-01.jpg'
+            pic:'../../assets/image/promo-coverimg-01.png'
         },{
             id:2,
-            pic:'../../assets/image/promo-coverimg-02.jpg'
+            pic:'../../assets/image/promo-coverimg-02.png'
         },{
             id:3,
-            pic:'../../assets/image/promo-coverimg-03.jpg'
+            pic:'../../assets/image/promo-coverimg-03.png'
         },{
             id:4,
-            pic:'../../assets/image/promo-coverimg-04.jpg'
+            pic:'../../assets/image/promo-coverimg-04.png'
         },{
             id:5,
-            pic:'../../assets/image/promo-coverimg-05.jpg'
+            pic:'../../assets/image/promo-coverimg-05.png'
         },{
             id:6,
-            pic:'../../assets/image/promo-coverimg-06.jpeg'
+            pic:'../../assets/image/promo-coverimg-06.png'
         },{
             id:7,
-            pic:'../../assets/image/promo-coverimg-07.jpg'
+            pic:'../../assets/image/promo-coverimg-07.png'
         },{
             id:8,
-            pic:'../../assets/image/promo-coverimg-08.jpg'
+            pic:'../../assets/image/promo-coverimg-08.png'
         },{
             id:9,
-            pic:'../../assets/image/promo-coverimg-09.jpg'
+            pic:'../../assets/image/promo-coverimg-09.png'
         },{
             id:10,
-            pic:'../../assets/image/promo-coverimg-10.jpeg'
+            pic:'../../assets/image/promo-coverimg-10.png'
         },{
             id:11,
-            pic:'../../assets/image/promo-coverimg-11.jpg'
+            pic:'../../assets/image/promo-coverimg-11.png'
         },{
             id:12,
-            pic:'../../assets/image/promo-coverimg-12.jpg'
+            pic:'../../assets/image/promo-coverimg-12.png'
         },{
             id:13,
-            pic:'../../assets/image/promo-coverimg-13.jpeg'
+            pic:'../../assets/image/promo-coverimg-13.png'
         },{
             id:14,
-            pic:'../../assets/image/promo-coverimg-14.jpg'
+            pic:'../../assets/image/promo-coverimg-14.png'
         },{
             id:15,
-            pic:'../../assets/image/promo-coverimg-15.jpg'
+            pic:'../../assets/image/promo-coverimg-15.png'
         },{
             id:16,
-            pic:'../../assets/image/promo-coverimg-16.jpg'
+            pic:'../../assets/image/promo-coverimg-16.png'
         },{
             id:17,
-            pic:'../../assets/image/promo-coverimg-17.jpg'
+            pic:'../../assets/image/promo-coverimg-17.png'
         },{
             id:18,
-            pic:'../../assets/image/promo-coverimg-18.jpg'
+            pic:'../../assets/image/promo-coverimg-18.png'
         },{
             id:19,
-            pic:'../../assets/image/promo-coverimg-19.jpg'
+            pic:'../../assets/image/promo-coverimg-19.png'
         },{
             id:20,
             pic:'../../assets/image/promo-coverimg-20.png'
         },{
             id:21,
             pic:'../../assets/image/promo-coverimg-21.png'
+        },{
+            id:22,
+            pic:'../../assets/image/promo-coverimg-22.png'
+        },{
+            id:23,
+            pic:'../../assets/image/promo-coverimg-23.png'
+        },{
+            id:24,
+            pic:'../../assets/image/promo-coverimg-24.png'
+        },{
+            id:25,
+            pic:'../../assets/image/promo-coverimg-25.png'
+        },{
+            id:26,
+            pic:'../../assets/image/promo-coverimg-26.png'
+        },{
+            id:27,
+            pic:'../../assets/image/promo-coverimg-27.png'
+        },{
+            id:28,
+            pic:'../../assets/image/promo-coverimg-28.png'
+        },{
+            id:29,
+            pic:'../../assets/image/promo-coverimg-29.png'
+        },{
+            id:30,
+            pic:'../../assets/image/promo-coverimg-30.png'
+        },{
+            id:31,
+            pic:'../../assets/image/promo-coverimg-31.png'
+        },{
+            id:32,
+            pic:'../../assets/image/promo-coverimg-32.png'
         }];
 
         bodys =  [
