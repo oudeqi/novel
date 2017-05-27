@@ -2,6 +2,18 @@
   margin-top: 10px;
 }
 
+#order-list .full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
+}
+
+#order-list .partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
+}
+
 #order-list .nodata {
   text-align: center;
 }

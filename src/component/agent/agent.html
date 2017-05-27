@@ -10,6 +10,7 @@
 
     <!--<div class="container">-->
     	 <button ui-sref="warpper.views.section.agentedit" type="button" class="btn btn-primary" style="margin-bottom: 15px;">添加代理</button>
+			
 
     	 	<div class="input-group search_btn">
 			  <input type="text" ng-model="search.search" class="form-control" placeholder="搜索昵称" aria-describedby="basic-addon1">
@@ -19,7 +20,7 @@
 
 
 		  <uib-tabset active="active">
-		    <uib-tab index="0" heading="当前代理">
+		    <uib-tab select="cgIndex(1)" index="0" heading="当前代理">
 		    	<table class="table table-striped">
 		    		 <thead>
 		                <tr>
@@ -70,7 +71,7 @@
 
 				</table>
 		    </uib-tab>
-			<!--<uib-tab index="1" heading="已禁止代理">
+			<uib-tab select="cgIndex(2)" index="1" heading="已禁止代理">
 
 		    	<table class="table table-striped">
 		    		 <thead>
@@ -79,23 +80,26 @@
 		                    <th>佣金比例</th>
 		                    <th>注册时间</th>
 		                    <th>等级</th>
-		                    <th>操作</th>
+		                    <!--<th>操作</th>-->
 
 		                </tr>
 		            </thead>
            			 <tbody>
-              		 <tr>
-					  <td class="active">12</td>
-					  <td class="success">333</td>
-					  <td class="warning">444</td>
-					  <td class="danger">32323</td>
-					  <td class="info">666</td>
+              		 <tr ng-repeat="x in list">
+					  <td class="active">
+					  	<a href id="simple-dropdownx" uib-dropdown-toggle>
+					       {{x.nickName}}({{x.account}})
+					      </a>
+					  </td>
+					  <td class="success">{{x.scale}}</td>
+					  <td class="warning">{{x.createDate | date:"yyyy/MM/dd HH:mm"}}</td>
+					  <td class="danger"><span style="background-color: cornflowerblue; padding: 3px 6px; color: white;">{{x.grade==0?'待定':''}}{{x.grade==1?'差':''}}{{x.grade==2?'良':''}}{{x.grade==3?'优':''}}</span></td>
+					  <!--<td class="info">666</td>-->
 					</tr>
             		</tbody>
 
 				</table>
 			</uib-tab>
-			-->
 
 		  </uib-tabset>
 

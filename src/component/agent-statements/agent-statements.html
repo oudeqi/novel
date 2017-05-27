@@ -8,6 +8,31 @@
         </li>
         <li class="active">代理结算单</li>
     </ol>
+    <div class="xd" ng-class="xdshow?'xdShow':'xdHide'">
+    {{xdtitle}}
+   </div>
+    <div class="row">
+    <div class="col-md-2">
+        <p class="input-group">
+          <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" clear-text="清空" current-text="今天" close-text="关闭" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="opendate()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+     </div>
+      <div class="col-md-2">
+        <p class="input-group">
+          <input type="text" class="form-control" uib-datepicker-popup ng-model="dtx" is-open="popup.openedend" datepicker-options="dateOptions" ng-required="true" clear-text="清空" current-text="今天" close-text="关闭" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="opendateend()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+      </div>
+    	<button ng-click="getList()" type="button" class="btn btn-primary" style="margin-bottom: 15px;">查询</button>
+			  
+    </div>
+    
+    
     <div class="row" ng-show="statements">
         <div class="col-md-4">
             <div class="jumbotron">

@@ -6,10 +6,12 @@
 			k.items = [
 			    '重置密码',
 			    '代理统计',
-			    "删除账户",
+			    "禁止账户",
 			  ];
 			  
 			k.xdtitle='';
+			
+			k.noww=1;
 		
 			k.xdshow=false;
 			k.show=function(e){
@@ -26,6 +28,10 @@
 			  
 			  k.toggled=function(open){
 			  	console.log(open)
+			  }
+			  k.cgIndex=function(index){
+			  	k.noww=index;
+			  	k.getList();
 			  }
 			  
 			  k.pageIndex=1;
@@ -77,6 +83,7 @@
                         pageSize:20,
                         pageIndex:$scope.pageIndex,
                         search:$scope.search.search,
+                        status:k.noww,
                     }
                 }).then(function(res){
                     console.log('小说列表',res);

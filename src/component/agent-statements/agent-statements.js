@@ -17,6 +17,40 @@
     angular.module('app').controller('agent-statements',['$scope','$http',
         function($scope,$http){
 
+			/*时间筛选相关*/
+			$scope.dateOptions = {
+				//			    dateDisabled: visible,
+				language: 'cn',
+				formatYear: 'yy',
+				maxDate: new Date(),
+				minDate: new Date(2000, 5, 22),
+				startingDay: 1
+			};
+			$scope.popup = {
+				opened: false,
+				openedend: false,
+			};
+//			$scope.dt = new Date();
+//			$scope.dtx = new Date();
+			$scope.dt = null;
+			$scope.dtx = null;
+			$scope.opendate = function() {
+				$scope.popup.opened = true;
+			};
+			$scope.opendateend = function() {
+				$scope.popup.openedend = true;
+			};
+			
+			$scope.xdtitle='';
+			$scope.xdshow=false;
+			$scope.show=function(e){
+				$scope.xdtitle=e;
+				$scope.xdshow=true;
+				$timeout(function(){
+					$scope.xdshow=false;
+				},2000)
+			}
+
             $scope.statements = null;
             // {
             //     rechargeMoney: 4000,  //充值总额
@@ -47,8 +81,44 @@
             $scope.status = 1;//状态
 
             $scope.getList = function(){
+            	var startTime=null;
+				var endTime=null;
+				if($scope.dt==null && $scope.dtx!=null){
+					$scope.show("请选择开始时间");
+					return;
+				}
+				if($scope.dt!=null && $scope.dtx==null){
+					$scope.show("请选择结束时间");
+					return;
+				}
+				
+				if(Date.parse($scope.dt)>Date.parse($scope.dtx)){
+					$scope.show("开始时间大于结束时间");
+					return;
+				}
+				
+				if(Date.parse($scope.dt)==Date.parse($scope.dtx)){
+					$scope.dtx.setDate($scope.dtx.getDate()+1);
+					console.log("時間相同,查询这一天的");
+				}
+				
+				if($scope.dt==null && $scope.dtx==null){
+					startTime=null;
+					endTime=null;
+					console.log("查询所有时间段的")
+				}
+				
+				
+				if($scope.dt!=null && $scope.dtx!=null){
+					startTime=Date.parse($scope.dt);
+					endTime=Date.parse($scope.dtx);
+				}
+            	
+            	
                 $http.get('/v1/aut/agent/balance/list',{
                     params:{
+                    	startTime:startTime,
+						endTime:endTime,
                         pageSize:$scope.pageSize,
                         pageIndex:$scope.currentPage,
                         status:$scope.status
