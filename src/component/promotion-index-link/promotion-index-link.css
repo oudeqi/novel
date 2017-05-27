@@ -1,0 +1,12 @@
+#promotion-index-link .btn-list {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#promotion-index-link .warning {
+  color: red;
+}
+
+#promotion-index-link .link {
+  word-break: break-all;
+}

@@ -1,3 +1,11 @@
+#promotion-list .add-index-link {
+  margin-bottom: 10px;
+}
+
+#promotion-list .breadcrumb {
+  margin-bottom: 15px;
+}
+
 #promotion-list .table > thead > tr > th {
   border-bottom: 1px solid #ddd;
 }

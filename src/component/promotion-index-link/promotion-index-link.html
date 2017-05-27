@@ -1,0 +1,33 @@
+<div class="container-fluid" id="promotion-index-link" ng-controller="promotion-index-link">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li><a ui-sref="warpper.views.section.promolist">推广链接</a></li>
+        <li class="active">首页推广链接</li>
+    </ol>
+    <div class="container-fluid">
+        <div class="row">
+            <p class="link">
+                <b>推广链接：</b>
+                <a href="javascript:void(0);" target="_blank">{{link}}</a>
+            </p>
+            <p class="tip">请复制上方推广链接，后续您可以在后台菜单的"推广链接"中找到它并查看统计数据</p>
+            <p class="warning">
+                <i class="glyphicon glyphicon-exclamation-sign"></i>
+                <span>请务必使用此链接作为文案的原文链接，不要使用微信中点开后手工复制的链接</span>
+            </p>
+            <div class="btn-list">
+                <div class="btn-group">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-info" ngclipboard data-clipboard-text="{{link}}" ngclipboard-success="copyLinkSuccess(e)" ngclipboard-error="copyLinkError(e);">复制推广链接</button>
+                    </div>
+                </div>
+            </div>
+            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'success')" close="closeAlert()">{{alert.msg}}</div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
-#order-list .table tr:first-child th {
-  border-top: 0;
+#order-list .table-list {
+  margin-top: 10px;
 }
 
 #order-list .nodata {
