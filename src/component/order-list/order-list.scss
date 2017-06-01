@@ -1,20 +1,16 @@
 #order-list{
-     .full button span {
+    .table-list{
+        margin-top: 10px;
+    }
+    .full button span {
         background-color: limegreen;
         border-radius: 32px;
         color: black;
-      }
-      .partially button span {
+    }
+    .partially button span {
         background-color: orange;
         border-radius: 32px;
         color: black;
-      }
-    .table{
-        tr:first-child{
-            th{
-                border-top: 0;
-            }
-        }
     }
     .nodata{
         text-align: center;

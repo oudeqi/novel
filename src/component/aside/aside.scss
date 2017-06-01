@@ -1,20 +1,70 @@
 #aside{
     border-right:0;
-    padding-bottom:20px;
-    left: 0;
+    .list{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #DADFEA;
+            a{
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding-left: 30px;
+                font-size: 15px;
+                color: #686868;
+                &:hover,&:focus{
+                    text-decoration: none;
+                }
+                &:hover{
+                    background: #C5D6F8;
+                }
+            }
+            &.active{
+                a{
+                    color: #007CFB;
+                    background-color: #fff;
+                }
+                a:hover{
+                    background-color: #fff;
+                }
+                a:after{
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 6px;
+                    height: 100%;
+                    background: #007CFB;
+                }
+            }
+        }
+    }
 }
 @media screen and (min-width:768px) {
     #aside{
         border-right:1px solid #eee;
         position: absolute;
         width: 150px;
-        top: 0;
+        top: 50px;
     }
 }
 
 @media screen and (min-width:992px) {
     #aside{
         width: 200px;
+        .list{
+            li{
+                a{
+                    padding-left: 40px;
+                }
+            }
+        }
+
     }
 }
 

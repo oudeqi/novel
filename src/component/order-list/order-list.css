@@ -1,3 +1,7 @@
+#order-list .table-list {
+  margin-top: 10px;
+}
+
 #order-list .full button span {
   background-color: limegreen;
   border-radius: 32px;
@@ -8,10 +12,6 @@
   background-color: orange;
   border-radius: 32px;
   color: black;
-}
-
-#order-list .table tr:first-child th {
-  border-top: 0;
 }
 
 #order-list .nodata {
