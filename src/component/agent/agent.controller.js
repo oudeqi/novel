@@ -7,6 +7,7 @@
 			    '重置密码',
 			    '代理统计',
 			    "禁止账户",
+			    "修改账户",
 			  ];
 			  
 			k.xdtitle='';
@@ -65,6 +66,11 @@
               		
               		console.log("是在代理统计"); 
               	}
+              	
+              	if(dd==k.items[3]){	
+              		k.goAgentEditx(item)
+              	}
+              	
               	if(dd==k.items[2]){	
               		console.log("删除账户"); 
               		$http.post('/v1/aut/user/delete',{
