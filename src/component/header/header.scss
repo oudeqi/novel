@@ -6,10 +6,18 @@
         border: 0;
         min-width:320px;
         margin-bottom: 0;
-        background: #4251F7;
+        background: #222;
+        // background: #4251F7;
         .navbar-brand {
             margin-left: -15px;
             color: #fff;
+            padding: 0 15px;
+            line-height: 50px;
+            .glyphicon:before{
+                position: relative;
+                top: 3px;
+                font-size: 20px;
+            }
         }
         .dropdown{
             position: relative;
@@ -34,7 +42,8 @@
             height: 50px;
             padding: 0 10px;
             padding-top: 7px;
-            background: #4251F7;
+            // background: #007CFB;
+            background: darken(#4251F7,2%);
             cursor: pointer;
             &:hover{
                 text-decoration: none;

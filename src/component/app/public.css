@@ -6,7 +6,7 @@ html a {
   color: #007CFB;
 }
 
-html a:hover {
+html a:hover, html a:focus {
   color: #007CFB;
 }
 

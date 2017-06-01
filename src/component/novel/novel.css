@@ -15,6 +15,10 @@
   font-size: 16px;
 }
 
+#novel .chapter-list .table {
+  margin-bottom: 0;
+}
+
 #novel .chapter-list .free {
   color: forestgreen;
 }

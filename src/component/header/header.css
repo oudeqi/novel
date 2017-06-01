@@ -7,12 +7,20 @@
   border: 0;
   min-width: 320px;
   margin-bottom: 0;
-  background: #4251F7;
+  background: #222;
 }
 
 #header .navbar .navbar-brand {
   margin-left: -15px;
   color: #fff;
+  padding: 0 15px;
+  line-height: 50px;
+}
+
+#header .navbar .navbar-brand .glyphicon:before {
+  position: relative;
+  top: 3px;
+  font-size: 20px;
 }
 
 #header .navbar .dropdown {
@@ -42,7 +50,7 @@
   height: 50px;
   padding: 0 10px;
   padding-top: 7px;
-  background: #4251F7;
+  background: #3848f7;
   cursor: pointer;
 }
 

@@ -29,10 +29,10 @@
         </p>
       </div>
     	<button ng-click="getList()" type="button" class="btn btn-primary" style="margin-bottom: 15px;">查询</button>
-			  
+
     </div>
-    
-    
+
+
     <div class="row" ng-show="statements">
         <div class="col-md-4">
             <div class="jumbotron">
@@ -63,12 +63,12 @@
             </div>
         </div>
     </div>
-    <uib-tabset active="active">
+    <!-- <uib-tabset active="active">
         <uib-tab index="0" heading="结算明细" select="changeType(1)"></uib-tab>
-        <!--<uib-tab index="1" heading="已结算" select="changeType(2)"></uib-tab>-->
-    </uib-tabset>
+        <uib-tab index="1" heading="已结算" select="changeType(2)"></uib-tab>
+    </uib-tabset> -->
     <div class="table-list">
-        <table class="table">
+        <table class="table table-bordered">
             <tr>
                 <th>日期</th>
                 <th>总笔数</th>

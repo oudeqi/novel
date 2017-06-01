@@ -9,8 +9,8 @@
 }
 
 #aside .list li {
-  height: 50px;
-  line-height: 50px;
+  height: 48px;
+  line-height: 48px;
   border-bottom: 1px solid #DADFEA;
 }
 
@@ -20,7 +20,7 @@
   width: 100%;
   height: 100%;
   padding-left: 30px;
-  font-size: 15px;
+  font-size: 14px;
   color: #686868;
 }
 
@@ -30,11 +30,12 @@
 
 #aside .list li a:hover {
   background: #C5D6F8;
+  color: #555;
 }
 
 #aside .list li.active a {
-  color: #007CFB;
   background-color: #fff;
+  color: #333;
 }
 
 #aside .list li.active a:hover {
@@ -49,7 +50,7 @@
   left: 0;
   width: 6px;
   height: 100%;
-  background: #007CFB;
+  background: #333;
 }
 
 @media screen and (min-width: 768px) {
