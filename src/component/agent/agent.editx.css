@@ -1,0 +1,15 @@
+.xd {
+  width: 20rem;
+  height: 12.36rem;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  line-height: 12.36rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  top: 40vh;
+  left: 40vw;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}

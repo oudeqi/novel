@@ -31,6 +31,7 @@
 			  }
 			  k.cgIndex=function(index){
 			  	k.noww=index;
+			  	k.pageIndex=1;
 			  	k.getList();
 			  }
 			  
@@ -38,6 +39,12 @@
 			  k.rowCount = null;
               k.pageCount=null;
               k.list=null;
+              
+              k.goAgentEditx=function(item){
+              	console.log("去代理编辑啦");
+              	localStorage.agenteditxuid=item.uid;
+              	$state.go("warpper.views.section.agenteditx")
+              }
               
               k.menuX=function(dd,item){
               	/*item.uid*/

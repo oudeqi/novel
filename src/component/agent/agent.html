@@ -39,7 +39,7 @@
 		            </thead>
            			 <tbody>
               		 <tr ng-repeat="x in list">
-					  <td class="active">
+					  <td class="active" ng-click="goAgentEditx(x)">
 <!--					  	<span uib-dropdown on-toggle="toggled(open)">-->
 					      <a href id="simple-dropdownx" uib-dropdown-toggle>
 					       {{x.nickName}}({{x.account}})

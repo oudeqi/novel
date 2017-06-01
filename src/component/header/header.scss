@@ -42,8 +42,9 @@
             height: 50px;
             padding: 0 10px;
             padding-top: 7px;
+            background: #333;
             // background: #007CFB;
-            background: darken(#4251F7,2%);
+            // background: darken(#4251F7,2%);
             cursor: pointer;
             &:hover{
                 text-decoration: none;
