@@ -11,8 +11,8 @@
 
         }
     ]);
-    angular.module('app').controller('site-settings',['$scope','$http','$timeout',
-        function($scope,$http,$timeout){
+    angular.module('app').controller('site-settings',['$scope','$http','$timeout','ngToast',
+        function($scope,$http,$timeout,ngToast){
 
             $scope.wx = {};
 
@@ -31,11 +31,6 @@
 
             $scope.refresh = function(){
                 location.reload();
-            };
-
-            $scope.alerts = [];
-            $scope.closeAlert = function() {
-                $scope.alerts.length = 0;
             };
 
             $scope.submitClicked = false;
@@ -57,20 +52,25 @@
                     $scope.submitClicked = false;
                     console.log('设置微信公众平台信息',res);
                     if(res.data.errMessage){
-                        $scope.alerts[0] = {msg: res.data.errMessage};
+                        ngToast.create({
+                            className: 'danger',
+                            content: res.data.errMessage,
+                        });
                     }else{
-                        $scope.refresh();
+                        ngToast.create({
+                            className: 'success',
+                            content: '设置微信公众平台信息成功',
+                        });
                     }
                 }).catch(function(res){
                     $scope.submitClicked = false;
-                    $scope.alerts[0] = {msg: '保存失败！'};
+                    ngToast.create({
+                        className: 'danger',
+                        content: '操作失败！',
+                    });
                 });
             };
 
-            $scope.menuAlerts = [];
-            $scope.closeMenuAlert = function() {
-                $scope.menuAlerts.length = 0;
-            };
             $scope.generateMenuClicked = false;
             $scope.generateMenu = function(){
                 if($scope.generateMenuClicked){
@@ -81,26 +81,23 @@
                     console.log('生成按钮',res);
                     $scope.generateMenuClicked = false;
                     if(res.data.errMessage){
-                        $scope.menuAlerts[0] = {
-                            type:'danger',
-                            msg: res.data.errMessage
-                        };
+                        ngToast.create({
+                            className: 'danger',
+                            content: res.data.errMessage,
+                        });
                     }else{
-                        $scope.menuAlerts[0] = {
-                            type:'success',
-                            msg: '生成菜单成功！'
-                        };
-                        $timeout(function(){
-                            location.reload();
-                        },2000);
+                        ngToast.create({
+                            className: 'success',
+                            content: '生成菜单成功！',
+                        });
                     }
 
                 }).catch(function(res){
                     $scope.generateMenuClicked = false;
-                    $scope.menuAlerts[0] = {
-                        type:'danger',
-                        msg: '菜单生成失败！'
-                    };
+                    ngToast.create({
+                        className: 'danger',
+                        content: '菜单生成失败！',
+                    });
                 });
             };
 

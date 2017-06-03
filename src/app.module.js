@@ -7,9 +7,11 @@
         'app.template',
         'LocalStorageModule',
         'ui.bootstrap',
-        'ngclipboard'
+        'ngclipboard',
+        'ngToast',
+        'ngAnimate'
     ]);
-//     angular.module('app').constant('APP_HOST','http://192.168.10.28:8080');
-    angular.module('app').constant('APP_HOST','http://book.zbty8.com/');
+    angular.module('app').constant('APP_HOST','http://192.168.10.28:8080');
+    // angular.module('app').constant('APP_HOST','http://book.zbty8.com/');
 
 })();

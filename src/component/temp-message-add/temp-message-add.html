@@ -1,0 +1,96 @@
+<div class="container-fluid" id="temp-message-add" ng-controller="temp-message-add">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="active">添加模板消息任务</li>
+    </ol>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 col-lg-3 control-label">任务名称</label>
+            <div class="col-md-10 col-lg-4">
+                <input type="text" class="form-control" placeholder="" ng-model="taskName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-lg-3 control-label">点击跳转链接</label>
+            <div class="col-md-10 col-lg-4">
+                <input type="text" class="form-control" placeholder="" ng-model="taskUrl">
+                <p>用户点击模板消息后跳转到的网页链接, 仅限您小说网站内部的链接</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-lg-3 control-label">发送时间</label>
+            <div class="col-md-10 col-lg-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-focus="open=true" on-open-focus="false"
+                    uib-datepicker-popup="yyyy-MM-dd HH:mm" ng-model="pushTime" close-on-date-selection="true"
+                    is-open="open" clear-text="清除" close-text="关闭" current-text="今天"
+                    datepicker-options="dateOptions" alt-input-formats="altInputFormats" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open=true"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+                <p class="set-time">
+                    <a href="javascript:void(0);" ng-click="setMinute(10)">10分钟后</a>
+                    <a href="javascript:void(0);" ng-click="setHour(1)">1小时后</a>
+                    <a href="javascript:void(0);" ng-click="setHour(2)">2小时后</a>
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-lg-3 control-label">选择模板</label>
+            <div class="col-md-10 col-lg-4">
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="1" ng-model="taskType"> 会员卡升级通知
+                    </label>
+                </div>
+                <div class="tpl">
+                    <div class="panel panel-default" ng-show="taskType == '1'">
+                        <div class="panel-body">
+                            <h4>会员卡升级通知</h4>
+                            <p class="date">2017-12-20</p>
+                            <p class="desc">
+                                <span>描述1：{{first}}</span>
+                                <a href="javascript:void(0);" ng-click="setTplMsg('first',first)"><i class="glyphicon glyphicon-edit"></i></a>
+                            </p>
+                            <p class="desc">
+                                <span>会员卡号：{{keyword1}}</span>
+                                <a href="javascript:void(0);" ng-click="setTplMsg('keyword1',keyword1)"><i class="glyphicon glyphicon-edit"></i></a>
+                            </p>
+                            <p class="desc">
+                                <span>有效期：{{keyword2}}</span>
+                                <a href="javascript:void(0);" ng-click="setTplMsg('keyword2',keyword2)"><i class="glyphicon glyphicon-edit"></i></a>
+                            </p>
+                            <p class="desc">
+                                <span>描述2：{{remark}}</span>
+                                <a href="javascript:void(0);" ng-click="setTplMsg('remark',remark)"><i class="glyphicon glyphicon-edit"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-lg-3 control-label">测试粉丝ID</label>
+            <div class="col-md-10 col-lg-4">
+                <input type="text" class="form-control" placeholder="" ng-model="testBuid">
+                <p>
+                    使用测试粉丝微信，打开当前代理的公众号，点击菜单 "粉丝导航" > "个人中心"，可以看到粉丝ID
+                    <!-- <a href="javascript:void(0);">查看示例</a> -->
+                </p>
+            </div>
+        </div>
+        <!-- <hr> -->
+        <div class="form-group btn-warpper">
+            <div class="col-md-offset-2 col-lg-offset-3 col-md-10 col-lg-9">
+                <button type="button" class="btn btn-primary" ng-click="addMsg()">保存</button>
+                <button type="button" class="btn btn-default" ng-click="addMsgTest()">测试发送</button>
+            </div>
+        </div>
+    </div>
+</div>

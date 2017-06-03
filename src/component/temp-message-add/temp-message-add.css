@@ -1,0 +1,40 @@
+#temp-message-add .radio {
+  margin-bottom: 15px;
+}
+
+#temp-message-add .radio label {
+  margin-right: 20px;
+}
+
+#temp-message-add .panel {
+  margin-bottom: 0;
+}
+
+#temp-message-add .panel h4 {
+  font-size: 20px;
+}
+
+#temp-message-add .panel p {
+  margin-bottom: 8px;
+}
+
+#temp-message-add .btn-warpper button {
+  margin-right: 6px;
+}
+
+#temp-message-add a {
+  outline: none;
+}
+
+#temp-message-add .set-time {
+  padding-top: 5px;
+  margin-bottom: 0;
+}
+
+#temp-message-add .set-time a {
+  margin-right: 5px;
+}
+
+#temp-message-add .set-time a:focus, #temp-message-add .set-time a:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,35 @@
+#temp-message-add{
+    .radio{
+        margin-bottom: 15px;
+        label{
+            margin-right: 20px;
+        }
+    }
+    .panel{
+        margin-bottom: 0;
+        h4{
+            font-size: 20px;
+        }
+        p{
+            margin-bottom: 8px;
+        }
+    }
+    .btn-warpper{
+        button{
+            margin-right: 6px;
+        }
+    }
+    a{
+        outline: none;
+    }
+    .set-time{
+        padding-top: 5px;
+        margin-bottom: 0;
+        a{
+            margin-right: 5px;
+            &:focus,&:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}

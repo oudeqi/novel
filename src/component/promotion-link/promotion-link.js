@@ -11,8 +11,8 @@
 
         }
     ]);
-    angular.module('app').controller('promotion-link',['$scope','$http','$state','$uibModal','$timeout','promoTemplate',
-        function($scope,$http,$state,$uibModal,$timeout,promoTemplate){
+    angular.module('app').controller('promotion-link',['$scope','$http','$state','$uibModal','$timeout','promoTemplate','ngToast',
+        function($scope,$http,$state,$uibModal,$timeout,promoTemplate,ngToast){
 
             $scope.id = $state.params.id; //小说id
             $scope.chapterid = $state.params.chapterid; //章节id

@@ -13,7 +13,6 @@
             <div class="alert alert-warning alert-dismissible">
                 <strong>注意: </strong> 接入公众号必须是 “ 认证服务号 ”
             </div>
-            <div uib-alert ng-repeat="alert in alerts" class="alert-warning" close="closeAlert()">{{alert.msg}}</div>
             <form class="form-horizontal" name="save" novalidate ng-submit="submit()">
                 <div class="form-group">
                     <label class="col-sm-3 control-label">网站首页</label>
@@ -63,10 +62,6 @@
             </form>
         </uib-tab>
         <uib-tab index="1" heading="公众号接入">
-            <!--  disable="!wx.baseId || !wx.wechat || !wx.name || !wx.appId || !wx.appsecret" -->
-            <div uib-alert ng-repeat="alert in menuAlerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeMenuAlert()">
-                <strong>消息：</strong>{{alert.msg}}
-            </div>
             <div class="form-horizontal">
                 <div class="alert alert-info">
                     <b>微信公众平台 &gt; 公众号设置 &gt; 功能设置</b>
