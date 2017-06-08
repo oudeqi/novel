@@ -12,9 +12,14 @@
 
         }
     ]);
-    angular.module('app').controller('video',['$scope','$http',
-        function($scope,$http){
-
+    angular.module('app').controller('video',['$scope','$http','localStorageService',
+        function($scope,$http,localStorageService){
+            var level = localStorageService.get('level');
+            if(level == 1 || level == 2){
+                $scope.videoUrl = 'http://cdn.2tai.net/book/jiaocheng2ji.mp4';
+            }else{
+                $scope.videoUrl = 'http://cdn.2tai.net/book/jiaocheng3ji.mp4';
+            }
         }
     ]);
 })();

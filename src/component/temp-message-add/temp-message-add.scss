@@ -1,4 +1,10 @@
 #temp-message-add{
+    .red{
+        color: red;
+    }
+    .blue{
+        color: blue;
+    }
     .radio{
         margin-bottom: 15px;
         label{
@@ -21,6 +27,7 @@
     }
     a{
         outline: none;
+        color: inherit;
     }
     .set-time{
         padding-top: 5px;

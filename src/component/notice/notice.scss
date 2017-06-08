@@ -29,4 +29,8 @@
         font-family: inherit;
         line-height: 1.5;
     }
+    .modal-body{
+        max-height: 500px;
+        overflow: auto;
+    }
 }
