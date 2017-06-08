@@ -8,6 +8,14 @@
         }
     ]);
 
+    angular.module('app').config(['ngToastProvider', function(ngToastProvider) {
+        ngToastProvider.configure({
+            horizontalPosition: 'right',
+            verticalPosition: 'bottom',
+            animation: 'slide' // or 'fade'
+        });
+    }]);
+
     angular.module('app').config(['$httpProvider','APP_HOST',
         function($httpProvider,APP_HOST){
             function HttpInterceptor($q,$state,localStorageService){

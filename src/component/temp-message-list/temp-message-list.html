@@ -1,0 +1,45 @@
+<div class="container-fluid" id="temp-message-list" ng-controller="temp-message-list">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="active">模板消息</li>
+    </ol>
+    <div class="btn-warpper">
+        <button class="btn btn-primary" type="button" ui-sref="warpper.views.section.tplmsgadd">+ 添加模板消息任务</button>
+    </div>
+    <div class="table-list">
+        <table class="table table-bordered">
+            <tr>
+                <th>任务名称</th>
+                <th>模板</th>
+                <th>发送时间</th>
+                <th>发送状态</th>
+                <th>操作</th>
+            </tr>
+            <tr ng-repeat="item in list track by $index">
+                <td>{{item.taskName}}</td>
+                <td>
+                    <span ng-show="item.taskType=='1'">会员卡升级通知</span>
+                </td>
+                <td>{{item.pushTime | date:"yyyy/MM/dd HH:mm"}}</td>
+                <td>
+                    <span ng-show="item.status==0">未发送</span>
+                    <span ng-show="item.status==1">已发送</span>
+                </td>
+                <td>
+                    <a ng-if="item.status==0" ng-click="del(item)" href="javascript:void(0);">删除</a>
+                </td>
+            </tr>
+        </table>
+        <div class="nodata" ng-show="list.length==0">
+            暂无数据
+        </div>
+        <div class="pagination-cont" ng-show="pageCount>1">
+            <ul uib-pagination boundary-links="true" items-per-page="pageSize" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
+    </div>
+</div>

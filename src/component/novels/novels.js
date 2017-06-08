@@ -21,12 +21,16 @@
             $scope.pageSize = 10;
             $scope.pageCount = 0;//总页数
             $scope.list = [];
+            
+            $scope.searchBook='';
+            
 
             $scope.getList = function(){
                 $http.get('/v1/aut/backend/books',{
                     params:{
                         pageSize:$scope.pageSize,
                         pageIndex:$scope.currentPage,
+                        search:$scope.searchBook,
                     }
                 }).then(function(res){
                     console.log('小说列表',res);

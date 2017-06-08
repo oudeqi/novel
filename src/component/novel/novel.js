@@ -14,8 +14,8 @@
 
         }
     ]);
-    angular.module('app').controller('novel',['$scope','$http','$state','localStorageService','$uibModal',
-        function($scope,$http,$state,localStorageService,$uibModal){
+    angular.module('app').controller('novel',['$scope','$http','$state','localStorageService','$uibModal','ngToast',
+        function($scope,$http,$state,localStorageService,$uibModal,ngToast){
 
             $scope.level = localStorageService.get('level');
 
@@ -91,12 +91,18 @@
                     }).then(function(res){
                         console.log('删除',res);
                         if(res.data.errMessage){
-                            alert('删除失败！');
+                            ngToast.create({
+                                className: 'danger',
+                                content: res.data.errMessage
+                            });
                         }else{
                             location.reload();
                         }
                     }).catch(function(res){
-
+                        ngToast.create({
+                            className: 'danger',
+                            content: '删除失败！'
+                        });
                     });
                 }, function () {
                     console.log('Modal dismissed at: ' + new Date());

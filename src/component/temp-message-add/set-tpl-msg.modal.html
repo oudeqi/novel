@@ -1,0 +1,13 @@
+<div class="app-modal">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="cancel()">&times;</button>
+        <h4 class="modal-title">配置模板消息</h4>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="form-control" placeholder="" ng-model="msg">
+        <p>可使用 {wename} 占位符, 发送时会被替换成用户昵称</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">提交</button>
+    </div>
+</div>

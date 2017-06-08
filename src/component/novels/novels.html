@@ -19,6 +19,17 @@
                     <th>派单指数</th>
                 </tr>
             </thead>
+             <div class="col-md-2" style="margin-bottom: 1rem; padding-left: 0 !important;">
+			    <div class="input-group">
+			      <input ng-model="searchBook" type="text" class="form-control" placeholder="搜索图书列表">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" ng-click="getList()" type="button">搜索</button>
+			      </span>
+			    </div><!-- /input-group -->
+			  </div><!-- /.col-lg-6 -->
+			  
+			  
+			  
             <tbody>
                 <tr ng-repeat="item in list">
                     <td>
@@ -61,8 +72,15 @@
         <div class="nodata" ng-show="list.length==0">
             暂无数据
         </div>
-        <div class="pagination-cont" ng-show="pageCount>1">
+        <div class="row">
+        	<!--pagination-cont--> 
+        <div class="app-pagination col-md-4">
             <ul uib-pagination boundary-links="true" items-per-page="pageSize" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
+        <div class="col-md-2" style="margin-top: 1.5rem; margin-left: -5rem;">
+      		<pre>总页数: {{pageCount}}   总数量：{{totalItems}}</pre>
+            	
+        </div>
         </div>
     </div>
 </div>

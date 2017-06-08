@@ -134,10 +134,10 @@
 
                     }
                 }).catch(function(res){
-
+					console.log("结算列表错误");
                 });
             };
-            // $scope.getList();
+               $scope.getList();
             $scope.pageChanged = function(){
                 console.log("page to "+$scope.currentPage);
                 $scope.getList();

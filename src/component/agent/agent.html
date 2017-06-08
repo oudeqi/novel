@@ -108,7 +108,8 @@
 
 		  </uib-tabset>
 
-		<div class="app-pagination">
+		<div class="row">
+		<div class="app-pagination col-md-4">
         <ul
             uib-pagination
             ng-change="pageGo()"
@@ -123,7 +124,13 @@
             last-text="&raquo;"
             previous-text="&lsaquo;"
             next-text="&rsaquo;"></ul>
-    </div>
+		 </div>
+		 
+         <div class="col-md-2" style="margin-top: 1.5rem; margin-left: -5rem;">
+      		<pre>总页数: {{pageCount}}   总数量：{{rowCount}}</pre>
+            	
+        </div>
+        </div>
 
 
 </div>

@@ -1,11 +1,11 @@
 html{
     height: 100%;
-    a{
-        color: #007CFB;
-        &:hover,&:focus{
-            color: #007CFB;
-        }
-    }
+    // a{
+    //     color: #007CFB;
+    //     &:hover,&:focus{
+    //         color: #007CFB;
+    //     }
+    // }
 }
 body{
     min-width:320px;
@@ -35,27 +35,27 @@ body{
     text-decoration: none;
 }
 // 分页器
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus{
-    background-color: #129aee;
-    border-color: #129aee;
-}
-
-.pagination > li > a,
-.pagination > li > span{
-    color: #129aee;
-}
-
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus{
-    color: #007CFB;
-}
+// .pagination > .active > a,
+// .pagination > .active > span,
+// .pagination > .active > a:hover,
+// .pagination > .active > span:hover,
+// .pagination > .active > a:focus,
+// .pagination > .active > span:focus{
+//     background-color: #129aee;
+//     border-color: #129aee;
+// }
+//
+// .pagination > li > a,
+// .pagination > li > span{
+//     color: #129aee;
+// }
+//
+// .pagination > li > a:hover,
+// .pagination > li > span:hover,
+// .pagination > li > a:focus,
+// .pagination > li > span:focus{
+//     color: #007CFB;
+// }
 
 
 .xd {
