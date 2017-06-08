@@ -9,8 +9,8 @@
 }
 
 #aside .list li {
-  height: 48px;
-  line-height: 48px;
+  height: 45px;
+  line-height: 45px;
   border-bottom: 1px solid #DADFEA;
 }
 
@@ -64,7 +64,7 @@
 
 @media screen and (min-width: 992px) {
   #aside {
-    width: 200px;
+    width: 180px;
   }
   #aside .list li a {
     padding-left: 40px;
@@ -73,6 +73,6 @@
 
 @media screen and (min-width: 1200px) {
   #aside {
-    width: 250px;
+    width: 210px;
   }
 }
