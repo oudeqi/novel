@@ -4,7 +4,8 @@
         <h4 class="modal-title">{{notice.title}}</h4>
     </div>
     <div class="modal-body">
-        <pre>{{notice.content}}</pre>
+        <!-- <pre>{{notice.content}}</pre> -->
+        <div ng-bind-html="notice.content"></div>
     </div>
     <div class="modal-footer">
         <button class="btn btn-warning" type="button" ng-click="cancel()">知道了</button>

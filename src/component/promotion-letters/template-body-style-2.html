@@ -1,11 +1,18 @@
-<section class="promo-template-section" ng-repeat="items in chapters track by $index">
-    <section class="section-header">
-        <section class="center">
-            <span></span><span></span><span></span><span>{{items.chapterTitle}}2</span><span></span><span></span><span></span>
+<div ng-repeat="items in chapters track by $index" id="wx-article-body"><section style="margin:15px 6px;box-shadow:0em 0em 0.8em #A5A5A5;overflow:hidden;box-sizing:border-box;padding:1em;">
+    <section style="display: inline-block; text-align: center; padding: 0.1em 0.1em 0em; color: rgb(29, 92, 105); background: rgb(160, 217, 229);transform: rotate(0deg);-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-o-transform: rotate(0deg);">
+        <section style="width: 90%; height: 1px; border-top-width: 0.3em; border-top-style: solid; border-color: rgb(80, 185, 207); margin-top: -0.2em; margin-left: -1px; transform: rotate(-3deg) !important;transform: rotate(-3deg);-webkit-transform: rotate(-3deg);-moz-transform: rotate(-3deg);-o-transform: rotate(-3deg);" data-bcless="darken" data-bclessp="20%" data-width="90%"></section>
+        <section style="color:#fff;padding:0.5em 0.8em;">
+            <p style="margin:0">
+                <span style="color: #FFFFFF;" class="135brush" data-brushtype="text">{{items.chapterTitle}}
+</span>
+            </p>
         </section>
     </section>
-    <section class="section-body">
-        <p ng-repeat="item in items.chapterContent track by $index">{{item}}</p>
+    <section style="width: auto; height: auto; margin: -1em auto 0px; overflow: hidden; border-top-width: 0.1em; border-top-style: dashed; border-top-color: rgb(160, 217, 229); padding: 1em 0.5em 0px; font-size: 1em; line-height: 1.4em;">
+        <section style="padding:10px 0px;line-height:1.8em;" ng-bind-html="items.chapterContent"> 
+            
+        </section>
     </section>
-    <section class="section-footer"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></section>
 </section>
+
+<span>&nbsp;</span></div>

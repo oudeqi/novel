@@ -1,3 +1,11 @@
+#temp-message-add .red {
+  color: red;
+}
+
+#temp-message-add .blue {
+  color: blue;
+}
+
 #temp-message-add .radio {
   margin-bottom: 15px;
 }
@@ -24,6 +32,7 @@
 
 #temp-message-add a {
   outline: none;
+  color: inherit;
 }
 
 #temp-message-add .set-time {

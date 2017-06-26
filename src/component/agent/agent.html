@@ -85,7 +85,7 @@
 		                    <th>佣金比例</th>
 		                    <th>注册时间</th>
 		                    <th>等级</th>
-		                    <!--<th>操作</th>-->
+		                    <th>操作</th>
 
 		                </tr>
 		            </thead>
@@ -99,7 +99,13 @@
 					  <td class="success">{{x.scale}}</td>
 					  <td class="warning">{{x.createDate | date:"yyyy/MM/dd HH:mm"}}</td>
 					  <td class="danger"><span style="background-color: cornflowerblue; padding: 3px 6px; color: white;">{{x.grade==0?'待定':''}}{{x.grade==1?'差':''}}{{x.grade==2?'良':''}}{{x.grade==3?'优':''}}</span></td>
-					  <!--<td class="info">666</td>-->
+					  <td class="info" style="cursor: pointer;" ng-click="refAgent(x)">
+					  	  <a>
+  	  						  	恢复
+					      </a>
+					  	
+
+					  </td>
 					</tr>
             		</tbody>
 
@@ -109,7 +115,12 @@
 		  </uib-tabset>
 
 		<div class="row">
-		<div class="app-pagination col-md-4">
+					<!--<div class="col-md-7"></div>-->
+			         <div class="col-md-3" style="margin-top: 1.5rem; float: right;">
+				      		<pre>总页数: {{pageCount}}   总数量：{{rowCount}}</pre>
+				            	
+				        </div>
+		<div class="app-pagination" style="float: right;">
         <ul
             uib-pagination
             ng-change="pageGo()"
@@ -126,10 +137,7 @@
             next-text="&rsaquo;"></ul>
 		 </div>
 		 
-         <div class="col-md-2" style="margin-top: 1.5rem; margin-left: -5rem;">
-      		<pre>总页数: {{pageCount}}   总数量：{{rowCount}}</pre>
-            	
-        </div>
+
         </div>
 
 

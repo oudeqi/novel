@@ -22,6 +22,10 @@
                     <th>新增用户</th>
                     <th>新增关注</th>
                     <th>充值金额</th>
+                    <!--已推广次数，最后推广时间-->
+                    <!--<th>已推广次数</th>
+                    <th>最后推广时间</th>-->
+
                     <th>操作</th>
                 </tr>
             </thead>
@@ -30,7 +34,9 @@
                     <td>{{item.id}}</td>
                     <td>
                         <p class="link">
-                            <a href="javascript:void(0);">{{item.link}}</a>
+                            <a ng-if="item.bookId!=0 && item.titleId!=0" ng-click="promotionLetters(item)">{{item.link}}</a>
+                            <a ng-if="item.bookId==0" ng-click="indexLink(item)">{{item.link}}</a>
+                            <a ng-if="item.bookId!=0 && item.titleId==0" ng-click="goBookIntro(item)">{{item.link}}</a>
                         </p>
                         <p class="time">
                             创建时间: {{item.createDate | date:"yyyy/MM/dd HH:mm"}}
@@ -57,10 +63,16 @@
                     <td>{{item.clickNumber | number}}</td>
                     <td>{{item.addNumber | number}}</td>
                     <td>{{item.followNumber | number}}</td>
+
                     <td>{{item.payMoney | currency : "￥" : 2}}</td>
+                    
+                    <!--<td>{{item.publishCount | number}}</td>
+                    <td>{{item.publishTime | date:"yyyy/MM/dd HH:mm"}}</td>-->
+                    
                     <td>
-                        <a ng-if="item.bookId!=0" href="javascript:void(0);" ng-click="promotionLetters(item)">查看文案</a>
+                        <a ng-if="item.bookId!=0 && item.titleId!=0" href="javascript:void(0);" ng-click="promotionLetters(item)">查看文案</a>
                         <a ng-if="item.bookId==0" href="javascript:void(0);" ng-click="indexLink(item)">查看链接</a>
+                        <a ng-if="item.bookId!=0 && item.titleId==0" href="javascript:void(0);" ng-click="goBookIntro(item)">查看简介文案</a>
                     </td>
                 </tr>
             </tbody>

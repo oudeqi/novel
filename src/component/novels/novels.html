@@ -17,6 +17,10 @@
                     <th>状态</th>
                     <th>性别频度</th>
                     <th>派单指数</th>
+                         <!--已推广次数，最后推广时间-->
+                    <th>已推广次数</th>
+                    <th>最后推广时间</th>
+                    <th ng-if="lev=='1'">热度</th>
                 </tr>
             </thead>
              <div class="col-md-2" style="margin-bottom: 1rem; padding-left: 0 !important;">
@@ -66,6 +70,10 @@
                     <td>
                         <span>{{item.hot || 0 | number}}</span>
                     </td>
+                    <td>{{item.publishCount | number}}</td>
+                    <td>{{item.publishTime | date:"yyyy/MM/dd HH:mm"}}</td>
+                    <td ng-if="lev=='1'">{{item.topHot}}</td>
+                    
                 </tr>
             </tbody>
         </table>
@@ -73,14 +81,16 @@
             暂无数据
         </div>
         <div class="row">
-        	<!--pagination-cont--> 
-        <div class="app-pagination col-md-4">
-            <ul uib-pagination boundary-links="true" items-per-page="pageSize" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
-        </div>
-        <div class="col-md-2" style="margin-top: 1.5rem; margin-left: -5rem;">
+        	<!--<div class="col-md-6"></div>-->
+	        <div class="col-md-3" style="margin-top: 1.5rem; float: right;">
       		<pre>总页数: {{pageCount}}   总数量：{{totalItems}}</pre>
             	
         </div>
+        	<!--pagination-cont--> 
+        <div class="app-pagination" style="float: right;">
+            <ul uib-pagination boundary-links="true" items-per-page="pageSize" force-ellipses="true" total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
+
         </div>
     </div>
 </div>

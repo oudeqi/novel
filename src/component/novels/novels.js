@@ -12,8 +12,8 @@
 
         }
     ]);
-    angular.module('app').controller('novels',['$scope','$http',
-        function($scope,$http){
+    angular.module('app').controller('novels',['$scope','$http','localStorageService',
+        function($scope,$http,localStorageService){
 
             $scope.maxSize = 5;
             $scope.totalItems = 0;
@@ -21,6 +21,10 @@
             $scope.pageSize = 10;
             $scope.pageCount = 0;//总页数
             $scope.list = [];
+            
+            /*1 */
+            $scope.lev=localStorageService.get('level');
+            console.log($scope.lev)
             
             $scope.searchBook='';
             

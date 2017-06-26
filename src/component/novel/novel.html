@@ -50,6 +50,16 @@
                         <i class="glyphicon glyphicon-remove"></i>
                         <span>删除</span>
                     </a>
+                     <a ng-if="level==1&&item.status==2" href="javascript:void(0);" ng-click="goOnline(item)">
+                        <i class="glyphicon glyphicon-saved"></i>
+                        <span>上线</span>
+                    </a>
+                    
+                    <a ng-if="$index<1 && currentPage==1" href="javascript:void(0);" ui-sref="warpper.views.section.bookintro({bookid:item.bookId,cid:item.cid,name:item.bookName,title:item.title})">
+                        <i class="glyphicon glyphicon-link"></i>
+                        <span>生成简介推广</span>
+                    </a>
+                    
                     <!-- <a ng-if="item.gold==0" href="javascript:void(0);">
                         <i class="glyphicon glyphicon-link"></i>
                         <span>获取推广链接</span>

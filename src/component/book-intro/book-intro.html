@@ -1,0 +1,148 @@
+<div class="container-fluid" id="book-intro" ng-controller="book-intro">
+	<ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0);">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li><a ui-sref="warpper.views.section.novels">图书列表</a></li>
+        <li><a >{{name}}</a></li>
+        <li class="active">简介文案</li>
+    </ol>
+    
+    <div class="container-fluid">
+    	<div class="row">
+     	
+     		<div class="col-md-6" style="padding-bottom: 3rem;">
+     			<div style="text-align: center;" id="mycontent">
+  			  <section data-role="outer" label="" style="font-family: 微软雅黑; font-size: 16px;">
+		   <section class="" data-id="89175" style="border-width: 0px; border-style: none; border-color: initial; box-sizing: border-box;">
+		    <section class="" style="margin: 10px auto; border-top: 2px solid rgb(117, 117, 118); padding-top: 3px; box-sizing: border-box;">
+		     <section style="border-top: 1px solid rgb(117, 117, 118); border-bottom: 1px solid rgb(117, 117, 118); padding-top: 5px; padding-bottom: 5px; font-weight: bold; font-size: 18px; box-sizing: border-box;">
+		      <p class="" data-brushtype="text" style="text-align: center;">热文推荐</p>
+		     </section>
+		    </section>
+		   </section>
+		   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; white-space: normal; widows: 1; text-align: center; line-height: 1.75em; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(136, 136, 136);"><strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">《{{bookinfo.name}}》</span></strong></span></p>
+		   <p style="text-align: center;">
+		   	<img ng-src="{{bookinfo.coverImg}}" style="width: 100%; height: auto !important; visibility: visible !important;" /></p>
+		   	<!--<div class="paper" style="text-align: center !important;" ng-bind-html="bookinfo.h5Introduction"></div>-->
+		   	<section>
+		   	<div class="paper" style="text-align: center;">
+		   		<p ng-repeat="bb in ctall" style="text-align: center; width: 100%; color: #b2b2b2; font-size: 14px; word-wrap: break-word;">{{bb}}</p>
+		   	</div>
+		   	</section>
+		   
+		   	
+		   	
+		   	
+		   	
+		   	
+		   <!--<pre style="border: none; background: none; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; text-align: center;">{{bookinfo.h5Introduction}}</pre>-->
+		   
+		   <!--<p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; widows: 1; text-align: center; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(136, 136, 136); font-size: 14px;">民间就有一门神秘的职业</span></p>
+		   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; widows: 1; text-align: center; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(136, 136, 136); font-size: 14px;">叫做法器商人</span></p>
+		   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; widows: 1; text-align: center; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(136, 136, 136); font-size: 14px;">与道士同宗同源，却更强于道士。</span></p>
+		   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; widows: 1; text-align: center; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(136, 136, 136); font-size: 14px;">我就是一名法器商人</span></p>
+		   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; widows: 1; text-align: center; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(136, 136, 136); font-size: 14px;">阴童子，饿死鬼，吃人老井，冥婚纸人……</span></p>
+		   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; widows: 1; text-align: center; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(136, 136, 136); font-size: 14px;">&nbsp;下面就来讲讲我这传奇的一生……</span><br /></p>-->
+		   <p><span style="max-width: 100%; color: rgb(38, 38, 38); font-family: PingFangSC-Regular, -apple-system, Simsun; font-size: 14px; line-height: 28px; box-sizing: border-box !important; word-wrap: break-word !important;">　</span></p>
+		  		
+		  		 <section>
+		  		 	<img style="display: block; width: 50%;" ng-src="{{footerimg}}" alt="" />
+		  		 </section>
+  			  </section>
+
+		  		
+
+		  		 
+     		</div>
+     	</div>
+     		
+     	<div class="col-md-6" >
+     		<!--<div class="btn-group" ng-show="!createShow">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-info" ng-click="createLink()">生成推广链接</button>
+                </div>
+            </div>-->
+            
+            <div ng-show="createShow">
+            	  <div>
+				   <p class="link"><b>推广链接：</b> <a href="javascript:void(0);" style=" word-break:break-all" target="_blank" class="ng-binding">{{generalize}}</a></p>
+				   <p class="tip">请复制上方推广链接，后续您可以在后台菜单的&quot;推广链接&quot;中找到它并查看统计数据</p>
+				   <p style="color: red;"><i class="glyphicon glyphicon-exclamation-sign"></i> <span>请务必使用此链接作为文案的原文链接，不要使用微信中点开后手工复制的链接</span></p>
+				   <div class="btn-list">
+				    <div class="btn-group">
+				     <div class="btn-group" role="group">
+				      <button type="button" class="btn btn-info ng-isolate-scope" ngclipboard="" data-clipboard-target="#mycontent" ngclipboard-success="copySuccess(e)" ngclipboard-error="copyErr(e);">复制正文</button>
+				     </div>
+				     <div class="btn-group" role="group">
+				      <button type="button" class="btn btn-info ng-isolate-scope" ngclipboard="" data-clipboard-text="{{generalize}}" ngclipboard-success="copySuccess(e)" ngclipboard-error="copyErr(e);">复制推广链接</button>
+				     </div>
+				    </div>
+				   </div>
+				   <!-- ngRepeat: alert in alerts -->
+				  </div>
+            </div>
+            
+     	</div>
+     	
+ 		</div>
+ 	</div>
+    
+    
+    <nav class="navbar navbar-default navbar-fixed-bottom" ng-show="justread">
+        <div class="container-fluid">
+            <div class="set-template">
+                <ul class="button-list clearfix">
+                    <!--<li class="dropdown" uib-dropdown>
+                        <button class="btn btn-default dropdown-toggle" type="button" uib-dropdown-toggle>
+                            文案标题
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" uib-dropdown-menu>
+                            <li ng-repeat="item in templateTitles track by $index"><a href="javascript:void(0);" ng-click="changeTitle($index,'article-title')">{{item.txt}}</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" uib-dropdown>
+                        <button class="btn btn-default dropdown-toggle" type="button" uib-dropdown-toggle>
+                            文案封面
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" uib-dropdown-menu>
+                            <li ng-repeat="item in templateCoverimgs track by $index"><a href="javascript:void(0);" ng-click="changeCoverimg($index,'article-coverimg')"><img ng-src="{{item.pic}}" alt=""></a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" uib-dropdown>
+                        <button class="btn btn-default dropdown-toggle" type="button" uib-dropdown-toggle>
+                            正文模板
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" uib-dropdown-menu>
+                            <li ng-repeat="item in templateBodys track by $index"><a href="javascript:void(0);" ng-click="changeBody($index,'article-body')"><img ng-src="{{item.pic}}" alt=""></a></li>
+                        </ul>
+                    </li>-->
+                    <li class="dropdown" uib-dropdown>
+                        <button class="btn btn-default dropdown-toggle" type="button" uib-dropdown-toggle>
+                            原文引导模板
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" uib-dropdown-menu>
+                            <li ng-repeat="item in footers track by $index"><a href="javascript:void(0);" ng-click="changeFooter($index,item.id)"><img ng-src="{{item.pic}}" alt=""></a></li>
+                        </ul>
+                    </li>
+                    <!--ng-show="!createShow"-->
+                    <li class="dropdown">
+                        <div class="btn-group">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-info" ng-click="createLink()">生成推广链接</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+</div>

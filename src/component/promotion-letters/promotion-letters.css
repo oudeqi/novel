@@ -237,6 +237,11 @@
   box-sizing: border-box;
 }
 
+#promotion-letters .promo-template .promo-template-body .promo-template-section .section-body p {
+  margin: 0;
+  line-height: 1.9rem;
+}
+
 #promotion-letters .promo-template .promo-template-body .promo-template-section .section-footer {
   margin-top: -20px;
   box-sizing: border-box;

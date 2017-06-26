@@ -131,7 +131,7 @@
                 }else{
                     t = Date.parse($scope.pushTime);
                 }
-                $http.post('/v1/aut/template/msg',{
+                $http.post('/v1/aut/template/msg/test',{
                     taskName:$scope.taskName,
                     taskUrl:$scope.taskUrl,
                     pushTime:t,

@@ -11,11 +11,13 @@
 
         }
     ]);
+
+    
     angular.module('app').controller('site-settings',['$scope','$http','$timeout','ngToast',
         function($scope,$http,$timeout,ngToast){
 
             $scope.wx = {};
-
+	
             $http.get('/v1/aut/user/wxinfo').then(function(res){
                 console.log('获取微信公众平台信息',res);
                 if(!res.data.errMessage){
@@ -23,18 +25,58 @@
                         $scope.wx = {};
                     }else{
                         $scope.wx = res.data.data;
+                        document.getElementById("coverImimg").display="block";
+						document.getElementById("coverImimg").setAttribute("src",res.data.data.kefuImg);
                     }
                 }
             }).catch(function(res){
 
             });
-
+            
             $scope.refresh = function(){
                 location.reload();
             };
+            $scope.picChange=function(){
+            	console.log($scope.wx.kefuImgBase64,'：我是图片');
+            }
+            $scope.coverImgBase64 = '';
+            $scope.nohotbase='';
+            
+            $scope.handleFileSelect= function(files) {
+				console.info(files);
+				var file = files[0];
+                var reader = new FileReader();
+                var kk=$scope;
+                reader.onloadend = function () {
+					$scope.nohotbase=reader.result;
+					kk.nohotbase=reader.result;
+					document.getElementById("coverImimg").display="block";
+					document.getElementById("coverImimg").setAttribute("src",reader.result);
+					
+					
+                };
+                reader.readAsDataURL(file);
+				};
+            
+//          var myi=document.getElementById("coverIm");
+//          angular.element(myi).on("change",function(e){
+//          		console.log("变化了")
+////          		var file = e.target.files[0];
+////                  var reader = new FileReader();
+////                  reader.onloadend = function () {
+////						$scope.nohotbase=reader.result;
+////						console.log($scope.nohotbase)
+////                  };
+////                  if (file) {
+////                      reader.readAsDataURL(file);
+////                  } else {
+////                      $scope.nohotbase = '';
+////                  }
+//          })
 
             $scope.submitClicked = false;
             $scope.submit = function(){
+            	console.log($scope.nohotbase)
                 if(!$scope.wx.appId || !$scope.wx.appsecret || !$scope.wx.name || !$scope.wx.wechat || !$scope.wx.baseId){
                     return false;
                 }
@@ -47,7 +89,8 @@
                     appsecret: $scope.wx.appsecret,
                     name: $scope.wx.name,
                     wechat: $scope.wx.wechat,
-                    baseId: $scope.wx.baseId
+                    baseId: $scope.wx.baseId,
+                    kefuImgBase64:$scope.nohotbase.substring($scope.nohotbase.indexOf(',')+1)
                 }).then(function(res){
                     $scope.submitClicked = false;
                     console.log('设置微信公众平台信息',res);
@@ -107,4 +150,8 @@
 
         }
     ]);
+    
+    
+    
+    
 })();

@@ -213,11 +213,16 @@
                     }
                 }
                 .section-body{
-
                     border: 2px solid #FD8125;
                     padding: 30px 15px 15px;
                     margin-top: -16px;
                     box-sizing: border-box;
+//                  text-indent: 16px;
+                    p {
+                        margin: 0;
+//                      line-height: 2rem;
+                        line-height: 1.9rem;
+                    }
                 }
                 .section-footer{
                     margin-top: -20px;

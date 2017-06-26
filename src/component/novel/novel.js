@@ -65,6 +65,27 @@
             }).catch(function(res){
 
             });
+            
+            $scope.goOnline=function(item){
+            	/*上线*/
+            	$http.post('/v1/aut/chapter/online',{
+            			bookId:item.bookId,
+            			cid:item.cid,
+            	}).then(function(res){
+                if(!res.data.errMessage){
+                	ngToast.create({
+                        className: 'success',
+                        content: '上线成功!'
+                    });
+                    $scope.getList();
+                    
+                }
+
+	            }).catch(function(res){
+	
+	            });
+            	
+            }
 
             $scope.del = function(item){
                 console.log(item);

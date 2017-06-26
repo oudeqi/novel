@@ -1,11 +1,26 @@
-<section class="promo-template-section" ng-repeat="items in chapters track by $index">
-    <section class="section-header">
-        <section class="center">
-            <span></span><span></span><span></span><span>{{items.chapterTitle}}</span><span></span><span></span><span></span>
-        </section>
+<div ng-repeat="items in chapters track by $index" id="wx-article-body"><section style="box-sizing: border-box;">
+    <section style="text-align:center;box-sizing: border-box;">
+        <section style="display: inline-block; box-sizing: border-box; background-color: rgb(254, 254, 254);"><section style="display: inline-block; height: 30px; width: 10px; vertical-align: top; border-right-width: 10px; border-right-style: solid; border-right-color: rgb(255, 129, 36); box-sizing: border-box; border-top-width: 15px !important; border-top-style: solid !important; border-top-color: transparent !important; border-bottom-width: 15px !important; border-bottom-style: solid !important; border-bottom-color: transparent !important;"></section><section style="display: inline-block; height: 30px; width: 10px; vertical-align: top; border-right-width: 10px; border-right-style: solid; border-right-color: rgb(254, 254, 254); margin-left: -8px; border-top-width: 15px !important; border-top-style: solid !important; border-top-color: transparent !important; border-bottom-width: 15px !important; border-bottom-style: solid !important; border-bottom-color: transparent !important; box-sizing: border-box;"></section><section style="display: inline-block; height: 30px; width: 10px; vertical-align: top; border-right-width: 10px; border-right-style: solid; border-right-color: rgb(255, 129, 36); box-sizing: border-box; border-top-width: 15px !important; border-top-style: solid !important; border-top-color: transparent !important; border-bottom-width: 15px !important; border-bottom-style: solid !important; border-bottom-color: transparent !important;"></section><section class="135brush" style="display: inline-block; vertical-align: top; height: 30px; line-height: 30px; padding-right: 0.5em; padding-left: 0.5em; color: rgb(255, 255, 255); box-sizing: border-box; background-color: rgb(255, 129, 36);text-align:left;">
+           {{items.chapterTitle}}
+        </section><section style="display: inline-block; height: 30px; width: 10px; vertical-align: top; border-left-width: 10px; border-left-style: solid; border-left-color: rgb(255, 129, 36); box-sizing: border-box; border-top-width: 15px !important; border-top-style: solid !important; border-top-color: transparent !important; border-bottom-width: 15px !important; border-bottom-style: solid !important; border-bottom-color: transparent !important;"></section><section style="display: inline-block; height: 30px; width: 10px; vertical-align: top; border-left-width: 10px; border-left-style: solid; border-left-color: rgb(255, 129, 36); margin-left: 2px; box-sizing: border-box; border-top-width: 15px !important; border-top-style: solid !important; border-top-color: transparent !important; border-bottom-width: 15px !important; border-bottom-style: solid !important; border-bottom-color: transparent !important;" data-width="10px"></section><section style="display: inline-block; height: 30px; width: 10px; vertical-align: top; border-left-width: 10px; border-left-style: solid; border-left-color: rgb(254, 254, 254); margin-left: -12px; border-top-width: 15px !important; border-top-style: solid !important; border-top-color: transparent !important; border-bottom-width: 15px !important; border-bottom-style: solid !important; border-bottom-color: transparent !important; box-sizing: border-box;"></section></section>
     </section>
-    <section class="section-body">
-        <p ng-repeat="item in items.chapterContent track by $index">{{item}}</p>
+    <section style="border: 2px solid rgb(255, 129, 36); padding: 30px 15px 15px; margin-top: -16px; box-sizing: border-box; line-height: 1.7;" ng-bind-html="items.chapterContent">
+       
     </section>
-    <section class="section-footer"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></section>
+    <section style="margin-top: -20px; box-sizing: border-box;"><section style="border-color: transparent transparent rgb(255, 129, 36); border-style: solid; border-width: 10px; float: none; height: 0px; margin-top: -10px; margin-right: auto; margin-left: auto; width: 0px; box-sizing: border-box;" data-width="0px"></section><section style="border-color: transparent transparent rgb(254, 254, 254); border-style: solid; border-width: 10px; height: 0px; margin-top: -18px; margin-right: auto; margin-left: auto; width: 0px; color: inherit; box-sizing: border-box;" data-width="0px"></section><section style="border-color: transparent transparent rgb(255, 129, 36); border-style: solid; border-width: 10px; float: none; height: 0px; margin-top: -15px; margin-right: auto; margin-left: auto; width: 0px; box-sizing: border-box;" data-width="0px"><br></section></section>
 </section>
+
+</div>
+<!--<div style="text-align: center;">-->
+	<!--<p style="margin: 2rem 0;">《{{name}}》</p>-->
+	<!--<img style="width: 100%;" ng-src="{{h5coverImg}}" alt="" />-->
+	<!--<div style="margin: 2rem 0;">
+<p>民间就有一门神秘的职业</p>
+<p>叫做法器商人</p>
+<p>与道士同宗同源，却更强于道士。</p>
+<p>我就是一名法器商人</p>
+<p>阴童子，饿死鬼，吃人老井，冥婚纸人……</p>
+ <p>下面就来讲讲我这传奇的一生……</p>
+	</div>-->
+	<!--<div style="margin: 2rem 0; width: 100%;"><pre style="border: none; background: none; font-size: 14px; color: ;">{{h5Introduction}}</pre></div>-->
+<!--</div>-->

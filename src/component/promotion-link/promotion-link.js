@@ -44,17 +44,19 @@
                 console.log('文案章节',res);
                 if(!res.data.errMessage){
                     angular.forEach(res.data.data,function(item,idx){
+                        var reg = new RegExp("\<p\/\>","g");
+                        var content = item.content.replace(reg, '</p>');
                         $scope.chapters[idx] = {
                             chapterTitle:item.title,
-                            chapterContent: []
+                            chapterContent: content
                         };
                         // var content = item.content.replace(/[\r]/g,'').split(/[\n]/g);
-                        var content = item.content.split('<br />');
-                        angular.forEach(content,function(it){
-                            if(it !== ''){
-                                $scope.chapters[idx].chapterContent.push(it);
-                            }
-                        });
+                        // var content = item.content.split('<br />');
+                        // angular.forEach(content,function(it){
+                        //     if(it !== ''){
+                        //         $scope.chapters[idx].chapterContent.push(it);
+                        //     }
+                        // });
                     });
                 }
             }).catch(function(res){

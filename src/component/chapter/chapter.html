@@ -22,10 +22,10 @@
         </div>
         </div>
         <div class="panel-body">
-            <div class="content text-{{theme}}">
-                <p ng-repeat="item in content track by $index">
+            <div class="content text-{{theme}}" ng-bind-html="content">
+                <!-- <p ng-repeat="item in content track by $index">
                     {{item}}
-                </p>
+                </p> -->
             </div>
         </div>
     </div>

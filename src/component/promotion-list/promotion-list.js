@@ -58,6 +58,16 @@
                     link:encodeURIComponent(JSON.stringify(idArr))
                 },{reload:true});
             };
+            
+            $scope.goBookIntro=function(item){
+            	$state.go('warpper.views.section.bookintro',{
+            		bookid:item.bookId,
+            		cid:item.cid,
+            		bottomId:item.bottomId
+            	},{
+            		reload:true
+            	})
+            }
 
             $scope.indexLink = function(item){
                 var idArr = [item.titleId,item.coverImgId,item.bodyId,item.bottomId,item.link];

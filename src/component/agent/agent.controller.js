@@ -47,6 +47,16 @@
               	$state.go("warpper.views.section.agenteditx")
               }
               
+              k.refAgent=function(item){
+              	$http.post('/v1/aut/user/recovery',{
+              		uid:item.uid
+              	}).then(function(res){
+              		k.show("恢复成功");
+              		k.getList();
+              		
+              	})
+              }
+              
               k.menuX=function(dd,item){
               	/*item.uid*/
               		if(dd==k.items[0]){
